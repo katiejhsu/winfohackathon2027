@@ -1,0 +1,42 @@
+.committee-group {
+  margin: 24px 0 40px;
+}
+
+.committee-card {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.photo-placeholder {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.winner-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.winner-card__emoji {
+  font-size: 1.8rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial__name {
+  font-size: 0.85rem;
+  color: var(--color-sky-mid);
+  margin-top: 1rem;
+}
