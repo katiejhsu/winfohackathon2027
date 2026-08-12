@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { to: "/resources", label: "Resources & FAQ" },
   { to: "/about", label: "About WINFO" },
   { to: "/contact", label: "Contact" },
+  { to: "/test-background", label: "Test Background" },
 ];
 
 export default function Navbar() {

@@ -9,6 +9,7 @@ import "./pages/Home.css";
 import "./pages/People.css";
 import "./pages/About.css";
 import "./pages/Shared.css";
+import "./pages/TestBackground.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -1,0 +1,13 @@
+.test-bg {
+  width: 100%;
+  margin: 0;
+  padding-top: var(--nav-height);
+  line-height: 0;
+  background: var(--color-ink);
+}
+
+.test-bg__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

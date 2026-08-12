@@ -12,6 +12,7 @@ import Resources from "./pages/Resources";
 import DayOf from "./pages/DayOf";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
+import TestBackground from "./pages/TestBackground";
 import NotFound from "./pages/NotFound";
 
 import SubmissionPortal from "./portals/SubmissionPortal";
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/day-of" element={<DayOf />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/test-background" element={<TestBackground />} />
 
           {/* ---- Portals ---- */}
           <Route path="/portal/submission" element={<SubmissionPortal />} />
