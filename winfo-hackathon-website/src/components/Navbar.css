@@ -12,15 +12,12 @@
 }
 
 .navbar--scrolled {
-  background: rgba(16, 38, 47, 0.92);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
 

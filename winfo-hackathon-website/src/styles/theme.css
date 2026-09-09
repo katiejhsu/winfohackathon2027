@@ -7,10 +7,10 @@
 :root {
   /* core palette */
   --color-sky-deep: #1e3f4f;
-  --color-sky-mid: #3b6b7c;
+  --color-sky-mid: #dee0e0;
   --color-sky-light: #7ea6ae;
   --color-glacier: #cfe4e6;
-  --color-ink: #10262f;
+  --color-ink: #e9e9e9;
   --color-paper: #f4f7f4;
 
   --color-accent: #d7f000;   /* yellow-green highlight, e.g. "Peaks of Possibility" */

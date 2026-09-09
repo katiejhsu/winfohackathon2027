@@ -12,68 +12,14 @@ import {
   sponsors,
   impactStats,
 } from "../data/content";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <>
-      {/* ---------------- HERO / MISSION ---------------- */}
-      <section className="hero">
-        <div className="container hero__inner fade-in-up">
-          <div className="section-kicker">2026–2027 · 15th Annual Hackathon</div>
-          <h1>{event.name}</h1>
-          <p className="hero__theme">"{event.theme}"</p>
-          <div className="eyebrow-meta" style={{ justifyContent: "center" }}>
-            <span>📅 {event.dates}</span>
-            <span>📍 {event.hackingLocation}</span>
-          </div>
-          <p className="hero__blurb">{mission.blurb}</p>
-          <div className="hero__actions">
-            <a className="btn btn--primary" href={event.registerUrl}>Register Now</a>
-            <Link className="btn btn--outline" to="/tracks">See the Tracks</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- THEME ---------------- */}
-      <section className="section section--light">
-        <div className="container">
-          <SectionHeader kicker="Our Theme" title={themeStory.heading} />
-          <div className="grid grid--2">
-            <div>
-              {themeStory.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <div className="theme-media card--light card" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              {/* TODO: swap for the highlight reel <video> or embed once available */}
-              <span style={{ color: "var(--color-sky-mid)", textAlign: "center" }}>
-                🎞️ Highlight reel from WINFO's 2026 Hackathon — coming soon
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- GOALS ---------------- */}
-      <section className="section section--dark">
-        <div className="container">
-          <SectionHeader kicker="Our Hackathon" title="Goals" />
-          <div className="grid grid--2">
-            {goals.map((g) => (
-              <div className="goal" key={g.number}>
-                <span className="goal__number">{g.number}</span>
-                <div>
-                  <h3>{g.title}</h3>
-                  <p>{g.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <img src="/test-bg/home-page.png" id="home-background"/>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
-      <section className="section section--light">
+      {/* <section className="section section--light">
         <div className="container">
           <SectionHeader kicker="Compete" title="Prize Tracks" />
           <div className="grid grid--2">
@@ -87,10 +33,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------- SCHEDULE PREVIEW ---------------- */}
-      <section className="section section--dark">
+      {/* <section className="section section--dark">
         <div className="container">
           <SectionHeader kicker="Plan Your Trip" title="Schedule" />
           <div className="grid grid--2">
@@ -115,33 +61,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ---------------- IMPACT STATS ---------------- */}
-      <section className="section section--light">
-        <div className="container">
-          <SectionHeader kicker="Last Year" title="Our Impact" center />
-          <div className="grid grid--3 impact-stats">
-            {impactStats.map((s) => (
-              <div className="impact-stats__item" key={s.label}>
-                <span className="impact-stats__number">{s.number}</span>
-                <span className="impact-stats__label">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- SPONSORS ---------------- */}
-      <section className="section section--dark">
-        <div className="container">
-          <SectionHeader kicker="With Gratitude" title="Our Sponsors" center />
-          <SponsorGrid sponsors={sponsors} />
-        </div>
-      </section>
+      </section> */}
 
       {/* ---------------- COUNTDOWN / REGISTER ---------------- */}
-      <section className="section section--light countdown-section">
+      {/* <section className="section section--light countdown-section">
         <div className="container" style={{ textAlign: "center" }}>
           <h2>Are You Ready to Reach New Heights?</h2>
           <Countdown target={event.countdownTarget} />
@@ -149,7 +72,8 @@ export default function Home() {
             <a className="btn btn--primary" href={event.registerUrl}>Register Now</a>
           </div>
         </div>
-      </section>
+      </section> */}
+      {/* <Footer/> */}
     </>
   );
 }

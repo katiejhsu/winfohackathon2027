@@ -99,7 +99,6 @@ happen in one place.
 | `/resources` | Pre-hackathon workshops, project resources, FAQ |
 | `/day-of` | Day-of hub: today's timeline + submission portal link |
 | `/register` | Registration page |
-| `/contact` | Contact form + social links |
 | `/portal/submission` | Project Submission Portal (stub auth + form) |
 | `/portal/mentor-feedback` | Mentor Feedback Portal (stub auth + form) |
 

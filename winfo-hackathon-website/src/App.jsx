@@ -10,7 +10,6 @@ import People from "./pages/People";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
 import DayOf from "./pages/DayOf";
-import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import TestBackground from "./pages/TestBackground";
 import NotFound from "./pages/NotFound";
@@ -41,7 +40,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/day-of" element={<DayOf />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/test-background" element={<TestBackground />} />
 
@@ -52,8 +50,8 @@ export default function App() {
           {/* ---- 404 ---- */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* <Footer /> */}
       </main>
-      <Footer />
     </>
   );
 }

@@ -4,13 +4,9 @@ import "./Navbar.css";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
-  { to: "/tracks", label: "Tracks" },
   { to: "/schedule", label: "Schedule" },
-  { to: "/people", label: "The People" },
-  { to: "/resources", label: "Resources & FAQ" },
-  { to: "/about", label: "About WINFO" },
-  { to: "/contact", label: "Contact" },
-  { to: "/test-background", label: "Test Background" },
+  { to: "/resources", label: "FAQ" },
+  { to: "/about", label: "About" },
 ];
 
 export default function Navbar() {
@@ -26,10 +22,6 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner container">
-        <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
-          winfo <span className="navbar__brand-sub">hackathon</span>
-        </NavLink>
-
         <nav className={`navbar__links ${open ? "navbar__links--open" : ""}`}>
           {NAV_LINKS.map((link) => (
             <NavLink
@@ -44,9 +36,6 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/register" className="btn btn--primary navbar__cta" onClick={() => setOpen(false)}>
-            Register
-          </NavLink>
         </nav>
 
         <button
