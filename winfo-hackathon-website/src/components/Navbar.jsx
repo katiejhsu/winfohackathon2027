@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/schedule", label: "Schedule" },
-  { to: "/resources", label: "FAQ" },
-  { to: "/about", label: "About" },
+  { to: "/", label: "Home", bgImage: "/test-bg/navbar-sign-1.png" },
+  { to: "/schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-2.png" },
+  { to: "/resources", label: "FAQ", bgImage: "/test-bg/navbar-sign-3.png" },
+  { to: "/about", label: "About",  bgImage: "/test-bg/navbar-sign-4.png" },
 ];
 
 export default function Navbar() {
@@ -28,6 +28,7 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               end={link.to === "/"}
+              style={{ "--link-bg-image": `url(${link.bgImage})` }}
               className={({ isActive }) =>
                 `navbar__link ${isActive ? "navbar__link--active" : ""}`
               }
