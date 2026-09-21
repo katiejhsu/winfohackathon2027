@@ -85,3 +85,15 @@
 #home-background {
   width: 100vw;
 }
+.home-hero-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.home-hero-content {
+  position: absolute;
+  top: max(14.7vw, calc(var(--nav-height) + 40px));
+  left: 11.8vw;
+  width: 58.9vw;
+  height: auto;
+}

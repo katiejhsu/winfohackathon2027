@@ -17,7 +17,14 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <img src="/test-bg/home-page.jpg" id="home-background" loading="eager" fetchpriority="high" alt="" />
+      <div className="home-hero-wrap">
+        <img src="/test-bg/home-page.jpg" id="home-background" loading="eager" fetchpriority="high" alt="" />
+        <img
+          src="/test-bg/section-1-content.png"
+          className="home-hero-content"
+          alt="Women in Informatics 15th Annual Hackathon, January 30-31 2027, University of Washington HUB"
+        />
+      </div>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
       {/* <section className="section section--light">
         <div className="container">
