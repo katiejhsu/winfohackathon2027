@@ -24,6 +24,9 @@ export default function Home() {
           className="home-hero-content"
           alt="Women in Informatics 15th Annual Hackathon, January 30-31 2027, University of Washington HUB"
         />
+        <img src="/test-bg/bear.png" className="home-asset home-asset--bear" alt="" />
+        <img src="/test-bg/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
+        <img src="/test-bg/goat.png" className="home-asset home-asset--goat" alt="" />
       </div>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
       {/* <section className="section section--light">

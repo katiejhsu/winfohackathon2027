@@ -97,3 +97,26 @@
   width: 58.9vw;
   height: auto;
 }
+
+.home-asset {
+  position: absolute;
+  height: auto;
+}
+
+.home-asset--bear {
+  top: 43.3vw;
+  left: 57.2vw;
+  width: 6.7vw;
+}
+
+.home-asset--ribbon {
+  top: 106vw;
+  left: 0;
+  width: 100vw;
+}
+
+.home-asset--goat {
+  top: 165.6vw;
+  left: 13.9vw;
+  width: 8.3vw;
+}
