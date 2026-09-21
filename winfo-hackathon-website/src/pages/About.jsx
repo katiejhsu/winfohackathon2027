@@ -5,7 +5,7 @@ import "./About.css";
 export default function About() {
   return (
     <>
-      <img src="/test-bg/about-page.jpg" id="about-background"/>
+      <img src="/test-bg/about-page.jpg" id="about-background" loading="eager" alt="" />
       {/* <Footer/> */}
     </>
   );
