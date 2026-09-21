@@ -17,7 +17,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <img src="/test-bg/home-page.png" id="home-background"/>
+      <img src="/test-bg/home-page.jpg" id="home-background"/>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
       {/* <section className="section section--light">
         <div className="container">
