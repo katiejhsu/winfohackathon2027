@@ -194,3 +194,7 @@
   height: auto;
   transform: translateX(-50%);
 }
+#schedule,
+#faq {
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
