@@ -4,8 +4,8 @@ import "./Navbar.css";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", bgImage: "/test-bg/navbar-sign-1.png" },
-  { to: "/schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-2.png" },
-  { to: "/resources", label: "FAQ", bgImage: "/test-bg/navbar-sign-3.png" },
+  { to: "/#schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-2.png" },
+  { to: "/#faq", label: "FAQ", bgImage: "/test-bg/navbar-sign-3.png" },
   { to: "/about", label: "About",  bgImage: "/test-bg/navbar-sign-4.png" },
 ];
 

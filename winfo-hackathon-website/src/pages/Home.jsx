@@ -41,10 +41,10 @@ export default function Home() {
         <img src="/test-bg/section-5-content.png" className="section-five-content" />
       </div>
       <div>
-        <img src="/test-bg/section-6-content.png" className="section-six-content" />
+        <img id="schedule" src="/test-bg/section-6-content.png" className="section-six-content" />
       </div>
       <div>
-        <img src="/test-bg/section-7-content.png" className="section-seven-content" />
+        <img id="faq" src="/test-bg/section-7-content.png" className="section-seven-content" />
       </div>
       <div>
         <img src="/test-bg/section-8-content.png" className="section-eight-content" />
