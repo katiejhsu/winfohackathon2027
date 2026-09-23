@@ -72,13 +72,6 @@
   padding: 8px;
 }
 
-.navbar__toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--color-white);
-  display: block;
-}
-
 @media (max-width: 900px) {
   .navbar__toggle {
     display: flex;
@@ -107,5 +100,25 @@
   .navbar__cta {
     width: 100%;
     justify-content: center;
+  }
+}
+.navbar__toggle {
+  background-image: url("/test-bg/hamburger-sign.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .navbar__toggle:hover ~ .navbar__links,
+  .navbar__toggle:hover + .navbar__links {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 }
