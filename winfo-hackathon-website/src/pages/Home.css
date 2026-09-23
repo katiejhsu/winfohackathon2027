@@ -85,6 +85,7 @@
 #home-background {
   width: 100vw;
 }
+
 .home-hero-wrap {
   position: relative;
   width: 100%;
@@ -94,7 +95,7 @@
   position: absolute;
   top: max(14.7vw, calc(var(--nav-height) + 40px));
   left: 11.8vw;
-  width: 58.9vw;
+  width: 56.9vw;
   height: auto;
 }
 
@@ -119,4 +120,77 @@
   top: 165.6vw;
   left: 13.9vw;
   width: 8.3vw;
+}
+
+.section-two-content {
+  position: absolute;
+  top: max(274.7vw, calc(var(--nav-height) + 40px));
+  left: 11.8vw;
+  width: 38.9vw;
+  height: auto;
+}
+
+.section-three-content {
+  position: absolute;
+  top: max(444.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 67.9vw;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.section-four-content {
+  position: absolute;
+  top: max(598.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  overflow: hidden;
+  width: 50vw;
+  aspect-ratio: 16 / 9;
+}
+
+.section-five-content {
+  position: absolute;
+  top: max(754.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 67.9vw;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.section-six-content {
+  position: absolute;
+  top: max(1024.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 72.9vw;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.section-seven-content {
+  position: absolute;
+  top: max(1314.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 67.9vw;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.section-eight-content {
+  position: absolute;
+  top: max(1436.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 67.9vw;
+  height: auto;
+  transform: translateX(-50%);
+}
+
+.section-nine-content {
+  position: absolute;
+  top: max(1586.7vw, calc(var(--nav-height) + 40px));
+  left: 50%;
+  width: 67.9vw;
+  height: auto;
+  transform: translateX(-50%);
 }

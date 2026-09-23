@@ -28,6 +28,30 @@ export default function Home() {
         <img src="/test-bg/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
         <img src="/test-bg/goat.png" className="home-asset home-asset--goat" alt="" />
       </div>
+      <div>
+        <img src="/test-bg/section-2-content.png" className="section-two-content" />
+      </div>
+      <div>
+        <img src="/test-bg/section-3-content.png" className="section-three-content" />
+      </div>
+      <div>
+        <iframe className="section-four-content" src="https://www.youtube.com/embed/7dFSPF8vwVo?si=d8kmyEUU2H37yE3j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div>
+        <img src="/test-bg/section-5-content.png" className="section-five-content" />
+      </div>
+      <div>
+        <img src="/test-bg/section-6-content.png" className="section-six-content" />
+      </div>
+      <div>
+        <img src="/test-bg/section-7-content.png" className="section-seven-content" />
+      </div>
+      <div>
+        <img src="/test-bg/section-8-content.png" className="section-eight-content" />
+      </div>
+       <div>
+        <img src="/test-bg/section-9-content.png" className="section-nine-content" />
+      </div>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
       {/* <section className="section section--light">
         <div className="container">
