@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import Tracks from "./pages/Tracks";
 import People from "./pages/People";
 import About from "./pages/About";
-import DayOf from "./pages/DayOf";
 import Register from "./pages/Register";
 import TestBackground from "./pages/TestBackground";
 import NotFound from "./pages/NotFound";
@@ -68,7 +67,6 @@ export default function App() {
           <Route path="/tracks" element={<Tracks />} />
           <Route path="/people" element={<People />} />
           <Route path="/about" element={<About />} />
-          <Route path="/day-of" element={<DayOf />} />
           <Route path="/register" element={<Register />} />
           <Route path="/test-background" element={<TestBackground />} />
 

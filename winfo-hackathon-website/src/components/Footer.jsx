@@ -1,54 +1,52 @@
-import { Link } from "react-router-dom";
 import { contact, aboutWinfo } from "../data/content";
 import "./Footer.css";
+
+const socials = [
+  { label: "Website", icon: "website", href: aboutWinfo?.website },
+  { label: "Email", icon: "email", href: contact?.email ? `mailto:${contact.email}` : null },
+  { label: "Instagram", icon: "instagram", href: contact?.instagram },
+  { label: "LinkedIn", icon: "linkedin", href: contact?.linkedin },
+  { label: "YouTube", icon: "youtube", href: contact?.youtube },
+  { label: "Facebook", icon: "facebook", href: contact?.facebook ?? "https://www.facebook.com/groups/winfouw/" },
+].filter((s) => s.href); // skip any link that isn't defined
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer__inner">
-        <div className="footer__col">
-          <div className="footer__brand">winfo hackathon</div>
-          <p className="footer__blurb">
-            Women in Informatics · Information School · University of Washington
-          </p>
-          <a className="footer__link" href={aboutWinfo.website} target="_blank" rel="noreferrer">
-            winfo.ischool.uw.edu
-          </a>
+      <div className="footer__inner">
+        <hr className="footer__divider" />
+          <div className="footer__legal">
+            <p>
+              The University of Washington is committed to providing access, equal
+              opportunity, and reasonable accommodations in its services, programs,
+              activities, education, and employment for individuals with disabilities.
+              To request disability accommodation, contact the Disability Service
+              Office at least one day in advance by phone at 206.543.6450,
+              206.543.6452/TTY, 206.685.7264/FAX, or email at dso@uw.edu.
+            </p>
+            <p>
+              The views expressed at this program are not necessarily those of the
+              Kelly Ethnic Cultural Center, Office of Minority Affairs &amp; Diversity,
+              and the Services and the Activities Fee Committee.
+            </p>
+            <p>
+              Special thanks to the HUB and iAffiliates. Made in Seattle, Washington
+              with ⊹ ࣪⋆.˚ 🥾🌲🏔️
+            </p>
+          <div className="footer__right">
+            <div className="footer__socials" aria-label="Social media">
+              {socials.map(({ label, icon, href }) => {
+                const isMail = href.startsWith("mailto:");
+                return (
+                  <a key={icon} href={href} aria-label={label} target={isMail ? undefined : "_blank"} rel={isMail ? undefined : "noopener noreferrer"}>
+                    <img src={`/assets/icons/${icon}.svg`} alt="" />
+                  </a>
+                );
+              })}
+            </div>
+            <p className="footer__copyright">©2026 Women in Informatics</p>
+          </div>
         </div>
-
-        <div className="footer__col">
-          <h4 className="footer__heading">Explore</h4>
-          <Link to="/tracks">Tracks</Link>
-          <Link to="/schedule">Schedule</Link>
-          <Link to="/people">The People</Link>
-          <Link to="/resources">Resources &amp; FAQ</Link>
-          <Link to="/about">About WINFO</Link>
-        </div>
-
-        <div className="footer__col">
-          <h4 className="footer__heading">Portals</h4>
-          <Link to="/register">Register</Link>
-          <Link to="/portal/submission">Project Submission</Link>
-          <Link to="/portal/mentor-feedback">Mentor Feedback</Link>
-        </div>
-
-        <div className="footer__col">
-          <h4 className="footer__heading">Connect</h4>
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          <a href={contact.instagram} target="_blank" rel="noreferrer">Instagram</a>
-          <a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={contact.youtube} target="_blank" rel="noreferrer">YouTube</a>
-        </div>
-      </div>
-
-      <div className="footer__bottom container">
-        <p>
-          The University of Washington is committed to providing access, equal
-          opportunity, and reasonable accommodations for individuals with
-          disabilities. To request accommodation, contact the Disability
-          Services Office at least one day in advance.
-        </p>
-        <p>© {new Date().getFullYear()} Women in Informatics — Made in Seattle, WA</p>
       </div>
     </footer>
   );

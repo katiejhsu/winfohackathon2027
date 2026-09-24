@@ -86,8 +86,3 @@
   color: var(--color-sky-mid);
 }
 
-@media (max-width: 900px) {
-  .sponsor-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}

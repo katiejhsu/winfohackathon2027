@@ -1,74 +1,103 @@
 .footer {
-  margin-top: -8px;
-  color: var(--color-ink);
-  margin-bottom: 0;
-  background-color: #1e1e1e;
+  width: 100%;
+  padding: 48px 0 32px;
+  color: #ffffff;
+  background: transparent;
 }
 
 .footer__inner {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 32px;
-  padding-bottom: 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
 }
 
-.footer__brand {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  text-transform: lowercase;
-  margin-bottom: 10px;
+.footer__divider {
+  border: 0;
+  border-top: 1.2px solid rgb(255, 255, 255);
+  margin: 0 0 28px;
 }
 
-.footer__blurb {
-  font-size: 0.9rem;
-  color: var(--color-sky-mid);
+.footer__legal {
+  flex: 1 1 0;
 }
 
-.footer__link {
-  font-size: 0.9rem;
-  text-decoration: underline;
+.footer__legal p {
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
-.footer__heading {
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-  color: var(--color-sky-mid);
+.footer__legal p:last-child {
+  margin-bottom: 0;
 }
 
-.footer__col {
+.footer__right {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
 }
 
-.footer__col a {
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: var(--color-ink);
-}
-
-.footer__col a:hover {
-  color: var(--color-accent-soft);
-}
-
-.footer__bottom {
-  border-top: 1px solid rgba(16, 38, 47, 0.12);
-  padding: 20px 24px 32px;
-  font-size: 0.75rem;
-  color: var(--color-sky-mid);
+.footer__socials {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  gap: 14px;
 }
 
-@media (max-width: 900px) {
-  .footer__inner {
-    grid-template-columns: 1fr 1fr;
+.footer__socials a {
+  display: block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer__socials a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.footer__socials img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .fire {
+    aspect-ratio: auto;
+    display: block;
+    padding-top: 80vw;
+    background-size: 100% auto;
+    background-position: center top;
   }
-}
 
-@media (max-width: 560px) {
+  .footer {
+    padding: 28px 0 24px;
+  }
+
   .footer__inner {
-    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .footer__legal p {
+    font-size: 11px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .footer__socials {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer__socials img {
+    width: 26px;
+    height: 26px;
   }
 }

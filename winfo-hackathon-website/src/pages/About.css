@@ -41,6 +41,285 @@
   margin-top: 1rem;
 }
 
-#about-background {
-  width: 100vw;
+.about {
+  display: block;
+  background: #101417;
+  /* fallback while images load */
+}
+
+.bg-slice {
+  position: relative;
+  /* lets sprites use absolute positioning inside */
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center top;
+  margin-bottom: -1px;
+}
+
+.bg-slice:last-child {
+  margin-bottom: 0;
+}
+
+.mountain {
+  aspect-ratio: 1728 / 2680;
+  background-image: url("/assets/about/about-1-mountain.webp");
+  background-color: #0a0c10;
+}
+
+.cliff {
+  aspect-ratio: 1728 / 2980;
+  background-image: url("/assets/about/about-2-cliff.webp");
+  background-color: #080c10;
+}
+
+.sunset {
+  aspect-ratio: 1728 / 3310;
+  background-image: url("/assets/about/about-3-sunset.webp");
+  background-color: #d0632a;
+}
+
+.orange {
+  aspect-ratio: 1728 / 5130;
+  background-image: url("/assets/about/about-4-orange.webp");
+  background-color: #030409;
+}
+
+.sky {
+  aspect-ratio: 1728 / 4850;
+  background-image: url("/assets/about/about-5-sky.webp");
+  background-color: #10182a;
+}
+
+.fire {
+  aspect-ratio: auto;
+  display: block;
+  padding-top: 82%;
+  background-image: url("/assets/about/about-6-fire.webp");
+  background-size: 100% auto;
+  background-position: center top;
+  background-color: #181818;
+}
+
+.mountain .about-intro {
+  position: absolute;
+  top: 16%;
+  right: 6%;
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.2vw;
+  text-align: right;
+}
+
+.mountain .about-intro img {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.mountain .about-intro p {
+  margin: 0;
+  max-width: 28ch;
+  font-size: clamp(12px, 1.1vw, 17px);
+  line-height: 1.5;
+}
+
+.cliff .about-winfo {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vw;
+  color: #FF8D47;
+}
+
+.cliff .about-winfo h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 56px);
+  line-height: 1.1;
+}
+
+.cliff .about-winfo p {
+  margin: 0;
+  font-size: clamp(13px, 1.15vw, 18px);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 0.6vw;
+  padding: 0.8em 1.8em;
+  border: 2px solid #FF8D47;
+  border-radius: 999px;
+  background: transparent;
+  color: #FF8D47;
+  font-size: clamp(12px, 1vw, 16px);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: #e7f7fa;
+  color: #101417;
+}
+
+.about-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10vw;
+  width: 100%;
+  margin-top: 10vw;
+}
+
+.about-gallery img {
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
+.about-gallery img:nth-child(1),
+.about-gallery img:nth-child(3) {
+  margin-left: 0;
+}
+
+.about-gallery img:nth-child(2) {
+  margin-left: 30%;
+}
+
+.sunset .committee-intro {
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4vw;
+  text-align: center;
+  color: #25568D;
+}
+
+.sunset .committee-intro h2 {
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.1;
+  font-style: italic;
+}
+
+.sunset .committee-intro p {
+  margin: 0;
+  max-width: 60ch;
+  font-size: clamp(16px, 16px, 18px);
+  line-height: 1.6;
+}
+
+.orange .committee-badges {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vw;
+  text-align: center;
+  color: #FFFADD;
+}
+
+.orange .committee-badges h2 {
+  margin: 0px 0px 40px;
+  font-size: 36px;
+  line-height: 1.15;
+}
+
+.badge-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vw;
+}
+
+.badge-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+}
+
+.badge-row img {
+  width: 25%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mountain .about-intro p {
+    font-size: 9px;
+  }
+
+  .cliff .about-winfo {
+    top: 6%;
+    left: 6%;
+    width: 66%;
+    gap: 12px;
+  }
+
+  .cliff .about-winfo p {
+    font-size: 9px;
+  }
+
+  .btn-outline {
+    font-size: 9px;
+
+  }
+
+  .about-gallery {
+    gap: 12px;
+    margin-top: 5px;
+  }
+
+  .about-gallery img {
+    width: 60%;
+  }
+
+  .sunset .committee-intro {
+    top: 60%;
+    width: 84%;
+    gap: 14px;
+  }
+
+  .sunset .committee-intro h2 {
+    font-size: 25px;
+  }
+
+  .sunset .committee-intro p {
+    font-size: 13px;
+  }
+
+  .orange .committee-badges h2 {
+    font-size: 25px;
+  }
+
+  .orange .committee-badges {
+    top: 3%;
+    width: 92%;
+    gap: 0px;
+  }
+
+  .badge-grid {
+    gap: 20px;
+  }
+
+  .badge-row {
+    gap: 4%;
+  }
 }
