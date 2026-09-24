@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import { aboutWinfo, committee, pastWinners, pastWinnersLinks, testimonials, impactStats } from "../data/content";
 import "./About.css";
+
 const BADGE_ROWS = [2, 3, 3, 2, 1];
 
 const badges = [

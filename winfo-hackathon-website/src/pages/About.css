@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 .committee-group {
   margin: 24px 0 40px;
 }
@@ -122,8 +124,10 @@
 .mountain .about-intro p {
   margin: 0;
   max-width: 28ch;
-  font-size: clamp(12px, 1.1vw, 17px);
+  font-size: 14px;
   line-height: 1.5;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
 }
 
 .cliff .about-winfo {
@@ -149,6 +153,8 @@
   font-size: clamp(13px, 1.15vw, 18px);
   line-height: 1.6;
   opacity: 0.9;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
 }
 
 .btn-outline {
@@ -162,6 +168,8 @@
   font-size: clamp(12px, 1vw, 16px);
   letter-spacing: 0.06em;
   text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
 }
 
 .btn-outline:hover {

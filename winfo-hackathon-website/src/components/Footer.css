@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 .footer {
   width: 100%;
   padding: 48px 0 32px;
@@ -26,6 +28,8 @@
   font-size: 12px;
   line-height: 1.6;
   opacity: 0.8;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
 }
 
 .footer__legal p:last-child {
