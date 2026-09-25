@@ -8,6 +8,8 @@
 
 export const event = {
   name: "Women in Informatics' 15th Annual Hackathon",
+  heroDates: "January 30-31, 2027",
+  heroLocation: "University of Washington HUB",
   theme: "Peaks of Possibility, Paths of Progress",
   lastYearTheme: "Depths of Discovery, Currents of Creation",
   dates: "January 30–31, 2027",

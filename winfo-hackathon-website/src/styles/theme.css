@@ -28,6 +28,7 @@
   /* type */
   --font-display: "Space Mono", "Courier New", monospace;
   --font-body: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --font-share-tech: "Share Tech", "Courier New", monospace;
 
   /* layout */
   --nav-height: 76px;

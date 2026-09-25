@@ -19,11 +19,17 @@ export default function Home() {
     <>
       <div className="home-hero-wrap">
         <img src="/test-bg/home-page.jpg" id="home-background" loading="eager" fetchpriority="high" alt="" />
-        <img
-          src="/test-bg/section-1-content.png"
-          className="home-hero-content"
-          alt="Women in Informatics 15th Annual Hackathon, January 30-31 2027, University of Washington HUB"
-        />
+        <img src="/test-bg/star-element.png" alt="Winfo star icon" className="hero-star" />
+        <img src="/test-bg/winfo-logo.png" alt="Winfo logo" className="hero-logo" />
+        <img src="/test-bg/headline-line1.svg" alt="Women in Informatics' 15th Annual Hackathon banner logo" className="hero-headline hero-headline--1" />
+        <img src="/test-bg/headline-line2.svg" alt="" className="hero-headline hero-headline--2" />
+        <p className="hero-meta hero-meta--1">
+          <img src="/test-bg/image106.png" alt="" className="hero-meta__icon" /> {event.heroDates}
+        </p>
+        <p className="hero-meta hero-meta--2">
+          <img src="/test-bg/navigation.png" alt="" className="hero-meta__icon hero-meta__icon--pin" /> {event.heroLocation}
+        </p>
+        <a className="hero-register-btn" href={event.registerUrl}>Register Now!</a>
         <img src="/test-bg/bear.png" className="home-asset home-asset--bear" alt="" />
         <img src="/test-bg/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
         <img src="/test-bg/goat.png" className="home-asset home-asset--goat" alt="" />
