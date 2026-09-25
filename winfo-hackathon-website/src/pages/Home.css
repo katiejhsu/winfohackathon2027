@@ -549,8 +549,61 @@
   top: max(1586.7vw, calc(var(--nav-height) + 40px));
   left: 50%;
   width: 67.9vw;
-  height: auto;
   transform: translateX(-50%);
+  text-align: center;
+}
+
+.section-nine-heading {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FFFADD;
+  font-size: 2.6vw;
+  line-height: 1.1;
+  white-space: nowrap;
+  margin: 0 0 1.5em;
+}
+
+.section-nine-content .countdown__value {
+  color: #FFFADD;
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.section-nine-content .countdown__sep {
+  top: 50%;
+  transform: translateY(-70%);
+  color: #FFFADD;
+}
+
+.section-nine-content .countdown__label,
+.section-nine-content .countdown__sep {
+  color: rgba(255, 250, 221, 0.7);
+}
+
+.section-nine-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  width: 21.16vw;
+  height: 4.46vw;
+  border-radius: 999px;
+  background: #FFFADD;
+  color: #FF8D47;
+  font-family: var(--font-share-tech);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 2.47vw;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.section-nine-register-btn:hover {
+  transform: translateY(-2px);
 }
 #schedule,
 #faq {

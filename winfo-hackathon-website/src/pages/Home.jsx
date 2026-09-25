@@ -177,7 +177,11 @@ export default function Home() {
         <img src="/test-bg/section-8-content.png" className="section-eight-content" />
       </div>
        <div>
-        <img src="/test-bg/section-9-content.png" className="section-nine-content" />
+        <div className="section-nine-content">
+          <h2 className="section-nine-heading">Are You Ready To Reach New Heights?</h2>
+          <Countdown target={event.countdownTarget} showSeconds={false} />
+          <a className="section-nine-register-btn" href={event.registerUrl}>Register Now!</a>
+        </div>
       </div>
       {/* ---------------- TRACKS PREVIEW ---------------- */}
       {/* <section className="section section--light">

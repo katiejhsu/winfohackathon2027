@@ -11,7 +11,7 @@ function getTimeLeft(target) {
   };
 }
 
-export default function Countdown({ target }) {
+export default function Countdown({ target, showSeconds = true }) {
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(target));
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Countdown({ target }) {
     { label: "Days", value: timeLeft.days },
     { label: "Hours", value: timeLeft.hours },
     { label: "Minutes", value: timeLeft.minutes },
-    { label: "Seconds", value: timeLeft.seconds },
+    ...(showSeconds ? [{ label: "Seconds", value: timeLeft.seconds }] : []),
   ];
 
   return (
