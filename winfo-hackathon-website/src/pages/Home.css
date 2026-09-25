@@ -318,8 +318,80 @@
   top: max(754.7vw, calc(var(--nav-height) + 40px));
   left: 50%;
   width: 67.9vw;
-  height: auto;
   transform: translateX(-50%);
+  color: #056C92;
+}
+
+.tracks-heading {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+  text-transform: none;
+  font-size: 4vw;
+  margin: 0 0 0.4em;
+}
+
+.tracks-divider {
+  border: none;
+  border-top: 1px solid #056C92;
+  opacity: 0.3;
+  margin: 1.5em 0;
+}
+
+.tracks-title {
+  font-family: var(--font-jost);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 2.4vw;
+  margin: 0 0 1em;
+}
+
+.tracks-row {
+  display: flex;
+  gap: 2.5vw;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.tracks-badge {
+  width: 14vw;
+  height: 14vw;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.tracks-copy {
+  flex: 1;
+}
+
+.tracks-description {
+  font-family: var(--font-jost);
+  font-weight: 500;
+  font-size: 1.15vw;
+  line-height: 1.6;
+  margin: 0 0 1em;
+}
+
+.tracks-focus-label {
+  font-family: var(--font-jost);
+  font-weight: 700;
+  font-size: 1.05vw;
+  text-transform: uppercase;
+  margin: 0 0 0.5em;
+}
+
+.tracks-focus-list {
+  font-family: var(--font-jost);
+  font-weight: 600;
+  font-size: 1.1vw;
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.tracks-focus-list li {
+  margin-bottom: 0.3em;
 }
 
 .section-six-content {

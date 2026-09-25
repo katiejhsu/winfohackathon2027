@@ -68,7 +68,32 @@ export default function Home() {
         <p className="section-four-caption">Highlight Reel From Winfo&#8217;s 2026 Hackathon</p>
       </div>
       <div>
-        <img src="/test-bg/section-5-content.png" className="section-five-content" />
+        <div className="section-five-content">
+          <h2 className="tracks-heading">Prize Tracks</h2>
+          <hr className="tracks-divider" />
+          {tracks.map((t, i) => (
+            <div key={t.id}>
+              <h3 className="tracks-title">{i + 1}. {t.name}</h3>
+              <div className="tracks-row">
+                <img
+                  src={`/test-bg/track-${["goat", "otter", "moose", "owl"][i]}.png`}
+                  alt={`${t.name} track badge`}
+                  className="tracks-badge"
+                />
+                <div className="tracks-copy">
+                  <p className="tracks-description">{t.description}</p>
+                  <p className="tracks-focus-label">THIS TRACK FOCUSES ON:</p>
+                  <ul className="tracks-focus-list">
+                    {t.focus.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              {i < tracks.length - 1 && <hr className="tracks-divider" />}
+            </div>
+          ))}
+        </div>
       </div>
       <div>
         <img id="schedule" src="/test-bg/section-6-content.png" className="section-six-content" />
