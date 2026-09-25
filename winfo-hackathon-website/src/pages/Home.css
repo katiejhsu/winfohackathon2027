@@ -215,12 +215,19 @@
   top: max(285.95vw, calc(var(--nav-height) + 90px));
   left: 11.8vw;
   width: 31.39vw;
-  height: auto;
+  margin: 0;
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+  color: #DBBF94;
+  font-size: 3.2vw;
+  line-height: 1.1;
+  text-transform: none;
 }
 
 .section-two-blurb {
   position: absolute;
-  top: 306.8vw;
+  top: 298vw;
   left: 11.8vw;
   width: 38.9vw;
   margin: 0;

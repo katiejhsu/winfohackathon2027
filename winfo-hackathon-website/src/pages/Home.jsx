@@ -36,7 +36,7 @@ export default function Home() {
       </div>
       <div>
         <img src="/test-bg/section2-badges.png" alt="Triangle tree patch, star bear patch, circle mountain patch" className="section-two-badges" />
-        <img src="/test-bg/section2-headline.png" alt="Ready to reach new heights headline" className="section-two-headline" />
+        <h2 className="section-two-headline">Ready to<br />Reach New<br />Heights?</h2>
         <p className="section-two-blurb">
           Women in Informatics is excited to invite you to our 15th Annual
           Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility, Paths of Progress&#8221;</span>.
