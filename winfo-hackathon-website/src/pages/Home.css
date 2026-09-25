@@ -218,7 +218,7 @@
   margin: 0;
   font-family: var(--font-anybody);
   font-style: italic;
-  font-weight: 800;
+  font-weight: 600;
   color: #DBBF94;
   font-size: 3.2vw;
   line-height: 1.1;
@@ -248,8 +248,43 @@
   top: max(444.7vw, calc(var(--nav-height) + 40px));
   left: 50%;
   width: 67.9vw;
-  height: auto;
   transform: translateX(-50%);
+}
+
+.section-three-heading {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: none;
+  color: #FF8D47;
+  font-size: 4.6vw;
+  line-height: 1.05;
+  margin: 0 0 0.6em;
+}
+
+.section-three-body {
+  font-family: var(--font-jost);
+  font-weight: 500;
+  color: #FFCFB4;
+  font-size: 1.35vw;
+  line-height: 1.6;
+  margin: 0 0 1.4em;
+}
+
+.section-three-body strong {
+  font-weight: 700;
+  color: #FF8D47;
+}
+
+.section-three-banner {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 600;
+  color: #FF8D47;
+  font-size: 3vw;
+  line-height: 1.15;
+  text-align: center;
+  margin: 1em 0 1.6em;
 }
 
 .section-four-content {

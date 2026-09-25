@@ -45,7 +45,23 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <img src="/test-bg/section-3-content.png" className="section-three-content" />
+        <div className="section-three-content">
+          <h2 className="section-three-heading">Hackathon Theme</h2>
+          <p className="section-three-body">
+            Last year, our theme, <strong>&#8220;Depths of Discovery, Currents of Creation&#8221;</strong> emphasized the power of exploration, creativity, and collaboration in shaping the future of technology.
+          </p>
+          <p className="section-three-body">This year, we&#8217;re setting out on a new path:</p>
+          <p className="section-three-banner">PEAKS OF POSSIBILITY,<br />PATHS OF PROGRESS</p>
+          <p className="section-three-body">
+            Inspired by the winding trails, towering mountains, and the natural beauty of the Pacific Northwest, our theme reflects the journey of <strong>discovery in technology.</strong> We believe ingenuity emerges when participants venture beyond familiar ground and pursue bold, creative ideas.
+          </p>
+          <p className="section-three-body">
+            Our theme celebrates creativity, collaboration, and problem-solving as powerful forces for shaping the future. We want to encourage our participants to explore emerging technologies, work together through challenges, and build solutions that create meaningful impact.
+          </p>
+          <p className="section-three-body">
+            Just as every trail leads to a new perspective, every project has the potential to guide us toward <strong>bold new possibilities</strong>.
+          </p>
+        </div>
       </div>
       <div>
         <iframe className="section-four-content" src="https://www.youtube.com/embed/7dFSPF8vwVo?si=d8kmyEUU2H37yE3j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
