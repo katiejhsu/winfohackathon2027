@@ -154,59 +154,63 @@ export const judgingDaySchedule = [
 export const faqs = [
   {
     q: "Is this hackathon right for me?",
-    a: "This is a beginner-friendly, high-level hackathon built to welcome participants from all backgrounds with no required coding experience. Whether you're interested in tech, design, problem-solving, or simply want to try something new, this is a great space for you to explore your ideas and grow your skills!",
-  },
-  {
-    q: "How does mentorship work?",
-    a: "Throughout the hackathon, we will have two shifts of industry professionals aligned with your track that will stop by to share their feedback and suggestions on your project as you work. During the hackathon, your team can use the provided flags to indicate when you are ready for mentoring.",
+    a: "This is a beginner-friendly, high-level hackathon built to welcome participants from all backgrounds with no required coding experience. If you're interested in tech, design, problem-solving, or simply want to try something new, this is a great space for you to explore your ideas and grow your skills.",
   },
   {
     q: "Are there any prerequisites or required skills?",
-    a: "While there are no prerequisites or required skills, it will be an advantage if you have a team where each member has different skills like designing, coding, presentation, etc.",
-  },
-  {
-    q: "Does my solution have to be coded?",
-    a: "No! We intentionally designed this hackathon to be beginner-friendly, so you can submit any sort of solution (through a link and a PowerPoint slide), whether it's fully coded or just prototyped. This is a great chance to learn new skills or get more practice, so we encourage you to challenge yourself!",
+    a: "While no prerequisites are required, it helps to have a team where each member brings something different \u2014 design, coding, presentation, or research. Curiosity is all you really need.",
   },
   {
     q: "How big are the teams?",
-    a: "Teams are made up of up to 4 individuals! Due to limits on prizes, teams may be less than 4, but cannot exceed that number.",
-  },
-  {
-    q: "Do I need to have a team before the event?",
-    a: "You don't need to have a team before the day of the hackathon. You can find one before the day of the event, or during the event! WINFO will also host a Team Formation event before and during the Hackathon where you can meet other potential teammates and form your team!",
+    a: "Teams can include 3-4 individuals.",
   },
   {
     q: "Do I need to have an idea before the event?",
-    a: "You don't need to have an idea before the day of the hackathon. You can use the time that you have to brainstorm with your team. Even if you come up with an idea before the day of the hackathon, you are not allowed to start working on your project until the start of the event!",
+    a: "Nope. Use the time before kickoff to brainstorm with your team. We ask that you don't start building until hacking officially begins, but prep those brainstorms early!",
   },
   {
-    q: "Who can participate in the hackathon?",
-    a: "Any current UW student is welcome to participate! 💗",
-  },
-  {
-    q: "Can we network with the mentors/sponsors?",
-    a: "Yes! Mentors are here to assist you in your project and give any advice. Sponsors would love to get to know you and hear what you're working on. Large companies love sponsoring our hackathon because of talented and passionate students like yourself!",
-  },
-  {
-    q: "How long will the Hackathon be?",
-    a: "The Hackathon runs for twelve hours on Hacking Day. Judging and presentations for finalists will be held the following day.",
+    q: "Can we network with the mentors or sponsors?",
+    a: "Absolutely. Mentors and sponsors are excited to learn about your project, offer feedback, and share advice. It's a fantastic opportunity to build connections.",
   },
   {
     q: "Can I join remotely?",
-    a: "This year's Hackathon will be fully in-person since we hope everyone will be able to socialize and connect with each other.",
-  },
-  {
-    q: "Will there be training prior to the hackathon?",
-    a: "This year, we're offering workshops prior to the hackathon. You can also find more resources on Figma and/or GitHub on the Internet. The WINFO team has also included a guide to Figma and GitHub for you to start with. For more information, visit the 'Resources' page.",
+    a: "This year's hackathon is in-person only so we can foster community and collaboration.",
   },
   {
     q: "What do I need to prepare?",
-    a: "Come with a fully charged laptop, your charger, and a creative mind.",
+    a: "Bring your laptop, charger, water bottle, and creative energy. Optional: headphones, sketchbook, or anything that supports your workflow.",
+  },
+  {
+    q: "My question isn't here!",
+    a: "Reach out to winfo@uw.edu \u2014 we're happy to help.",
+  },
+  {
+    q: "How does mentorship work?",
+    a: "Throughout the hackathon, we'll host two shifts of industry professionals aligned with your track. Mentors stop by to share feedback and suggestions as you work. When you're ready, signal your team's flag and they'll dive in.",
+  },
+  {
+    q: "Does my solution have to be coded?",
+    a: "No! This hackathon welcomes prototypes, slide decks, and concept demos just as much as polished builds. Show your idea in the format that best highlights its impact.",
+  },
+  {
+    q: "Do I need to have a team before the event?",
+    a: "Not at all. You'll have chances to meet collaborators before and during the hackathon. Join our Team Formation event to connect with other participants.",
+  },
+  {
+    q: "Who can participate in the hackathon?",
+    a: "Any current UW student is welcome to participate. Come as you are \u2014 we can't wait to see what you build.",
+  },
+  {
+    q: "How long will the hackathon be?",
+    a: "The hackathon runs a full day (roughly 8:30 AM \u2013 8:30 PM), with judging and presentations for finalists happening the following afternoon from 12:00 PM \u2013 4:00 PM.",
+  },
+  {
+    q: "Will there be training prior to the hackathon?",
+    a: "Yes! We're hosting two workshops before the event, plus sharing guides on Figma and GitHub to help you get started. Watch our socials for details.",
   },
   {
     q: "Will food be provided?",
-    a: "Lunch and dinner will be provided. There will be several food options available, so do not worry if you have dietary restrictions.",
+    a: "Lunch and dinner are provided, with several dietary options available. Snacks and hydration stations will be stocked all day.",
   },
 ];
 

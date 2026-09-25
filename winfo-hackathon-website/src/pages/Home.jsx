@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import { SectionHeader, TrackCard, ScheduleList, SponsorGrid } from "../components/Reusable";
@@ -11,10 +12,25 @@ import {
   judgingDaySchedule,
   sponsors,
   impactStats,
+  faqs,
 } from "../data/content";
 import Footer from "../components/Footer";
 
+function linkifyEmail(text) {
+  const parts = text.split(/(\S+@\S+\.\S+)/g);
+  return parts.map((part, i) =>
+    /\S+@\S+\.\S+/.test(part) ? (
+      <a key={i} href={`mailto:${part}`} className="section-faq__email-link">
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState(null);
   return (
     <>
       <div className="home-hero-wrap">
@@ -133,7 +149,29 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <img id="faq" src="/test-bg/section-7-content.png" className="section-seven-content" />
+        <div id="faq" className="section-seven-content">
+          <h2 className="section-faq__heading">Frequently Asked Questions</h2>
+          <div className="section-faq__list">
+            {faqs.map((item, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div className="section-faq__item" key={item.q}>
+                  <button
+                    className="section-faq__question"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.q}</span>
+                    <span className="section-faq__chevron" aria-hidden="true">{isOpen ? "\u2303" : "\u2304"}</span>
+                  </button>
+                  {isOpen && (
+                    <div className="section-faq__answer">{linkifyEmail(item.a)}</div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       <div>
         <img src="/test-bg/section-8-content.png" className="section-eight-content" />
