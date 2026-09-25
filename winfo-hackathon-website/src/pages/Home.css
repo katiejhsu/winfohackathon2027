@@ -298,6 +298,21 @@
   aspect-ratio: 16 / 9;
 }
 
+.section-four-caption {
+  position: absolute;
+  top: calc(max(598.7vw, calc(var(--nav-height) + 40px)) + 50vw * 9 / 16 + 2vw);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-share-tech);
+  color: #FFADC0;
+  text-transform: uppercase;
+  font-size: 1.6vw;
+  letter-spacing: 0.03em;
+}
+
 .section-five-content {
   position: absolute;
   top: max(754.7vw, calc(var(--nav-height) + 40px));

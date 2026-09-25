@@ -65,6 +65,7 @@ export default function Home() {
       </div>
       <div>
         <iframe className="section-four-content" src="https://www.youtube.com/embed/7dFSPF8vwVo?si=d8kmyEUU2H37yE3j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p className="section-four-caption">Highlight Reel From Winfo&#8217;s 2026 Hackathon</p>
       </div>
       <div>
         <img src="/test-bg/section-5-content.png" className="section-five-content" />
