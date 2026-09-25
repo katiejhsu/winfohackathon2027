@@ -96,7 +96,41 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <img id="schedule" src="/test-bg/section-6-content.png" className="section-six-content" />
+        <div id="schedule" className="section-six-content">
+          <h2 className="section-schedule-heading">Schedules</h2>
+
+          <h3 className="section-schedule-day-title">Hackathon Day</h3>
+          <p className="section-schedule-meta">
+            <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.hackingDate} | Saturday
+          </p>
+          <p className="section-schedule-meta section-schedule-meta--location">
+            <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> {event.hackingLocation}
+          </p>
+          <ul className="section-schedule-list">
+            {hackingDaySchedule.map((item) => (
+              <li key={item.time + item.label}>
+                <span className="section-schedule__time">{item.time}</span>
+                <span className="section-schedule__label">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="section-schedule-day-title section-schedule-day-title--judging">Judging Day</h3>
+          <p className="section-schedule-meta">
+            <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.judgingDate} | Sunday
+          </p>
+          <p className="section-schedule-meta section-schedule-meta--location">
+            <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> {event.judgingLocation}
+          </p>
+          <ul className="section-schedule-list">
+            {judgingDaySchedule.map((item) => (
+              <li key={item.time + item.label}>
+                <span className="section-schedule__time">{item.time}</span>
+                <span className="section-schedule__label">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div>
         <img id="faq" src="/test-bg/section-7-content.png" className="section-seven-content" />

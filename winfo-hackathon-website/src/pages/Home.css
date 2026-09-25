@@ -399,8 +399,76 @@
   top: max(1024.7vw, calc(var(--nav-height) + 40px));
   left: 50%;
   width: 72.9vw;
-  height: auto;
   transform: translateX(-50%);
+  color: #FFFFFF;
+}
+
+.section-schedule-heading {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+  text-transform: none;
+  font-size: 3.6vw;
+  margin: 0 0 0.2em;
+}
+
+.section-schedule-day-title {
+  font-family: var(--font-jost);
+  font-weight: 700;
+  text-transform: none;
+  font-size: 2.2vw;
+  margin: 0 0 0.5em;
+}
+
+.section-schedule-day-title--judging {
+  margin-top: 2.5em;
+}
+
+.section-schedule__icon {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.section-schedule-meta {
+  font-family: var(--font-share-tech);
+  text-transform: uppercase;
+  font-size: 1.3vw;
+  margin: 0 0 0.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.section-schedule-meta--location {
+  text-decoration: underline;
+}
+
+.section-schedule-list {
+  list-style: none;
+  margin: 1.5em 0 0;
+  padding: 0;
+}
+
+.section-schedule-list li {
+  display: flex;
+  gap: 2em;
+  padding: 0.3em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-schedule__time {
+  font-family: var(--font-share-tech);
+  font-size: 1.15vw;
+  min-width: 6em;
+  flex-shrink: 0;
+}
+
+.section-schedule__label {
+  font-family: var(--font-jost);
+  font-weight: 600;
+  font-size: 1.2vw;
 }
 
 .section-seven-content {
