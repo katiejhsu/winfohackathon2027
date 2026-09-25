@@ -35,7 +35,14 @@ export default function Home() {
         <img src="/test-bg/goat.png" className="home-asset home-asset--goat" alt="" />
       </div>
       <div>
-        <img src="/test-bg/section-2-content.png" className="section-two-content" />
+        <img src="/test-bg/section2-badges.png" alt="Triangle tree patch, star bear patch, circle mountain patch" className="section-two-badges" />
+        <img src="/test-bg/section2-headline.png" alt="Ready to reach new heights headline" className="section-two-headline" />
+        <p className="section-two-blurb">
+          Women in Informatics is excited to invite you to our 15th Annual
+          Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility, Paths of Progress&#8221;</span>.
+          Join us for a day of developing technology solutions for social good
+          and celebrating equity and inclusion in the technology field.
+        </p>
       </div>
       <div>
         <img src="/test-bg/section-3-content.png" className="section-three-content" />
