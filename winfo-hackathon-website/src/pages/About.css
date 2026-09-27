@@ -375,6 +375,27 @@
   margin-top: 10%;
 }
 
+.campfire-mascots-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  align-items: center;
+}
+
+.campfire-mascots-section div {
+  display: flex;
+  justify-content: center;
+}
+
+.campfire-mascots {
+  width: 70%;
+}
+
 @media (max-width: 768px) {
   .mountain .about-intro p {
     font-size: 9px;
@@ -488,5 +509,9 @@
   .congrats-text {
     margin-top: 5%;
     font-size: 8px;
+  }
+
+  .campfire-mascots-section {
+    top: 18%;
   }
 }

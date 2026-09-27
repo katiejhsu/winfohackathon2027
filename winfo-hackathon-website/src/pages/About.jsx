@@ -194,6 +194,11 @@ export default function About() {
 
         {/* 6. fire */}
         <section className="bg-slice fire">
+          <div className="campfire-mascots-section">
+            <div>
+              <img alt="animals around a campfire" src="assets/about/campfire-mascots.png" className="campfire-mascots" />
+            </div>
+          </div>
           <Footer />
         </section>
       </main>

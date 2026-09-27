@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+
 .navbar {
   position: fixed;
   top: 0;
@@ -8,6 +10,8 @@
   display: flex;
   align-items: center;
   background: transparent;
+  font-family: "National Park", sans-serif;
+
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -96,7 +100,8 @@
     width: 82px;
     padding: 10px 10px;
     font-size: 11px;
-    margin-top: -10px;
+    margin-top: -12px;
+    position: relative;
   }
 
   .navbar__links--open {
@@ -108,6 +113,23 @@
     width: 100%;
     justify-content: center;
   }
+
+  .navbar__link::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 20px;
+    background: #7a533e;
+    z-index: -1;
+  }
+
+  .navbar__toggle {
+    z-index: 0;
+  }
+
 }
 
 .navbar__toggle {
