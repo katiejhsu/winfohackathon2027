@@ -52,7 +52,7 @@ export default function About() {
         {/* 2. black cliff */}
         <section className="bg-slice cliff">
           <div className="about-winfo">
-            <h2>What is WINFO?</h2>
+            <img src="assets/about/what-is-winfo.png" alt="what is winfo" className="what-is-winfo-header" />
             <p>
               Women in Informatics (WINFO) is a diversity organization at the Information
               School at the University of Washington, Seattle, dedicated to empowering
@@ -84,7 +84,7 @@ export default function About() {
         {/* 3. sunset */}
         <section className="bg-slice sunset">
           <div className="committee-intro">
-            <h2>The WINFO Hackathon Committee</h2>
+            <img src="assets/about/winfo-hackathon-committee.png" alt="the winfo hackathon committee" className="committee-header" />
             <p>Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.</p>
           </div>
         </section>
@@ -92,8 +92,7 @@ export default function About() {
         {/* 4. orange */}
         <section className="bg-slice orange">
           <div className="committee-badges">
-            <h2>Meet the 2026-2027<br /> Hackathon Committee!</h2>
-
+            <img src="assets/about/meet-committee.png" alt="meet the committee" className="meet-committee-header" />
             <div className="badge-grid">
               {badgeRows.map((row, r) => (
                 <div className="badge-row" key={r}>
@@ -104,16 +103,97 @@ export default function About() {
               ))}
             </div>
           </div>
+          <div className="speakers">
+            <img src="assets/about/speakers.png" alt="speakers" className="speakers-header" />
+            <p className="speakers-intro">Stay tuned for the announcement of our upcoming hackathon speakers!</p>
+            <div className="speakers-container">
+              <div className="speakers-list">
+                <div className="speaker-card">
+                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <div className="speaker-info">
+                    <h4>Speaker Name</h4>
+                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div className="speaker-card">
+                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <div className="speaker-info">
+                    <h4>Speaker Name</h4>
+                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div className="speaker-card">
+                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <div className="speaker-info">
+                    <h4>Speaker Name</h4>
+                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* 5. night sky */}
         <section className="bg-slice sky">
-          {/* testimonials, impact stats, etc. */}
+          <div className="last-years-winners">
+            <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
+            <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>By: Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai</p>
+            <div className="past-project-section">
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>“Canario” Logo</p>
+              </div>
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>Prototyped Screens</p>
+              </div>
+            </div>
+            <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>By: Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen</p>
+            <div className="past-project-section">
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>“NewFuse” Logo </p>
+              </div>
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>Prototyped Screens</p>
+              </div>
+            </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>By: Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja</p>
+            <div className="past-project-section">
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>Nudge Logo</p>
+              </div>
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>Prototyped Screens</p>
+              </div>
+            </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>By: Isaiah Hoagland, Sunny Tian, Farrel Sudrajat</p>
+            <div className="past-project-section">
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>WNBA Logo</p>
+              </div>
+              <div>
+                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
+                <p>Prototyped Screens</p>
+              </div>
+            </div>
+            <p className="congrats-text">Congratulations to all of our winners and their incredible projects! Thank you to everyone who dove into our 14th Hackathon with us 🤍</p>
+          </div>
         </section>
 
         {/* 6. fire */}
         <section className="bg-slice fire">
-          {/* campfire content */}
           <Footer />
         </section>
       </main>

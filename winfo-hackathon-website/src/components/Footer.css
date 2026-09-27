@@ -7,6 +7,16 @@
   background: transparent;
 }
 
+.sponsors-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+
+.sponsors-section img {
+  width: 70%;
+}
+
 .footer__inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -90,7 +100,7 @@
   }
 
   .footer__legal p {
-    font-size: 11px;
+    font-size: 9px;
     line-height: 1.55;
     overflow-wrap: anywhere;
   }
@@ -103,5 +113,8 @@
   .footer__socials img {
     width: 26px;
     height: 26px;
+  }
+  .sponsors-section {
+    margin-bottom: 4vh;
   }
 }

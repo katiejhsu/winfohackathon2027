@@ -142,10 +142,8 @@
   color: #FF8D47;
 }
 
-.cliff .about-winfo h2 {
-  margin: 0;
-  font-size: clamp(28px, 3.4vw, 56px);
-  line-height: 1.1;
+.what-is-winfo-header {
+  width: 80%;
 }
 
 .cliff .about-winfo p {
@@ -154,7 +152,7 @@
   line-height: 1.6;
   opacity: 0.9;
   font-family: "Jost", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn-outline {
@@ -169,7 +167,7 @@
   letter-spacing: 0.06em;
   text-decoration: none;
   font-family: "Jost", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn-outline:hover {
@@ -202,7 +200,7 @@
 
 .sunset .committee-intro {
   position: absolute;
-  top: 72%;
+  top: 68%;
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
@@ -214,18 +212,18 @@
   color: #25568D;
 }
 
-.sunset .committee-intro h2 {
-  margin: 0;
-  font-size: 50px;
-  line-height: 1.1;
-  font-style: italic;
+.committee-header {
+  width: 90%;
+  margin-bottom: 5%;
 }
 
 .sunset .committee-intro p {
   margin: 0;
-  max-width: 60ch;
-  font-size: clamp(16px, 16px, 18px);
+  max-width: 40ch;
+  font-size: 22px;
   line-height: 1.6;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
 }
 
 .orange .committee-badges {
@@ -242,10 +240,9 @@
   color: #FFFADD;
 }
 
-.orange .committee-badges h2 {
-  margin: 0px 0px 40px;
-  font-size: 36px;
-  line-height: 1.15;
+.meet-committee-header {
+  width: 55%;
+  margin-bottom: 5%;
 }
 
 .badge-grid {
@@ -269,6 +266,115 @@
   display: block;
 }
 
+.speakers {
+  position: absolute;
+  top: 68%;
+  left: 15%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vw;
+  color: #FFFADD;
+}
+
+.speakers-header {
+  width: 30%;
+}
+
+.speakers-intro {
+  text-align: left;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.speakers-container {
+  display: flex;
+  justify-content: center;
+}
+
+.speakers-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4vw;
+  width: 100%;
+}
+
+.speaker-card {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.speaker-badge {
+  flex-shrink: 0;
+  width: 25vw;
+  object-fit: contain;
+  margin-left: -30px;
+}
+
+.speaker-info h4 {
+  margin: 0 0 0.3vw;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 32px;
+}
+
+.speaker-info p {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.last-years-winners {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vw;
+  color: #B5C6D0;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+.last-years-winners-header {
+  width: 80%;
+}
+
+.best-impact-header {
+  width: 60%;
+  margin-top: 12%;
+  margin-bottom: 5%;
+}
+
+.last-years-winners p {
+  font-size: 20px;
+}
+
+.past-project-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7%;
+}
+
+.project-img {
+  width: 90%;
+}
+
+.congrats-text {
+  margin-top: 10%;
+}
+
 @media (max-width: 768px) {
   .mountain .about-intro p {
     font-size: 9px;
@@ -286,8 +392,7 @@
   }
 
   .btn-outline {
-    font-size: 9px;
-
+    font-size: 8px;
   }
 
   .about-gallery {
@@ -329,5 +434,59 @@
 
   .badge-row {
     gap: 4%;
+  }
+
+  .speakers-intro {
+    font-size: 12px;
+  }
+
+  .speakers {
+    top: 60%;
+  }
+
+  .speaker-info h4 {
+    font-size: 20px;
+  }
+
+  .speaker-info p {
+    font-size: 10px;
+  }
+
+  .speaker-badge {
+    margin-left: -12px;
+  }
+
+  .speakers-header {
+    width: 44%;
+  }
+
+  .speaker-card {
+    margin-top: 10px;
+  }
+
+  .last-years-winners p {
+    font-size: 9px;
+  }
+
+  .best-impact-header {
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .last-years-winners p {
+    font-size: 9px;
+  }
+
+  .past-project-section {
+    margin-top: 3%;
+  }
+
+  .project-img {
+    width: 80%;
+  }
+
+  .congrats-text {
+    margin-top: 5%;
+    font-size: 8px;
   }
 }

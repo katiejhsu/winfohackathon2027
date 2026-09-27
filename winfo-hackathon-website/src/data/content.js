@@ -241,7 +241,7 @@ export const aboutWinfo = {
     `beginner-friendly, and collaborative environment in which they can develop ` +
     `new skills, network with industry professionals, and learn more about the ` +
     `tech industry.`,
-  website: "https://winfo.ischool.uw.edu",
+  website: "https://winfo.ischool.uw.edu"
 };
 
 // Committee members grouped by role — TODO: add headshots + last names as available
