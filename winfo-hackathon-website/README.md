@@ -70,7 +70,7 @@ src/
 ├── App.jsx              # route definitions (all pages live here)
 ├── main.jsx              # entry point, global CSS imports
 ├── components/           # Navbar, Footer, Countdown, shared UI bits
-├── pages/                 # one file per site page (Home, Tracks, About, ...)
+├── pages/                 # one file per site page (Home, About, ...)
 ├── portals/                # Submission Portal + Mentor Feedback Portal
 ├── firebase/               # NOT active — placeholder for future backend
 ├── data/content.js         # ALL site copy lives here — edit this file first
@@ -92,7 +92,6 @@ happen in one place.
 | Route | Page |
 |---|---|
 | `/` | Home — mission, theme, goals, tracks preview, schedule preview, sponsors, countdown |
-| `/tracks` | Full prize track descriptions |
 | `/schedule` | Hacking Day + Judging Day timelines |
 | `/people` | Speakers / mentors / judges (empty — TODO once roster is confirmed) |
 | `/about` | About WINFO, committee, past winners, testimonials, photos |
@@ -131,7 +130,5 @@ Two open decisions are flagged with `TODO` comments directly in
 
 - `src/pages/People.jsx` — speaker/mentor/judge lists are empty
 - `src/data/content.js` → `committee.groups` — Directors list is empty
-- `src/data/content.js` → `sponsors` — logos are placeholders (text only, no images)
 - `src/pages/About.jsx` — photo gallery is placeholder boxes
-- Hero "highlight reel" video on the Home page — not yet embedded
 - `event.registerUrl` in `src/data/content.js` — points to `#`, swap for the real registration form link

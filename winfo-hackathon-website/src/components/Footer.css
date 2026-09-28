@@ -10,11 +10,12 @@
 .sponsors-section {
   display: flex;
   justify-content: center;
-  margin-bottom: 10vh;
+  margin-bottom: 2%;
 }
 
 .sponsors-section img {
   width: 70%;
+  z-index: 2;
 }
 
 .footer__inner {
@@ -115,7 +116,4 @@
     height: 26px;
   }
 
-  .sponsors-section {
-    margin-bottom: 4vh;
-  }
 }

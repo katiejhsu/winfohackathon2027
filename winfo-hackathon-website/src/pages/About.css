@@ -380,7 +380,7 @@
   justify-content: center;
   margin-top: 0;
   position: absolute;
-  top: 32%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -512,6 +512,6 @@
   }
 
   .campfire-mascots-section {
-    top: 18%;
+    top: 30%;
   }
 }
