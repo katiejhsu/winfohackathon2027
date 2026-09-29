@@ -175,9 +175,9 @@ export default function Home() {
 
         {/* 5. blue sky to mountain lake: schedules */}
         <section className="bg-slice home-s5">
+          <img src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding" />
           <div id="schedule" className="section-six-content">
             <h2 className="section-schedule-heading">Schedules</h2>
-
             <h3 className="section-schedule-day-title">Hackathon Day</h3>
             <p className="section-schedule-meta">
               <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.hackingDate} | Saturday
@@ -210,6 +210,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
+          <img src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding"/>
         </section>
 
         {/* 6. water fading to black: FAQ */}
@@ -241,6 +242,13 @@ export default function Home() {
 
         {/* 7. night sky: resources */}
         <section className="bg-slice home-s7">
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-0"/>
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-1"/>
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-2"/>
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-0"/>
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1"/>
+          <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const"/>
+          <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const"/>
           <div className="section-eight-content">
             <h2 className="res-heading">Resources</h2>
 

@@ -83,6 +83,9 @@ export default function About() {
 
         {/* 3. sunset */}
         <section className="bg-slice sunset">
+          <img src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
+          <img src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
+
           <div className="committee-intro">
             <img src="assets/about/winfo-hackathon-committee.png" alt="the winfo hackathon committee" className="committee-header" />
             <p>Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.</p>
@@ -136,6 +139,14 @@ export default function About() {
 
         {/* 5. night sky */}
         <section className="bg-slice sky">
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-0-about" />
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-1-about" />
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-2-about" />
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-0-about" />
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1-about" />
+          <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const-about" />
+          <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const-about" />
+          <div className="section-eight-content"></div>
           <div className="last-years-winners">
             <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
             <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />

@@ -380,7 +380,7 @@
   justify-content: center;
   margin-top: 0;
   position: absolute;
-  top: 20%;
+  top: 23%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -394,6 +394,75 @@
 
 .campfire-mascots {
   width: 70%;
+}
+
+.elk-paragliding-about {
+  position: absolute;
+  width: 33%;
+  top: 20%;
+  left: 12%;
+}
+
+.owl-paragliding-about {
+  position: absolute;
+  width: 37%;
+  top: 40%;
+  right: 10%;
+}
+
+
+.stars1-0-about {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  width: 12%;
+  transform: scaleX(-1);
+
+}
+
+.stars1-1-about {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  width: 16%;
+}
+
+.stars1-2-about {
+  position: absolute;
+  bottom: 5%;
+  right: 18%;
+  width: 14%;
+  transform: scaleX(-1);
+}
+
+.stars3-0-about {
+  position: absolute;
+  top: 28%;
+  width: 20%;
+  right: 6%;
+}
+
+.stars3-1-about {
+  position: absolute;
+  bottom: 8%;
+  right: 2%;
+  width: 18%;
+
+}
+
+.goat-const-about {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  right: 7%;
+}
+
+.owl-const-about {
+  position: absolute;
+  top: 70%;
+  right: 5%;
+  width: 14%;
+
 }
 
 @media (max-width: 768px) {
@@ -512,6 +581,6 @@
   }
 
   .campfire-mascots-section {
-    top: 30%;
+    top: 18%;
   }
 }

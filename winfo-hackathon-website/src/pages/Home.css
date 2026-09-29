@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --fs-display: clamp(24px, 3.1vw, 54px);
-  --fs-title:   clamp(16px, 2.3vw, 40px);
-  --fs-body:    clamp(8px, 1.05vw, 18px);
-  --fs-small:   clamp(9px, 0.92vw, 16px);
+  --fs-title: clamp(16px, 2.3vw, 40px);
+  --fs-body: clamp(8px, 1.05vw, 18px);
+  --fs-small: clamp(9px, 0.92vw, 16px);
 }
 
 .tracks-heading,
@@ -192,7 +193,7 @@
   position: absolute;
   top: 116vw;
   left: 8vw;
-  width: 38.9vw;
+  width: 32vw;
   margin: 0;
   font-family: "Jost", sans-serif;
   font-weight: 600;
@@ -282,7 +283,7 @@
 
 .section-five-content {
   position: absolute;
-  top: 10%;
+  top: 14%;
   left: 50%;
   width: 67.9vw;
   transform: translateX(-50%);
@@ -311,7 +312,7 @@
   font-weight: 700;
   text-transform: none;
   font-size: var(--fs-title);
-  margin: 8% 0 1%;
+  margin: 6% 0 1%;
 }
 
 .tracks-row {
@@ -369,6 +370,21 @@
   width: 65vw;
   transform: translateX(-50%);
   color: #FFFFFF;
+}
+
+.elk-paragliding {
+  position: absolute;
+  width: 33%;
+  top: 0;
+  right: 16%;
+  transform: scaleX(-1);
+}
+
+.owl-paragliding {
+  position: absolute;
+  width: 37%;
+  bottom: 48%;
+  right: 10%;
 }
 
 .section-schedule-heading {
@@ -505,6 +521,60 @@
 .section-faq__email-link {
   color: #FFFFFF;
   text-decoration: underline;
+}
+
+.stars1-0 {
+  position: absolute;
+  top: 0;
+  right: 22%;
+  width: 12%;
+}
+
+.stars1-1 {
+  position: absolute;
+  top: 0%;
+  transform: scaleX(-1);
+  left: 2%;
+  width: 16%;
+}
+
+.stars1-2 {
+  position: absolute;
+  top: 40%;
+  right: 0%;
+  width: 16%;
+  transform: scaleX(-1);
+}
+
+.stars3-0 {
+  position: absolute;
+  top: 0;
+  width: 18%;
+  right: 7%;
+}
+
+.stars3-1 {
+  position: absolute;
+  bottom: 8%;
+  left: 2%;
+  width: 18%;
+
+}
+
+.goat-const {
+  position: absolute;
+  top: 56%;
+  width: 26%;
+  right: 2%;
+}
+
+.owl-const {
+  position: absolute;
+  transform: scaleX(-1);
+  top: 26%;
+  left: 0%;
+  width: 18%;
+
 }
 
 .section-eight-content {
@@ -851,7 +921,7 @@
   }
 
   .section-six-content {
-    top: 0%;
+    top: 10%;
   }
 
   .section-eight-content {
@@ -862,53 +932,47 @@
     top: -36%
   }
 
-  @media (max-width: 768px) {
-    .tracks-copy {
-      flex: 0 0 60vw;
-    }
+  .tracks-copy {
+    flex: 0 0 60vw;
+  }
 
-    .tracks-title {
-      margin: 0% 0% 1%;
-    }
+  .tracks-title {
+    margin: 0% 0% 1%;
+  }
 
-    .tracks-row {
-      margin: 2% 0% 4%;
-    }
+  .tracks-row {
+    margin: 2% 0% 4%;
+  }
 
-    .tracks-heading {
-      margin: 0;
-    }
+  .tracks-heading {
+    margin: 0;
+  }
 
-    .tracks-divider {
-      margin: 0.6em 0;
-    }
+  .tracks-divider {
+    margin: 0.6em 0;
+  }
 
-    .section-faq__list {
-      width: 85%;
-    }
+  .section-faq__list {
+    width: 85%;
+  }
 
-    .section-five-content {
-      width: 85vw;
-    }
+  .section-five-content {
+    width: 85vw;
+  }
 
-    .section-six-content {
-      top: 0%;
-    }
+  .section-eight-content {
+    top: -10%;
+  }
 
-    .section-eight-content {
-      top: -10%;
-    }
+  .section-nine-content {
+    top: 0%;
+  }
 
-    .section-nine-content {
-      top: 0%;
-    }
+  .countdown__value {
+    font-size: 16px;
+  }
 
-    .countdown__value {
-      font-size: 16px;
-    }
-
-    .section-nine-heading {
-      font-size: 12px;
-    }
+  .section-nine-heading {
+    font-size: 12px;
   }
 }
