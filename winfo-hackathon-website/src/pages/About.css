@@ -610,3 +610,28 @@
   margin-top: 3%;
   border-radius: 8px;
 }
+
+.last-years-winners .winner-heading {
+  margin-top: 6%;
+  margin-bottom: 1%;
+}
+
+.last-years-winners .project-poster {
+  width: 80%;
+  margin-top: 1%;
+}
+
+.last-years-winners .congrats-text {
+  margin-top: 4%;
+}
+
+@media (max-width: 768px) {
+  .last-years-winners .winner-heading {
+    margin-top: 4%;
+    margin-bottom: 0;
+  }
+
+  .last-years-winners .project-poster {
+    width: 70%;
+  }
+}
