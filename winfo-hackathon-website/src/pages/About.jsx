@@ -150,7 +150,7 @@ export default function About() {
           <div className="last-years-winners">
             <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
             <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>Reducing confusion, improving preparedness, and supporting safer encounters.</p>
             <p>By: Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai</p>
             <div className="past-project-section">
               <div>
@@ -163,7 +163,7 @@ export default function About() {
               </div>
             </div>
             <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>Exploring the depths of news! Making today's news understandable, not overwhelming.</p>
             <p>By: Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen</p>
             <div className="past-project-section">
               <div>
@@ -175,7 +175,7 @@ export default function About() {
                 <p>Prototyped Screens</p>
               </div>
             </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>Nudge doesn't block your escape - it builds your bridge to focus.</p>
             <p>By: Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja</p>
             <div className="past-project-section">
               <div>
@@ -187,7 +187,7 @@ export default function About() {
                 <p>Prototyped Screens</p>
               </div>
             </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.</p>
+            <p>Introducing the WNBA to new fans through an improved fantasy experience.</p>
             <p>By: Isaiah Hoagland, Sunny Tian, Farrel Sudrajat</p>
             <div className="past-project-section">
               <div>
