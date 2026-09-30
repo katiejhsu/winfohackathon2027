@@ -1063,3 +1063,7 @@ a.res-tile:hover {
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+.res-card .res-card__desc {
+  white-space: pre-line;
+}

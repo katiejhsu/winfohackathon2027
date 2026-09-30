@@ -33,7 +33,7 @@ const workshops = [
     icon: "/assets/resources/icon-design.png",
     title: "Design Workshop",
     when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
+    desc: "🏔️ Interested in leveling up your Figma skills before the WINFO Hackathon? Now's your chance!\n\nJoin Figma Campus Leaders for a hands-on workshop covering Auto Layout, Components, and Variables! These are three essential tools for designing faster, smarter, and more scalable interfaces.\n\nWhether you’re new to Figma or looking to sharpen your skills, this workshop will help you build flexible designs, collaborate more efficiently, and move seamlessly from idea to prototype. Come learn, ask questions, and get hackathon-ready with confidence.",
   },
   {
     icon: "/assets/resources/icon-code.png",
@@ -54,7 +54,7 @@ const events = [
     icon: "/assets/resources/icon-laptop.png",
     title: "Hack the Hackathon",
     when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
+    desc: "New to the hackathon or still searching for a team? Hack the Hackathon has you covered 🥾\n\nThis session gives you the opportunity to:\n🥾 Meet other participants and potential teammates\n🌲 Learn more about the hackathon structure, expectations, and tips & tricks\n🏔️ Get your brain working on early ideation and making the most out of our hackathon!\n\nDive in early, explore new ideas, and kick off the hackathon with confidence.",
   },
 ];
 
