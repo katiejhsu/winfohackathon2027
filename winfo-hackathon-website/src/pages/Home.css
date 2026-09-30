@@ -987,3 +987,68 @@
   display: flex;
   text-decoration: none;
 }
+
+@media (min-width: 769px) {
+  :root {
+    --fs-body: clamp(12px, 1.25vw, 20px);
+    --fs-small: clamp(11px, 1.1vw, 18px);
+  }
+
+  .hero-meta { font-size: max(2.083vw, 12px); }
+  .section-three-body { font-size: max(1.5vw, 12px); }
+  .section-four-caption { font-size: max(1.6vw, 12px); }
+  .section-schedule-meta { font-size: max(1.3vw, 12px); }
+  .res-card__when { font-size: max(1.45vw, 12px); }
+  .res-card__desc { font-size: max(1.2vw, 12px); }
+}
+
+@media (max-width: 768px) {
+  .hero-meta { font-size: max(2.083vw, 9px); }
+  .section-three-body { font-size: max(1.5vw, 8px); }
+  .section-four-caption { font-size: max(1.6vw, 9px); }
+  .section-schedule-meta { font-size: max(1.3vw, 8px); }
+}
+
+@media (min-width: 769px) {
+  .tracks-description {
+    font-size: clamp(12px, 1.45vw, 24px);
+  }
+
+  .section-faq__question,
+  .section-faq__answer {
+    font-size: clamp(14px, 1.45vw, 24px);
+  }
+}
+
+@media (min-width: 769px) {
+  .section-schedule__time,
+  .section-schedule__label {
+    font-size: clamp(13px, 1.4vw, 22px);
+  }
+
+  .section-schedule-meta {
+    font-size: max(1.5vw, 13px);
+  }
+
+  .section-two-blurb {
+    font-size: clamp(13px, 1.5vw, 24px);
+  }
+}
+
+@media (min-width: 769px) {
+  .tracks-description {
+    font-size: clamp(12px, 1.6vw, 26px);
+  }
+
+  .tracks-focus-label,
+  .tracks-focus-list {
+    font-size: clamp(12px, 1.35vw, 22px);
+  }
+}
+
+@media (min-width: 769px) {
+  .section-schedule__time,
+  .section-schedule__label {
+    font-size: clamp(14px, 1.75vw, 28px);
+  }
+}

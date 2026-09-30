@@ -635,3 +635,14 @@
     width: 70%;
   }
 }
+
+@media (min-width: 769px) {
+  .cliff .about-winfo p { font-size: clamp(14px, 1.25vw, 20px); }
+  .last-years-winners p { font-size: clamp(13px, 1.4vw, 20px); }
+}
+
+@media (max-width: 768px) {
+  .mountain .about-intro p,
+  .cliff .about-winfo p { font-size: 10.5px; }
+  .btn-outline { font-size: 10px; }
+}

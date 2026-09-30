@@ -159,3 +159,30 @@
     text-align: center;
   }
 }
+
+@media (min-width: 787px) {
+  .navbar__link {
+    font-size: 1.667vw;
+    padding: 1.111vw 4.167vw;
+    min-width: 13.2vw;
+  }
+}
+
+@media (min-width: 787px) {
+  .navbar {
+    top: clamp(10px, 1.2vw, 20px);
+    height: max(var(--nav-height), 5.5vw);
+  }
+}
+
+@media (min-width: 787px) {
+  .navbar__link {
+    font-size: 1.417vw;
+    padding: 0.944vw 3.542vw;
+    min-width: 11.2vw;
+  }
+
+  .navbar {
+    height: max(var(--nav-height), 4.7vw);
+  }
+}
