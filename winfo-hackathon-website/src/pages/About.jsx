@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import { aboutWinfo, committee, pastWinners, pastWinnersLinks, testimonials, impactStats } from "../data/content";
 import "./About.css";
 
-const BADGE_ROWS = [2, 3, 3, 2, 1];
+const BADGE_ROWS = [2, 3, 4, 3];
 
 const badges = [
   // "/assets/about/badge-1.png",
@@ -15,18 +15,18 @@ const badges = [
   // "/assets/about/badge-8.png",
   // "/assets/about/badge-9.png",
   // "/assets/about/badge-10.png",
+  "/assets/about/badge-18.png",
+  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-7.png",
+  "/assets/about/badge-21.png",
   "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
-  "/assets/about/badge-11.png",
+  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-20.png",
+  "/assets/about/badge-8.png",
+  "/assets/about/badge-9.png",
+  "/assets/about/badge-15.png",
+  "/assets/about/badge-16.png",
 ];
 
 // split the flat list into rows
@@ -112,21 +112,21 @@ export default function About() {
             <div className="speakers-container">
               <div className="speakers-list">
                 <div className="speaker-card">
-                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
                     <h4>Speaker Name</h4>
                     <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                   </div>
                 </div>
                 <div className="speaker-card">
-                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
                     <h4>Speaker Name</h4>
                     <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                   </div>
                 </div>
                 <div className="speaker-card">
-                  <img src="assets/about/badge-11.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
                     <h4>Speaker Name</h4>
                     <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
