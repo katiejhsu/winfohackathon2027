@@ -976,3 +976,14 @@
     font-size: 12px;
   }
 }
+.location-link--plain {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+}
+
+.location-icon-link {
+  display: flex;
+  text-decoration: none;
+}
