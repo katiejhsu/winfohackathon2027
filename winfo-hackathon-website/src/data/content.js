@@ -274,24 +274,28 @@ export const pastWinners = [
     emoji: "🌊",
     track: "Best Impact",
     project: "Canario",
+    image: "/assets/about/winners/canario.png",
     team: "Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai",
   },
   {
     emoji: "🐟",
     track: "Best Product",
     project: "NewFuse",
+    image: "/assets/about/winners/newfuse.png",
     team: "Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen",
   },
   {
     emoji: "🐚",
     track: "Best Implementation",
     project: "Nudge",
+    image: "/assets/about/winners/nudge.png",
     team: "Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja",
   },
   {
     emoji: "🪼",
     track: "Best Design",
     project: "WNBA",
+    image: "/assets/about/winners/wnba.png",
     team: "Isaiah Hoagland, Sunny Tian, Farrel Sudrajat",
   },
 ];

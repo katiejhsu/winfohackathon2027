@@ -149,56 +149,20 @@ export default function About() {
           <div className="section-eight-content"></div>
           <div className="last-years-winners">
             <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
-            <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <h3 className="winner-heading">{pastWinners[0].track} – “{pastWinners[0].project}”</h3>
             <p>Reducing confusion, improving preparedness, and supporting safer encounters.</p>
             <p>By: Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai</p>
-            <div className="past-project-section">
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>“Canario” Logo</p>
-              </div>
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>Prototyped Screens</p>
-              </div>
-            </div>
-            <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <img src={pastWinners[0].image} alt={`${pastWinners[0].project} project poster`} className="project-poster" />
+            <h3 className="winner-heading">{pastWinners[1].track} – “{pastWinners[1].project}”</h3>
             <p>Exploring the depths of news! Making today's news understandable, not overwhelming.</p>
             <p>By: Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen</p>
-            <div className="past-project-section">
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>“NewFuse” Logo </p>
-              </div>
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>Prototyped Screens</p>
-              </div>
-            </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <img src={pastWinners[1].image} alt={`${pastWinners[1].project} project poster`} className="project-poster" />    <h3 className="winner-heading">{pastWinners[2].track} – “{pastWinners[2].project}”</h3>
             <p>Nudge doesn't block your escape - it builds your bridge to focus.</p>
             <p>By: Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja</p>
-            <div className="past-project-section">
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>Nudge Logo</p>
-              </div>
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>Prototyped Screens</p>
-              </div>
-            </div>    <img src="assets/about/best-impact-header1.png" alt="best impact" className="best-impact-header" />
+            <img src={pastWinners[2].image} alt={`${pastWinners[2].project} project poster`} className="project-poster" />    <h3 className="winner-heading">{pastWinners[3].track} – “{pastWinners[3].project}”</h3>
             <p>Introducing the WNBA to new fans through an improved fantasy experience.</p>
             <p>By: Isaiah Hoagland, Sunny Tian, Farrel Sudrajat</p>
-            <div className="past-project-section">
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>WNBA Logo</p>
-              </div>
-              <div>
-                <img src="assets/about/blank-placeholder.png" alt="blank" className="project-img" />
-                <p>Prototyped Screens</p>
-              </div>
-            </div>
+            <img src={pastWinners[3].image} alt={`${pastWinners[3].project} project poster`} className="project-poster" />
             <p className="congrats-text">Congratulations to all of our winners and their incredible projects! Thank you to everyone who dove into our 14th Hackathon with us 🤍</p>
           </div>
         </section>

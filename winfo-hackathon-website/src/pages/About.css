@@ -586,3 +586,27 @@
     top: 18%;
   }
 }
+.winner-heading {
+  font-family: var(--font-anybody);
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 150%;
+  font-size: 3.333vw;
+  line-height: normal;
+  color: #B5C6D0;
+  margin-top: 12%;
+  margin-bottom: 5%;
+}
+
+.last-years-winners .winner-heading {
+  text-transform: none;
+  letter-spacing: normal;
+  font-stretch: 100%;
+}
+
+.project-poster {
+  width: 100%;
+  height: auto;
+  margin-top: 3%;
+  border-radius: 8px;
+}
