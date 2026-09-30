@@ -1067,3 +1067,25 @@ a.res-tile:hover {
 .res-card .res-card__desc {
   white-space: pre-line;
 }
+
+.home-s7 {
+  aspect-ratio: auto;
+  min-height: calc(100vw * 2460 / 1728);
+  background-size: 100% 100%;
+  display: flow-root;
+  padding-bottom: 6vw;
+}
+
+.home-s7 .section-eight-content {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .home-s7 .section-eight-content {
+    margin-top: -14.2vw;
+  }
+}
