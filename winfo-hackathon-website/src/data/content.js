@@ -16,7 +16,9 @@ export const event = {
   hackingDate: "January 30, 2027",
   judgingDate: "January 31, 2027",
   hackingLocation: "University of Washington HUB, North Ballroom",
+  hubMapUrl: "https://www.google.com/maps/dir/?api=1&destination=4001+E+Stevens+Way+NE,+Seattle,+WA+98195",
   judgingLocation: "University of Washington Maple Great Room",
+  mapleMapUrl: "https://www.google.com/maps/dir/?api=1&destination=1135+NE+Campus+Pkwy,+Seattle,+WA+98105",
   // ISO string used to drive the countdown component
   countdownTarget: "2027-01-30T09:00:00-08:00",
   registerUrl: "#", // TODO: replace with live registration form link

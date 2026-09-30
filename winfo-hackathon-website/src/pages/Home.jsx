@@ -93,7 +93,7 @@ export default function Home() {
               <img src="/test-bg/image106.png" alt="" className="hero-meta__icon" /> {event.heroDates}
             </p>
             <p className="hero-meta hero-meta--2">
-              <img src="/test-bg/navigation.png" alt="" className="hero-meta__icon hero-meta__icon--pin" /> {event.heroLocation}
+              <img src="/test-bg/navigation.png" alt="" className="hero-meta__icon hero-meta__icon--pin" /> <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.heroLocation}</a>
             </p>
             <a className="hero-register-btn" href={event.registerUrl}>Register Now!</a>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
               <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.hackingDate} | Saturday
             </p>
             <p className="section-schedule-meta section-schedule-meta--location">
-              <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> {event.hackingLocation}
+              <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.hackingLocation}</a>
             </p>
             <ul className="section-schedule-list">
               {hackingDaySchedule.map((item) => (
@@ -199,7 +199,7 @@ export default function Home() {
               <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.judgingDate} | Sunday
             </p>
             <p className="section-schedule-meta section-schedule-meta--location">
-              <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> {event.judgingLocation}
+              <img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /> <a href={event.mapleMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.judgingLocation}</a>
             </p>
             <ul className="section-schedule-list">
               {judgingDaySchedule.map((item) => (
