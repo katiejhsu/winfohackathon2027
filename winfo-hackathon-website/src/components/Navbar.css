@@ -45,7 +45,7 @@
 .navbar__link {
   color: var(--color-white);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.03em;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
@@ -55,7 +55,7 @@
   background-position: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   position: relative;
-  padding: 10px 40px;
+  padding: 16px 60px;
 }
 
 .navbar__link:hover {
@@ -151,5 +151,11 @@
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+}
+@media (min-width: 787px) {
+  .navbar__link {
+    min-width: 190px;
+    text-align: center;
   }
 }
