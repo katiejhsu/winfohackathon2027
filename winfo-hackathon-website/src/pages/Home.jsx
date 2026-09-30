@@ -58,8 +58,15 @@ const events = [
   },
 ];
 
-const designResources = ["Design Basics", "How to use Figma"];
-const devResources = ["How to collaborate with Github", "Intro to Web Dev", "Intro to CSS Animations"];
+const designResources = [
+  { label: "Design Basics", url: "https://www.figma.com/resource-library/design-basics/" },
+  { label: "How to use Figma", url: "https://www.figma.com/resource-library/k-12-design-basics/" },
+];
+const devResources = [
+  { label: "How to collaborate with Github", url: "https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67" },
+  { label: "Intro to Web Dev", url: "https://www.youtube.com/watch?v=ysEN5RaKOlA" },
+  { label: "Intro to CSS Animations", url: "https://www.youtube.com/watch?v=z2LQYsZhsFw" },
+];
 
 function ResourceCard({ icon, title, when, desc }) {
   return (
@@ -262,12 +269,16 @@ export default function Home() {
             <h3 className="res-subheading res-subheading--spaced">Project Resources</h3>
             <h4 className="res-label">Design</h4>
             <div className="res-tiles">
-              {designResources.map((t) => <div className="res-tile" key={t}>{t}</div>)}
+              {designResources.map((r) => (
+                <a className="res-tile" key={r.label} href={r.url} target="_blank" rel="noopener noreferrer">{r.label}</a>
+              ))}
             </div>
 
             <h4 className="res-label res-label--spaced">Development</h4>
             <div className="res-tiles">
-              {devResources.map((t) => <div className="res-tile" key={t}>{t}</div>)}
+              {devResources.map((r) => (
+                <a className="res-tile" key={r.label} href={r.url} target="_blank" rel="noopener noreferrer">{r.label}</a>
+              ))}
             </div>
           </div>
         </section>
