@@ -113,7 +113,7 @@ export default function Home() {
           <img src="/test-bg/section2-headline.png" className="section-two-headline" alt="ready to reach new heights" />
           <p className="section-two-blurb">
             Women in Informatics is excited to invite you to our 15th Annual
-            Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility, Paths of Progress&#8221;</span>.
+            Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility&#8221;</span>.
             Join us for a day of developing technology solutions for social good
             and celebrating equity and inclusion in the technology field.
           </p>
@@ -127,7 +127,7 @@ export default function Home() {
               Last year, our theme, <strong>&#8220;Depths of Discovery, Currents of Creation&#8221;</strong> emphasized the power of exploration, creativity, and collaboration in shaping the future of technology.
             </p>
             <p className="section-three-body">This year, we&#8217;re setting out on a new path:</p>
-            <p className="section-three-banner">PEAKS OF POSSIBILITY,<br />PATHS OF PROGRESS</p>
+            <p className="section-three-banner">PEAKS OF POSSIBILITY</p>
             <p className="section-three-body">
               Inspired by the winding trails, towering mountains, and the natural beauty of the Pacific Northwest, our theme reflects the journey of <strong>discovery in technology.</strong> We believe ingenuity emerges when participants venture beyond familiar ground and pursue bold, creative ideas.
             </p>
@@ -216,6 +216,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <p className="schedules-disclaimer">The exact schedule will be sent out closer to the hackathon date</p>
           </div>
           <img src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding"/>
         </section>

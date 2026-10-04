@@ -9,7 +9,7 @@
 export const event = {
   name: "Women in Informatics' 15th Annual Hackathon",
   heroDates: "January 30-31, 2027",
-  heroLocation: "University of Washington HUB",
+  heroLocation: "University of Washington Husky Union Building",
   theme: "Peaks of Possibility, Paths of Progress",
   lastYearTheme: "Depths of Discovery, Currents of Creation",
   dates: "January 30–31, 2027",
@@ -127,18 +127,19 @@ export const tracks = [
 ];
 
 export const hackingDaySchedule = [
-  { time: "08:30 AM", label: "Doors open for sponsors & mentors" },
-  { time: "09:00 AM", label: "Doors open for participants" },
-  { time: "09:30 AM", label: "Opening Ceremony" },
-  { time: "10:00 AM", label: "Hackathon Begins" },
-  { time: "10:30 AM", label: "Mentoring Round 1" },
-  { time: "12:00 PM", label: "Lunch" },
-  { time: "01:30 PM", label: "Mentoring Round 2" },
-  { time: "03:00 PM", label: "Mentoring Round 3" },
-  { time: "05:00 PM", label: "Dinner" },
-  { time: "05:30 PM", label: "Mentoring Round 4" },
-  { time: "07:00 PM", label: "Project Submission Closes" },
-  { time: "08:00 PM", label: "Finalists Announced" },
+  { time: "08:30 AM - 9:30 AM", label: "Participants & Sponsors Check-In" },
+  { time: "9:30 AM - 9:50 AM", label: "Opening Ceremonies" },
+  { time: "9:50 AM", label: "Hacking Begins!" },
+  { time: "10:00 AM", label: "Mentors Check-In" },
+  { time: "10:50 AM - 11:50 AM", label: "Mentoring Round 1 Begins" },
+  { time: "11:50 AM", label: "Lunch - Complimentary Catering by WINFO" },
+  { time: "01:20 PM - 02:20 PM", label: "Mentoring Round 2 Begins" },
+  { time: "02:50 PM - 03:50 PM", label: "Mentoring Round 3 Begins" },
+  { time: "04:00 PM", label: "Dinner - Complimentary Catering by WINFO" },
+  { time: "05:00 PM - 06:00 PM", label: "Mentoring Round 4 Begins" },
+  { time: "07:00 PM", label: "Final Project Submissions Due" },
+  { time: "07:00 PM - 08:15 PM", label: "Pitching" },
+  { time: "08:15 PM - 09:00 PM", label: "Closing Ceremonies" },
 ];
 
 export const judgingDaySchedule = [
@@ -200,7 +201,7 @@ export const faqs = [
   },
   {
     q: "Who can participate in the hackathon?",
-    a: "Any current UW student is welcome to participate. Come as you are \u2014 we can't wait to see what you build.",
+    a: "Any current undergraduate UW student is welcome to participate. Come as you are \u2014 we can't wait to see what you build.",
   },
   {
     q: "How long will the hackathon be?",
