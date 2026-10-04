@@ -1,0 +1,236 @@
+.mentor-portal {
+  display: block;
+  background: #040b17;
+}
+
+.mentor-portal__top,
+.mentor-portal__bottom {
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
+  margin-bottom: -1px;
+}
+
+.mentor-portal h2 {
+  font-family: var(--font-anybody);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: 60px;
+}
+
+.mentor-portal p {
+  font-family: var(--font-jost);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-size: 18px;
+}
+
+.mentor-portal__top {
+  aspect-ratio: 1728 / 3800;
+  background-image: url("/assets/mentor-portal/mentor-portal1.webp");
+  background-color: #040b17;
+}
+
+.mentor-portal__bottom {
+  aspect-ratio: 1728 / 2208;
+  background-image: url("/assets/mentor-portal/mentor-portal2.webp");
+  background-color: #080c10;
+}
+
+.mentor-portal__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.mentor-portal__heading {
+  position: absolute;
+  top: 5%;
+  left: 10vw;
+  width: 56vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #25568D;
+}
+
+.mentor-portal__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  margin-bottom: -1vw;
+}
+
+.mentor-portal__star {
+  width: 3.65vw;
+  height: auto;
+}
+
+.mentor-portal__wordmark {
+  width: 13.96vw;
+  height: auto;
+  margin-left: -0.68vw;
+}
+
+.mentor-portal__resources {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 74.2vw;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  z-index: 1;
+}
+
+.mentor-portal__title {
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-size: 5.6vw;
+  line-height: 1;
+  margin: 0 0 3vw;
+}
+
+.mentor-portal__subtitle {
+  font-family: var(--font-jost);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.95vw;
+  line-height: 1.2;
+  margin: 0 0 1.8vw;
+}
+
+.mentor-portal__subtitle--spaced {
+  margin-top: 4vw;
+}
+
+.mentor-portal__label {
+  font-family: var(--font-jost);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.4vw;
+  line-height: 1.2;
+  margin: 0 0 1.2vw;
+}
+
+.mentor-portal__label--spaced {
+  margin-top: 3.5vw;
+}
+
+.mentor-card {
+  display: grid;
+  grid-template-columns: 14.1vw 1fr;
+  min-height: 14.5vw;
+  margin-bottom: 2.4vw;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 2.4vw;
+  overflow: hidden;
+  background: rgb(218 218 218 / 9%);
+}
+
+.mentor-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2f3576;
+}
+
+.mentor-card__icon img {
+  width: 4.8vw;
+  height: 4.8vw;
+  object-fit: contain;
+}
+
+.mentor-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5vw 2vw 1.5vw 1.7vw;
+}
+
+.mentor-card__title {
+  font-family: var(--font-anybody);
+  font-weight: 700;
+  text-transform: none;
+  font-size: 2.4vw;
+  line-height: 1.1;
+  margin: 0 0 0.5vw;
+}
+
+.mentor-card__subtitle {
+  font-family: var(--font-jost);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: max(1.45vw, 12px);
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 2.1vw;
+}
+
+.mentor-card__desc {
+  font-family: var(--font-jost);
+  font-weight: 600;
+  font-size: max(1.2vw, 12px);
+  line-height: 1.45;
+  max-width: 42vw;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.mentor-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.3vw;
+}
+
+.mentor-tile {
+  box-sizing: border-box;
+  width: 20.2vw;
+  height: 14.8vw;
+  padding: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2f3576;
+  border: 1px solid rgba(190, 200, 255, 0.5);
+  border-radius: 2.4vw;
+  font-family: var(--font-anybody);
+  font-weight: 700;
+  font-size: 2.4vw;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mentor-tile:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .mentor-portal h2 {
+    font-size: 26px;
+  }
+
+  .mentor-portal p {
+    font-size: 9px;
+  }
+
+  .mentor-portal__resources {
+    top: 50%;
+  }
+}

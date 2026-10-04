@@ -8,8 +8,7 @@ import About from "./pages/About";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
-import SubmissionPortal from "./portals/SubmissionPortal";
-import MentorFeedbackPortal from "./portals/MentorFeedbackPortal";
+import MentorPortal from "./portals/MentorPortal";
 
 function waitForImages() {
   const imgs = Array.from(document.images);
@@ -64,8 +63,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
           {/* ---- Portals ---- */}
-          <Route path="/portal/submission" element={<SubmissionPortal />} />
-          <Route path="/portal/mentor-feedback" element={<MentorFeedbackPortal />} />
+          <Route path="/mentor-portal" element={<MentorPortal />} />
 
           {/* ---- 404 ---- */}
           <Route path="*" element={<NotFound />} />
