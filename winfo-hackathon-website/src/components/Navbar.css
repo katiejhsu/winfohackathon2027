@@ -15,8 +15,6 @@
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.navbar--scrolled {}
-
 .navbar__inner {
   display: flex;
   align-items: center;
