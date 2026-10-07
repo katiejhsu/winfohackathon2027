@@ -208,3 +208,29 @@
     opacity: 1;
   }
 }
+
+/* fade the nav while scrolling so it doesn't block content */
+@media (min-width: 787px) {
+  .navbar__link {
+    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.3s ease;
+  }
+
+  .navbar--scrolled .navbar__link {
+    opacity: 0.6;
+  }
+
+  .navbar--scrolled .navbar__link:hover,
+  .navbar--scrolled .navbar__link--active {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 787px) {
+  .navbar--scrolled .navbar__link--active {
+    opacity: 0.8;
+  }
+
+  .navbar--scrolled .navbar__link--active:hover {
+    opacity: 1;
+  }
+}
