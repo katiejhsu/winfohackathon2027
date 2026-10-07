@@ -248,3 +248,37 @@
 .navbar--scrolled .navbar__toggle:focus-visible {
   opacity: 1;
 }
+
+/* desktop: all signs the same size and pointing the same way */
+@media (min-width: 787px) {
+  .navbar__links {
+    gap: 2vw;
+  }
+
+  .navbar__link {
+    background-image: none;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 11.2vw;
+    min-width: 0;
+    height: 3.6vw;
+    padding: 0;
+  }
+
+  .navbar__link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--link-bg-image);
+    background-repeat: no-repeat;
+  }
+
+  .navbar__link:nth-child(1)::before { background-size: 110.1% 125.3%; background-position: 34.8% 25%; }
+  .navbar__link:nth-child(2)::before { background-size: 110.6% 118.2%; background-position: 61.5% 42.9%; transform: scaleX(-1); }
+  .navbar__link:nth-child(3)::before { background-size: 116.3% 116.7%; background-position: 42.1% 58.3%; }
+  .navbar__link:nth-child(4)::before { background-size: 116.3% 117.7%; background-position: 57.6% 54.5%; transform: scaleX(-1); }
+}
