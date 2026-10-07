@@ -234,3 +234,17 @@
     opacity: 1;
   }
 }
+
+/* fade the hamburger sign while scrolling (phones) */
+.navbar__toggle {
+  transition: opacity 0.3s ease;
+}
+
+.navbar--scrolled .navbar__toggle {
+  opacity: 0.6;
+}
+
+.navbar--scrolled .navbar__toggle:hover,
+.navbar--scrolled .navbar__toggle:focus-visible {
+  opacity: 1;
+}
