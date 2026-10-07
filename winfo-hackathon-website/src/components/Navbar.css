@@ -186,3 +186,25 @@
     height: max(var(--nav-height), 4.7vw);
   }
 }
+
+/* highlight the section the user is on */
+.navbar__link--active {
+  font-weight: 700;
+  color: #FFE9A8;
+}
+
+@media (min-width: 787px) {
+  .navbar__link {
+    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+  }
+
+  .navbar__link--active {
+    color: var(--color-white);
+    transform: scale(1.1);
+    filter: brightness(1.2) saturate(1.15) drop-shadow(0 0 6px rgba(255, 250, 221, 0.55));
+  }
+
+  .navbar__link--active:hover {
+    opacity: 1;
+  }
+}
