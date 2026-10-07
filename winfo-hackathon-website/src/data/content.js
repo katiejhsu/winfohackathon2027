@@ -128,7 +128,6 @@ export const tracks = [
 
 export const hackingDaySchedule = [
   { time: "08:30 AM - 9:30 AM", label: "Participants & Sponsors Check-In" },
-  { time: "9:30 AM - 9:50 AM", label: "Opening Ceremonies" },
   { time: "9:50 AM", label: "Hacking Begins!" },
   { time: "10:00 AM", label: "Mentors Check-In" },
   { time: "10:50 AM - 11:50 AM", label: "Mentoring Round 1" },
@@ -139,7 +138,6 @@ export const hackingDaySchedule = [
   { time: "05:00 PM - 06:00 PM", label: "Mentoring Round 4" },
   { time: "07:00 PM", label: "Final Project Submissions Due" },
   { time: "07:00 PM - 08:15 PM", label: "Pitching" },
-  { time: "08:15 PM - 09:00 PM", label: "Closing Ceremonies" },
 ];
 
 export const judgingDaySchedule = [
@@ -184,10 +182,6 @@ export const faqs = [
     a: "Bring your laptop, charger, water bottle, and creative energy. Optional: headphones, sketchbook, or anything that supports your workflow.",
   },
   {
-    q: "My question isn't here!",
-    a: "Reach out to winfo@uw.edu \u2014 we're happy to help.",
-  },
-  {
     q: "How does mentorship work?",
     a: "Throughout the hackathon, we'll host two shifts of industry professionals aligned with your track. Mentors stop by to share feedback and suggestions as you work. When you're ready, signal your team's flag and they'll dive in.",
   },
@@ -214,6 +208,10 @@ export const faqs = [
   {
     q: "Will food be provided?",
     a: "Lunch and dinner are provided, with several dietary options available. Snacks and hydration stations will be stocked all day.",
+  },
+  {
+    q: "My question isn't here!",
+    a: "Reach out to winfo@uw.edu \u2014 we're happy to help.",
   },
 ];
 

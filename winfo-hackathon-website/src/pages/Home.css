@@ -1131,3 +1131,65 @@ a.res-tile:hover {
     margin-top: -14.2vw;
   }
 }
+.section-schedule-day-title {
+  font-size: clamp(18px, 2.7vw, 47px);
+}
+
+.section-schedule-heading {
+  margin-bottom: 0.6em;
+}
+
+.section-nine-heading {
+  font-size: clamp(12px, 2.78vw, 40px);
+}
+
+.res-card {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.res-card:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.section-faq__answer {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 0.8em 1.1em;
+  margin: 0 0 1.2em;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* fire section: footer always starts below the campfire, section grows if needed */
+.home-s8 {
+  aspect-ratio: auto;
+  min-height: calc(100vw * 2567 / 1728);
+  background-size: 100% auto;
+  background-position: center top;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 87vw;
+}
+
+.home-s8 .section-nine-content {
+  top: 7.43vw;
+}
+
+.home-s8 .campfire-mascots-section-home {
+  top: 38.6vw;
+}
+
+.home-s8 .footer-home {
+  position: relative;
+  bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .home-s8 .section-nine-content {
+    top: 0;
+  }
+}

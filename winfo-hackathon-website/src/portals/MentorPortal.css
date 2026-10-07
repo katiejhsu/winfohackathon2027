@@ -234,3 +234,12 @@
     top: 50%;
   }
 }
+.mentor-portal__top {
+  background-image: url("/assets/mentor-portal/mentor-portal-new.jpg");
+  background-position: center top;
+}
+
+.mentor-portal__bottom {
+  background-image: url("/assets/mentor-portal/mentor-portal-new.jpg");
+  background-position: center bottom;
+}

@@ -201,7 +201,7 @@ export default function Home() {
               ))}
             </ul>
 
-            <h3 className="section-schedule-day-title section-schedule-day-title--judging">Judging Day</h3>
+            <h3 className="section-schedule-day-title section-schedule-day-title--judging">Judging Day (Finalists Only)</h3>
             <p className="section-schedule-meta">
               <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.judgingDate} | Sunday
             </p>
