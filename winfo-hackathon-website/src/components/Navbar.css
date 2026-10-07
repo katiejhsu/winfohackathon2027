@@ -282,3 +282,11 @@
   .navbar__link:nth-child(3)::before { background-size: 116.3% 116.7%; background-position: 42.1% 58.3%; }
   .navbar__link:nth-child(4)::before { background-size: 116.3% 117.7%; background-position: 57.6% 54.5%; transform: scaleX(-1); }
 }
+
+@media (min-width: 787px) {
+  .navbar__link:nth-child(1)::before,
+  .navbar__link:nth-child(3)::before { transform: scaleX(-1); }
+
+  .navbar__link:nth-child(2)::before,
+  .navbar__link:nth-child(4)::before { transform: none; }
+}
