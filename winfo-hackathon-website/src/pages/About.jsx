@@ -5,19 +5,9 @@ import "./About.css";
 const BADGE_ROWS = [2, 3, 4, 3];
 
 const badges = [
-  // "/assets/about/badge-1.png",
-  // "/assets/about/badge-2.png",
-  // "/assets/about/badge-3.png",
-  // "/assets/about/badge-4.png",
-  // "/assets/about/badge-5.png",
-  // "/assets/about/badge-6.png",
-  // "/assets/about/badge-7.png",
-  // "/assets/about/badge-8.png",
-  // "/assets/about/badge-9.png",
-  // "/assets/about/badge-10.png",
   "/assets/about/badge-18.png",
   "/assets/about/badge-placeholder.png",
-  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-6.png",
   "/assets/about/badge-7.png",
   "/assets/about/badge-21.png",
   "/assets/about/badge-11.png",
@@ -94,7 +84,7 @@ export default function About() {
 
         {/* 4. orange */}
         <section className="bg-slice orange">
-          <div className="committee-badges">
+          <div id="committee" className="committee-badges">
             <img src="assets/about/meet-committee.png" alt="meet the committee" className="meet-committee-header" />
             <div className="badge-grid">
               {badgeRows.map((row, r) => (
@@ -106,7 +96,7 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="speakers">
+          <div id="speakers" className="speakers">
             <img src="assets/about/speakers.png" alt="speakers" className="speakers-header" />
             <p className="speakers-intro">Stay tuned for the announcement of our upcoming hackathon speakers!</p>
             <div className="speakers-container">
@@ -146,7 +136,7 @@ export default function About() {
           <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1-about" />
           <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const-about" />
           <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const-about" />
-          <div className="section-eight-content"></div>
+          <div id="past-winners" className="section-eight-content"></div>
           <div className="last-years-winners">
             <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
             <h3 className="winner-heading">{pastWinners[0].track} – “{pastWinners[0].project}”</h3>

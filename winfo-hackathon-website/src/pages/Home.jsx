@@ -121,7 +121,7 @@ export default function Home() {
 
         {/* 3. dark forest to cave: theme + video */}
         <section className="bg-slice home-s3">
-          <div className="section-three-content">
+          <div id="theme" className="section-three-content">
             <h2 className="section-three-heading">Hackathon Theme</h2>
             <p className="section-three-body">
               Last year, our theme, <strong>&#8220;Depths of Discovery, Currents of Creation&#8221;</strong> emphasized the power of exploration, creativity, and collaboration in shaping the future of technology.
@@ -152,7 +152,7 @@ export default function Home() {
 
         {/* 4. clouds: prize tracks */}
         <section className="bg-slice home-s4">
-          <div className="section-five-content">
+          <div id="prize-tracks" className="section-five-content">
             <h2 className="tracks-heading">Prize Tracks</h2>
             <hr className="tracks-divider" />
             {tracks.map((t, i) => (
@@ -218,7 +218,7 @@ export default function Home() {
             </ul>
             <p className="schedules-disclaimer">The exact schedule will be sent out closer to the hackathon date</p>
           </div>
-          <img src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding"/>
+          <img src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding" />
         </section>
 
         {/* 6. water fading to black: FAQ */}
@@ -250,14 +250,14 @@ export default function Home() {
 
         {/* 7. night sky: resources */}
         <section className="bg-slice home-s7">
-          <img src="assets/characters/stars1.png" alt="star" className="stars1-0"/>
-          <img src="assets/characters/stars1.png" alt="star" className="stars1-1"/>
-          <img src="assets/characters/stars1.png" alt="star" className="stars1-2"/>
-          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-0"/>
-          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1"/>
-          <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const"/>
-          <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const"/>
-          <div className="section-eight-content">
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-0" />
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-1" />
+          <img src="assets/characters/stars1.png" alt="star" className="stars1-2" />
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-0" />
+          <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1" />
+          <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const" />
+          <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const" />
+          <div id="resources" className="section-eight-content">
             <h2 className="res-heading">Resources</h2>
 
             <h3 className="res-subheading">Pre-Hackathon Workshops and Events</h3>

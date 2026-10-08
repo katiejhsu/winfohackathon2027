@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --fs-display: clamp(24px, 3.1vw, 54px);
+  --fs-display: clamp(24px, 56px, 54px);
   --fs-title: clamp(16px, 2.3vw, 40px);
   --fs-body: clamp(8px, 1.05vw, 18px);
   --fs-small: clamp(9px, 0.92vw, 16px);
@@ -412,7 +412,7 @@
 }
 
 .section-schedule-day-title--judging {
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .section-schedule__icon {
@@ -522,7 +522,7 @@
   font-size: var(--fs-body);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .section-faq__email-link {
@@ -1137,7 +1137,7 @@ a.res-tile:hover {
 }
 
 .section-schedule-heading {
-  margin-bottom: 0.6em;
+  margin-bottom: 1em;
 }
 
 .section-nine-heading {

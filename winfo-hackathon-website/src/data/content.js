@@ -128,6 +128,7 @@ export const tracks = [
 
 export const hackingDaySchedule = [
   { time: "08:30 AM - 9:30 AM", label: "Participants & Sponsors Check-In" },
+  { time: "09:30 AM - 9:50 AM", label: "Opening Ceremony" },
   { time: "9:50 AM", label: "Hacking Begins!" },
   { time: "10:00 AM", label: "Mentors Check-In" },
   { time: "10:50 AM - 11:50 AM", label: "Mentoring Round 1" },
@@ -138,6 +139,7 @@ export const hackingDaySchedule = [
   { time: "05:00 PM - 06:00 PM", label: "Mentoring Round 4" },
   { time: "07:00 PM", label: "Final Project Submissions Due" },
   { time: "07:00 PM - 08:15 PM", label: "Pitching" },
+  { time: "08:15 PM - 09:00 PM", label: "Closing Ceremony" },
 ];
 
 export const judgingDaySchedule = [

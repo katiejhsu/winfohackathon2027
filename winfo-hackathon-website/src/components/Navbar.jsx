@@ -3,33 +3,61 @@ import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { key: "home", to: "/", label: "Home", bgImage: "/test-bg/navbar-sign-1.png" },
-  { key: "schedule", to: "/#schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-2.png" },
+  {
+    key: "home",
+    to: "/",
+    label: "Home",
+    bgImage: "/test-bg/navbar-sign-3.png",
+    children: [
+      { key: "theme", to: "/#theme", label: "Theme", bgImage: "/test-bg/navbar-sign-3.png" },
+      { key: "prize-tracks", to: "/#prize-tracks", label: "Prize Tracks", bgImage: "/test-bg/navbar-sign-3.png" },
+      { key: "resources", to: "/#resources", label: "Resources", bgImage: "/test-bg/navbar-sign-3.png" },
+    ],
+  },
+  { key: "schedule", to: "/#schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-3.png" },
   { key: "faq", to: "/#faq", label: "FAQ", bgImage: "/test-bg/navbar-sign-3.png" },
-  { key: "about", to: "/about", label: "About", bgImage: "/test-bg/navbar-sign-4.png" },
+  {
+    key: "about",
+    to: "/about",
+    label: "About",
+    bgImage: "/test-bg/navbar-sign-4.png",
+    children: [
+      { key: "committee", to: "/about#committee", label: "Committee" },
+      { key: "speakers", to: "/about#speakers", label: "Speakers" },
+      { key: "past-winners", to: "/about#past-winners", label: "Past Winners" },
+    ],
+  },
 ];
 
-// Home-page sections the nav tracks while scrolling (element id -> nav key)
-const TRACKED_SECTIONS = ["schedule", "faq"];
+// Home-page sections the nav tracks while scrolling (element ids).
+// Keep these in the same order they appear on the page.
+const TRACKED_SECTIONS = ["theme", "prize-tracks", "resources", "schedule", "faq"];
+
+const isMobile = () => window.matchMedia("(max-width: 786px)").matches;
+
+function getSection(id) {
+  const el = document.getElementById(id);
+  return el?.closest("section") || el;
+}
 
 function getActiveHomeSection() {
   const middle = window.innerHeight * 0.4;
+  let firstExisting = null;
   for (const id of TRACKED_SECTIONS) {
-    const el = document.getElementById(id);
-    const section = el?.closest("section") || el;
+    const section = getSection(id);
     if (!section) continue;
+    if (!firstExisting) firstExisting = section;
     const r = section.getBoundingClientRect();
     if (r.top <= middle && r.bottom > middle) return id;
   }
-  const first = document.getElementById(TRACKED_SECTIONS[0]);
-  const firstSection = first?.closest("section") || first;
-  if (!firstSection || firstSection.getBoundingClientRect().top > middle) return "home";
+  if (!firstExisting || firstExisting.getBoundingClientRect().top > middle) return "home";
   return null;
 }
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null); // which dropdown is open
   const [scrolled, setScrolled] = useState(false);
   const [homeSection, setHomeSection] = useState("home");
 
@@ -53,26 +81,81 @@ export default function Navbar() {
     };
   }, [pathname]);
 
-  const activeKey =
-    pathname === "/" ? homeSection : pathname.startsWith("/about") ? "about" : null;
+  let activeKey = null;
+  if (pathname === "/") {
+    activeKey = homeSection;
+  } else {
+    const match = NAV_LINKS.flatMap((l) => l.children || [l]).find(
+      (c) => !c.to.includes("#") && c.to !== "/" && pathname.startsWith(c.to)
+    );
+    activeKey = match?.key ?? null;
+  }
+
+  const closeAll = () => {
+    setOpen(false);
+    setOpenMenu(null);
+  };
+
+  const handleParentClick = (e, link) => {
+    // On phones, tapping a parent with a dropdown expands it instead of navigating
+    if (link.children && isMobile()) {
+      e.preventDefault();
+      setOpenMenu((cur) => (cur === link.key ? null : link.key));
+      return;
+    }
+    closeAll();
+  };
 
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar__inner container">
         <nav className={`navbar__links ${open ? "navbar__links--open" : ""}`}>
           {NAV_LINKS.map((link) => {
-            const isActive = link.key === activeKey;
+            const hasMenu = !!link.children;
+            const isActive =
+              link.key === activeKey || link.children?.some((c) => c.key === activeKey);
+            const isMenuOpen = openMenu === link.key;
+
             return (
-              <Link
+              <div
                 key={link.key}
-                to={link.to}
+                className={`navbar__item ${isMenuOpen ? "navbar__item--open" : ""}`}
+                data-sign={link.bgImage.match(/navbar-sign-(\d+)/)?.[1]}
+
                 style={{ "--link-bg-image": `url(${link.bgImage})` }}
-                className={`navbar__link ${isActive ? "navbar__link--active" : ""}`}
-                aria-current={isActive ? "page" : undefined}
-                onClick={() => setOpen(false)}
+                onMouseEnter={() => hasMenu && !isMobile() && setOpenMenu(link.key)}
+                onMouseLeave={() => hasMenu && !isMobile() && setOpenMenu(null)}
               >
-                {link.label}
-              </Link>
+                <Link
+                  to={link.to}
+                  className={`navbar__link ${isActive ? "navbar__link--active" : ""}`}
+                  aria-current={isActive ? "page" : undefined}
+                  aria-haspopup={hasMenu ? "true" : undefined}
+                  aria-expanded={hasMenu ? isMenuOpen : undefined}
+                  onClick={(e) => handleParentClick(e, link)}
+                >
+                  {link.label}
+                </Link>
+
+                {hasMenu && (
+                  <div className="navbar__dropdown">
+                    <ul className="navbar__dropdown-list">
+                      {link.children.map((child) => (
+                        <li key={child.key}>
+                          <Link
+                            to={child.to}
+                            className={`navbar__sublink ${child.key === activeKey ? "navbar__sublink--active" : ""
+                              }`}
+                            onClick={closeAll}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             );
           })}
         </nav>
