@@ -2,7 +2,7 @@
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 5px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -11,8 +11,11 @@
   align-items: center;
   background: transparent;
   font-family: "National Park", sans-serif;
+  transition: background 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+}
 
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+.navbar--scrolled {
+  opacity: 0.8;
 }
 
 .navbar__inner {
@@ -46,7 +49,7 @@
   font-size: 1.5rem;
   letter-spacing: 0.03em;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
   background-image: var(--link-bg-image);
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,10 +57,12 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   position: relative;
   padding: 16px 60px;
+  z-index: 3;
 }
 
-.navbar__link:hover {
-  opacity: 0.80;
+.navbar__link--active {
+  font-weight: 700;
+  color: #FFE9A8;
 }
 
 .navbar__cta {
@@ -69,193 +74,102 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: none;
-  border: none;
-  padding: 8px;
-}
-
-@media (max-width: 786px) {
-  .navbar__toggle {
-    display: flex;
-  }
-
-  .navbar__links {
-    position: fixed;
-    top: calc(var(--nav-height) - 20px);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0px 24px 10px;
-    gap: 0px;
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-
-  .navbar__link {
-    width: 82px;
-    padding: 10px 10px;
-    font-size: 11px;
-    margin-top: -12px;
-    position: relative;
-  }
-
-  .navbar__links--open {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .navbar__cta {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .navbar__link::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 20px;
-    background: #7a533e;
-    z-index: -1;
-  }
-
-  .navbar__toggle {
-    z-index: 0;
-  }
-
-}
-
-.navbar__toggle {
   background-image: url("/test-bg/hamburger-sign.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 90px;
+  background-color: transparent;
   height: 40px;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-@media (hover: hover) {
+.navbar__item {
+  position: relative;
+  --sign-gap: 0.2vw;
+}
 
-  .navbar__toggle:hover~.navbar__links,
-  .navbar__toggle:hover+.navbar__links {
+.navbar__dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sign-gap);
+}
+
+.navbar__sublink {
+  position: relative;
+  isolation: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--color-white);
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.navbar__sublink--active {
+  color: #FFE9A8;
+  font-weight: 700;
+}
+
+.navbar__sublink::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7a533e;
+  z-index: -2;
+  height: 40px;
+  width: 80px;
+}
+
+.navbar__link::before,
+.navbar__sublink::before {
+  transition: filter 0.2s ease, scale 0.2s ease;
+}
+
+@media (hover: hover) {
+  .navbar__link:hover,
+  .navbar__sublink:hover {
+    color: var(--color-white);
+  }
+
+  .navbar__link:hover::before,
+  .navbar__sublink:hover::before {
+    scale: 1.1;
+    filter: brightness(1.2) saturate(1.15) drop-shadow(0 0 6px rgba(255, 250, 221, 0.55));
+  }
+
+  .navbar__toggle:hover ~ .navbar__links,
+  .navbar__toggle:hover + .navbar__links {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
-  }
-}
-@media (min-width: 787px) {
-  .navbar__link {
-    min-width: 190px;
-    text-align: center;
-  }
-}
-
-@media (min-width: 787px) {
-  .navbar__link {
-    font-size: 1.667vw;
-    padding: 1.111vw 4.167vw;
-    min-width: 13.2vw;
   }
 }
 
 @media (min-width: 787px) {
   .navbar {
     top: clamp(10px, 1.2vw, 20px);
-    height: max(var(--nav-height), 5.5vw);
-  }
-}
-
-@media (min-width: 787px) {
-  .navbar__link {
-    font-size: 1.417vw;
-    padding: 0.944vw 3.542vw;
-    min-width: 11.2vw;
-  }
-
-  .navbar {
     height: max(var(--nav-height), 4.7vw);
   }
-}
 
-/* highlight the section the user is on */
-.navbar__link--active {
-  font-weight: 700;
-  color: #FFE9A8;
-}
-
-@media (min-width: 787px) {
-  .navbar__link {
-    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
-  }
-
-  .navbar__link--active {
-    color: var(--color-white);
-    transform: scale(1.1);
-    filter: brightness(1.2) saturate(1.15) drop-shadow(0 0 6px rgba(255, 250, 221, 0.55));
-  }
-
-  .navbar__link--active:hover {
-    opacity: 1;
-  }
-}
-
-/* fade the nav while scrolling so it doesn't block content */
-@media (min-width: 787px) {
-  .navbar__link {
-    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.3s ease;
-  }
-
-  .navbar--scrolled .navbar__link {
-    opacity: 0.6;
-  }
-
-  .navbar--scrolled .navbar__link:hover,
-  .navbar--scrolled .navbar__link--active {
-    opacity: 1;
-  }
-}
-
-@media (min-width: 787px) {
-  .navbar--scrolled .navbar__link--active {
-    opacity: 0.8;
-  }
-
-  .navbar--scrolled .navbar__link--active:hover {
-    opacity: 1;
-  }
-}
-
-/* fade the hamburger sign while scrolling (phones) */
-.navbar__toggle {
-  transition: opacity 0.3s ease;
-}
-
-.navbar--scrolled .navbar__toggle {
-  opacity: 0.6;
-}
-
-.navbar--scrolled .navbar__toggle:hover,
-.navbar--scrolled .navbar__toggle:focus-visible {
-  opacity: 1;
-}
-
-/* desktop: all signs the same size and pointing the same way */
-@media (min-width: 787px) {
   .navbar__links {
     gap: 2vw;
   }
 
   .navbar__link {
     background-image: none;
-    isolation: isolate;
+    isolation: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,6 +178,8 @@
     min-width: 0;
     height: 3.6vw;
     padding: 0;
+    font-size: 1.417vw;
+    text-align: center;
   }
 
   .navbar__link::before {
@@ -275,12 +191,16 @@
     background-repeat: no-repeat;
   }
 
-}
+  .navbar__link--active {
+    color: var(--color-white);
+  }
 
+  .navbar__link--active::before,
+  .navbar__sublink--active::before {
+    scale: 1.1;
+    filter: brightness(1.2) saturate(1.15) drop-shadow(0 0 6px rgba(255, 250, 221, 0.55));
+  }
 
-/* sign art: crop + flip are tied to the image (data-sign), not the item's position,
-   so the same image looks identical wherever it's used (links and dropdown signs) */
-@media (min-width: 787px) {
   .navbar__item[data-sign="1"] :is(.navbar__link, .navbar__sublink)::before {
     background-size: 110.1% 125.3%;
     background-position: 34.8% 25%;
@@ -304,69 +224,13 @@
     background-position: 57.6% 54.5%;
     transform: none;
   }
-}
 
-/* ---------- dropdowns ----------
-   Each dropdown item is a sign using the same image as the parent sign,
-   hung below it and connected by a short brown post. */
-
-.navbar__item {
-  position: relative;
-  --sign-gap: 0.4vw;
-}
-
-.navbar__dropdown-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sign-gap);
-}
-
-.navbar__sublink {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  color: var(--color-white);
-  text-decoration: none;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  letter-spacing: 0.03em;
-  transition: filter 0.2s ease, opacity 0.2s ease;
-}
-
-.navbar__sublink:hover {
-  opacity: 0.8;
-}
-
-.navbar__sublink--active {
-  color: #FFE9A8;
-  font-weight: 700;
-}
-
-/* brown post connecting this sign to the one above it */
-.navbar__sublink::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #7a533e;
-  z-index: -2;
-}
-
-/* desktop: hover / keyboard-focus dropdown */
-@media (min-width: 787px) {
   .navbar__dropdown {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -6px);
-    padding-top: var(--sign-gap); /* also bridges the hover gap */
+    padding-top: var(--sign-gap);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -398,26 +262,51 @@
   }
 
   .navbar__sublink::after {
-    top: calc(var(--sign-gap) * -1);
-    width: 0.5vw;
-    height: var(--sign-gap);
-  }
-
-  .navbar--scrolled .navbar__sublink {
-    opacity: 0.8;
-  }
-
-  .navbar--scrolled .navbar__sublink:hover {
-    opacity: 1;
+    top: calc(var(--sign-gap) * -4);
+    width: 1vw;
   }
 }
 
-/* mobile: tap a parent to expand its signs inline */
 @media (max-width: 786px) {
+  .navbar__toggle {
+    display: flex;
+    z-index: 0;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: calc(var(--nav-height) - 20px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 10px;
+    gap: 0;
+    list-style: none;
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .navbar__links--open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navbar__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
   .navbar__item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
   }
 
   .navbar__dropdown {
@@ -429,23 +318,61 @@
   }
 
   .navbar__dropdown-list {
+    margin: 0;
+    padding: 0;
     gap: 0;
+    list-style: none;
   }
 
+  .navbar__link,
   .navbar__sublink {
+    position: relative;
+    isolation: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 82px;
-    padding: 10px 10px;
+    height: 32px;
+    padding: 0;
+    border-bottom: 0;
+    margin-top: -4px;
     font-size: 11px;
-    margin-top: -2px;
+    line-height: 1;
+    background-image: none;
+  }
+
+  .navbar__link::before,
+  .navbar__sublink::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background-image: var(--link-bg-image);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
 
+  .navbar__link::after,
   .navbar__sublink::after {
-    top: -10px;
+    content: "";
+    position: absolute;
+    top: calc(var(--sign-gap) * -7);
+    left: 50%;
+    transform: translateX(-50%);
     width: 6px;
-    height: 20px;
+    height: 30px;
+    background: #7a533e;
+    z-index: -3;
   }
+}
+
+.navbar--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar--hidden * {
+  pointer-events: none !important;
 }

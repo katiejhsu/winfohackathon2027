@@ -224,7 +224,7 @@
   font-size: 4.6vw;
   line-height: 1.05;
   margin: 0 0 0.6em;
-  letter-spacing: -1.9px;
+  letter-spacing: -1px;
 
 }
 
@@ -407,8 +407,8 @@
   font-family: var(--font-jost);
   font-weight: 700;
   text-transform: none;
-  font-size: var(--fs-title);
   margin: 0 0 0.5em;
+  font-size: clamp(40px, 2.7vw, 47px);
 }
 
 .section-schedule-day-title--judging {
@@ -982,6 +982,19 @@
   .section-nine-heading {
     font-size: 12px;
   }
+
+  .tracks-heading,
+  .section-schedule-heading {
+    font-size: clamp(20px, 6vw, 32px);
+  }
+
+  .tracks-title {
+    font-size: clamp(14px, 4vw, 22px);
+  }
+
+  .section-schedule-day-title {
+    font-size: clamp(14px, 4vw, 22px);
+  }
 }
 
 .location-link--plain {
@@ -1130,10 +1143,6 @@ a.res-tile:hover {
   .home-s7 .section-eight-content {
     margin-top: -14.2vw;
   }
-}
-
-.section-schedule-day-title {
-  font-size: clamp(18px, 2.7vw, 47px);
 }
 
 .section-schedule-heading {

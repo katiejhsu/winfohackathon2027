@@ -29,8 +29,6 @@ const NAV_LINKS = [
   },
 ];
 
-// Home-page sections the nav tracks while scrolling (element ids).
-// Keep these in the same order they appear on the page.
 const TRACKED_SECTIONS = ["theme", "prize-tracks", "resources", "schedule", "faq"];
 
 const isMobile = () => window.matchMedia("(max-width: 786px)").matches;
@@ -55,12 +53,26 @@ function getActiveHomeSection() {
 }
 
 export default function Navbar() {
+
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(null); // which dropdown is open
+  const [openMenu, setOpenMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [homeSection, setHomeSection] = useState("home");
+  const [hidden, setHidden] = useState(false);
 
+  useEffect(() => {
+    let lastY = 0;
+    const onScroll = (e) => {
+      const t = e.target;
+      const y = t === document ? window.scrollY : t.scrollTop;
+      if (y > lastY && y > 80) setHidden(true);
+      else if (y < lastY) setHidden(false);
+      lastY = y;
+    };
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    return () => document.removeEventListener("scroll", onScroll, { capture: true });
+  }, []);
   useEffect(() => {
     let frame = 0;
     const update = () => {
@@ -97,7 +109,6 @@ export default function Navbar() {
   };
 
   const handleParentClick = (e, link) => {
-    // On phones, tapping a parent with a dropdown expands it instead of navigating
     if (link.children && isMobile()) {
       e.preventDefault();
       setOpenMenu((cur) => (cur === link.key ? null : link.key));
@@ -107,7 +118,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""} ${hidden ? "navbar--hidden" : ""}`}>
       <div className="navbar__inner container">
         <nav className={`navbar__links ${open ? "navbar__links--open" : ""}`}>
           {NAV_LINKS.map((link) => {
