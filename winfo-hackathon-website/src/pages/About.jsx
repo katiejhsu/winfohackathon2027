@@ -42,7 +42,7 @@ export default function About() {
         {/* 2. black cliff */}
         <section className="bg-slice cliff">
           <div className="about-winfo">
-            <img src="assets/about/what-is-winfo.png" alt="what is winfo" className="what-is-winfo-header" />
+            <h2 className="what-is-winfo-header">WHAT IS WINFO?</h2>
             <p>
               Women in Informatics (WINFO) is a diversity organization at the Information
               School at the University of Washington, Seattle, dedicated to empowering
@@ -77,7 +77,7 @@ export default function About() {
           <img src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
 
           <div className="committee-intro">
-            <img src="assets/about/winfo-hackathon-committee.png" alt="the winfo hackathon committee" className="committee-header" />
+            <h2 className="committee-header">The WINFO Hackathon <br /> Committee</h2>
             <p>Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.</p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function About() {
         {/* 4. orange */}
         <section className="bg-slice orange">
           <div id="committee" className="committee-badges">
-            <img src="assets/about/meet-committee.png" alt="meet the committee" className="meet-committee-header" />
+            <h2 className="meet-committee-header">Meet the 2026-2027 <br /> Hackathon Committee!</h2>
             <div className="badge-grid">
               {badgeRows.map((row, r) => (
                 <div className="badge-row" key={r}>
@@ -97,7 +97,7 @@ export default function About() {
             </div>
           </div>
           <div id="speakers" className="speakers">
-            <img src="assets/about/speakers.png" alt="speakers" className="speakers-header" />
+            <h2 className="speakers-header">Speakers</h2>
             <p className="speakers-intro">Stay tuned for the announcement of our upcoming hackathon speakers!</p>
             <div className="speakers-container">
               <div className="speakers-list">
@@ -138,7 +138,7 @@ export default function About() {
           <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const-about" />
           <div id="past-winners" className="section-eight-content"></div>
           <div className="last-years-winners">
-            <img src="assets/about/last-years-winners.png" alt="last years winners" className="last-years-winners-header" />
+            <h2 className="last-years-winners-header">Last Year's Winners</h2>
             <h3 className="winner-heading">{pastWinners[0].track} – “{pastWinners[0].project}”</h3>
             <p>Reducing confusion, improving preparedness, and supporting safer encounters.</p>
             <p>By: Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai</p>

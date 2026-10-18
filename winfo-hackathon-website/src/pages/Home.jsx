@@ -91,26 +91,26 @@ export default function Home() {
         <section className="bg-slice home-s1">
           <div className="section-one-content">
             <div className="winfo-logo">
-              <img src="/test-bg/star-element.png" alt="Winfo star icon" className="hero-star" />
-              <img src="/test-bg/winfo-logo.png" alt="Winfo logo" className="hero-logo" />
+              <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="hero-star" />
+              <img src="/assets/logo/winfo-logo.png" alt="Winfo logo" className="hero-logo" />
             </div>
-            <img src="/test-bg/headline-line1.svg" alt="Women in Informatics' 15th Annual Hackathon banner logo" className="hero-headline hero-headline--1" />
-            <img src="/test-bg/headline-line2.svg" alt="" className="hero-headline hero-headline--2" />
+            <img src="/assets/home/headline-line1.svg" alt="Women in Informatics' 15th Annual Hackathon banner logo" className="hero-headline hero-headline--1" />
+            <img src="/assets/home/headline-line2.svg" alt="" className="hero-headline hero-headline--2" />
             <p className="hero-meta hero-meta--1">
-              <img src="/test-bg/image106.png" alt="" className="hero-meta__icon" /> {event.heroDates}
+              <img src="assets/home/clock.png" alt="" className="hero-meta__icon" /> {event.heroDates}
             </p>
             <p className="hero-meta hero-meta--2">
-              <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link location-link--plain"><img src="/test-bg/navigation.png" alt="" className="hero-meta__icon hero-meta__icon--pin" /> {event.heroLocation}</a>
+              <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link location-link--plain"><img src="/assets/home/navigation.png" alt="" className="hero-meta__icon hero-meta__icon--pin" /> {event.heroLocation}</a>
             </p>
             <a className="hero-register-btn" href={event.registerUrl}>Register Now!</a>
           </div>
-          <img src="/test-bg/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
+          <img src="/assets/home/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
         </section>
 
         {/* 2. giant tree: section two */}
         <section className="bg-slice home-s2">
-          <img src="/test-bg/section2-badges.png" alt="Triangle tree patch, star bear patch, circle mountain patch" className="section-two-badges" />
-          <img src="/test-bg/section2-headline.png" className="section-two-headline" alt="ready to reach new heights" />
+          <img src="/assets/home/badges.png" alt="Triangle tree patch, star bear patch, circle mountain patch" className="section-two-badges" />
+          <h2 className="section-two-headline">Ready to Reach New Heights?</h2>
           <p className="section-two-blurb">
             Women in Informatics is excited to invite you to our 15th Annual
             Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility&#8221;</span>.
@@ -187,10 +187,10 @@ export default function Home() {
             <h2 className="section-schedule-heading">Schedules</h2>
             <h3 className="section-schedule-day-title">Hackathon Day</h3>
             <p className="section-schedule-meta">
-              <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.hackingDate} | Saturday
+              <img src="/assets/home/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.hackingDate} | Saturday
             </p>
             <p className="section-schedule-meta section-schedule-meta--location">
-              <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-icon-link" aria-hidden="true" tabIndex={-1}><img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /></a> <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.hackingLocation}</a>
+              <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-icon-link" aria-hidden="true" tabIndex={-1}><img src="/assets/home/schedule-pin.png" alt="" className="section-schedule__icon" /></a> <a href={event.hubMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.hackingLocation}</a>
             </p>
             <ul className="section-schedule-list">
               {hackingDaySchedule.map((item) => (
@@ -203,10 +203,10 @@ export default function Home() {
 
             <h3 className="section-schedule-day-title section-schedule-day-title--judging">Judging Day (Finalists Only)</h3>
             <p className="section-schedule-meta">
-              <img src="/test-bg/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.judgingDate} | Sunday
+              <img src="/assets/home/schedule-clock.png" alt="" className="section-schedule__icon" /> {event.judgingDate} | Sunday
             </p>
             <p className="section-schedule-meta section-schedule-meta--location">
-              <a href={event.mapleMapUrl} target="_blank" rel="noopener noreferrer" className="location-icon-link" aria-hidden="true" tabIndex={-1}><img src="/test-bg/schedule-pin.png" alt="" className="section-schedule__icon" /></a> <a href={event.mapleMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.judgingLocation}</a>
+              <a href={event.mapleMapUrl} target="_blank" rel="noopener noreferrer" className="location-icon-link" aria-hidden="true" tabIndex={-1}><img src="/assets/home/schedule-pin.png" alt="" className="section-schedule__icon" /></a> <a href={event.mapleMapUrl} target="_blank" rel="noopener noreferrer" className="location-link">{event.judgingLocation}</a>
             </p>
             <ul className="section-schedule-list">
               {judgingDaySchedule.map((item) => (

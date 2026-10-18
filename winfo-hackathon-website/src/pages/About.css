@@ -143,7 +143,14 @@
 }
 
 .what-is-winfo-header {
-  width: 80%;
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 700;
+  text-transform: none;
+  color: #FF8D47;
+  font-size: 5vw;
+  line-height: 1.05;
+  letter-spacing: -1px;
 }
 
 .cliff .about-winfo p {
@@ -213,8 +220,15 @@
 }
 
 .committee-header {
-  width: 90%;
-  margin-bottom: 5%;
+  display: flex;
+  gap: 1.4vw;
+  font-size: 4.5vw;
+  font-style: italic;
+  color: #25568D;
+  text-transform: none;
+  margin-bottom: 0%;
+  font-family: "Anybody", "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .sunset .committee-intro p {
@@ -241,8 +255,14 @@
 }
 
 .meet-committee-header {
-  width: 55%;
-  margin-bottom: 5%;
+  display: flex;
+  gap: 1.4vw;
+  font-size: 4vw;
+  color: #FFFADD;
+  text-transform: none;
+  margin-bottom: 8%;
+  font-family: "Anybody", "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .badge-grid {
@@ -281,7 +301,17 @@
 }
 
 .speakers-header {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vw;
+  font-size: 5.4vw;
+  font-style: italic;
+  margin: 10px 0 0;
+  color: #FFFADD;
+  font-family: "Anybody", "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: none;
 }
 
 .speakers-intro {
@@ -337,7 +367,7 @@
 
 .last-years-winners {
   position: absolute;
-  top: 5%;
+  top: 8%;
   left: 15%;
   width: 70%;
   display: flex;
@@ -350,7 +380,17 @@
 }
 
 .last-years-winners-header {
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-transform: none;
+  gap: 1.4vw;
+  font-size: 5.4vw;
+  font-style: italic;
+  margin: 10px 0 0;
+  color: #B5C6D0;
+  font-family: "Anybody", "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 .best-impact-header {
@@ -506,12 +546,8 @@
     gap: 14px;
   }
 
-  .sunset .committee-intro h2 {
-    font-size: 25px;
-  }
-
   .sunset .committee-intro p {
-    font-size: 13px;
+    font-size: 3vw;
   }
 
   .orange .committee-badges h2 {

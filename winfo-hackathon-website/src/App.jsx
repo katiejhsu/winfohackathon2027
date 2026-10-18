@@ -62,9 +62,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
-          {/* ---- Portals ---- */}
+          {/* ---- Portal ---- */}
           <Route path="/mentor-portal" element={<MentorPortal />} />
-
           {/* ---- 404 ---- */}
           <Route path="*" element={<NotFound />} />
         </Routes>

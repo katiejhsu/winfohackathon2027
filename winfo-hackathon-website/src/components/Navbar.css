@@ -74,7 +74,7 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  background-image: url("/test-bg/hamburger-sign.png");
+  background-image: url("assets/navbar/hamburger-sign.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

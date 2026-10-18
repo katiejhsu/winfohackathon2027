@@ -7,20 +7,20 @@ const NAV_LINKS = [
     key: "home",
     to: "/",
     label: "Home",
-    bgImage: "/test-bg/navbar-sign-3.png",
+    bgImage: "/assets/navbar/navbar-sign-3.png",
     children: [
-      { key: "theme", to: "/#theme", label: "Theme", bgImage: "/test-bg/navbar-sign-3.png" },
-      { key: "prize-tracks", to: "/#prize-tracks", label: "Prize Tracks", bgImage: "/test-bg/navbar-sign-3.png" },
-      { key: "resources", to: "/#resources", label: "Resources", bgImage: "/test-bg/navbar-sign-3.png" },
+      { key: "theme", to: "/#theme", label: "Theme", bgImage: "/assets/navbar/navbar-sign-3.png" },
+      { key: "prize-tracks", to: "/#prize-tracks", label: "Prize Tracks", bgImage: "/assets/navbar/navbar-sign-3.png" },
+      { key: "resources", to: "/#resources", label: "Resources", bgImage: "/assets/navbar/navbar-sign-3.png" },
     ],
   },
-  { key: "schedule", to: "/#schedule", label: "Schedule", bgImage: "/test-bg/navbar-sign-3.png" },
-  { key: "faq", to: "/#faq", label: "FAQ", bgImage: "/test-bg/navbar-sign-3.png" },
+  { key: "schedule", to: "/#schedule", label: "Schedule", bgImage: "/assets/navbar/navbar-sign-3.png" },
+  { key: "faq", to: "/#faq", label: "FAQ", bgImage: "/assets/navbar/navbar-sign-3.png" },
   {
     key: "about",
     to: "/about",
     label: "About",
-    bgImage: "/test-bg/navbar-sign-4.png",
+    bgImage: "/assets/navbar/navbar-sign-3.png",
     children: [
       { key: "committee", to: "/about#committee", label: "Committee" },
       { key: "speakers", to: "/about#speakers", label: "Speakers" },
@@ -29,7 +29,8 @@ const NAV_LINKS = [
   },
 ];
 
-const TRACKED_SECTIONS = ["theme", "prize-tracks", "resources", "schedule", "faq"];
+const HOME_SECTIONS = ["theme", "prize-tracks", "schedule", "faq", "resources"];
+const ABOUT_SECTIONS = ["committee", "speakers", "past-winners"];
 
 const isMobile = () => window.matchMedia("(max-width: 786px)").matches;
 
@@ -38,27 +39,24 @@ function getSection(id) {
   return el?.closest("section") || el;
 }
 
-function getActiveHomeSection() {
-  const middle = window.innerHeight * 0.4;
-  let firstExisting = null;
-  for (const id of TRACKED_SECTIONS) {
-    const section = getSection(id);
-    if (!section) continue;
-    if (!firstExisting) firstExisting = section;
-    const r = section.getBoundingClientRect();
-    if (r.top <= middle && r.bottom > middle) return id;
+function getActiveSection(ids, fallback, trigger = 0.4) {
+  const line = window.innerHeight * trigger;
+  let active = fallback;
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (el.getBoundingClientRect().top <= line) active = id;
   }
-  if (!firstExisting || firstExisting.getBoundingClientRect().top > middle) return "home";
-  return null;
+  return active;
 }
 
 export default function Navbar() {
-
+  const [homeSection, setHomeSection] = useState("home");
+  const [aboutSection, setAboutSection] = useState("about");
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const [homeSection, setHomeSection] = useState("home");
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -78,7 +76,8 @@ export default function Navbar() {
     const update = () => {
       frame = 0;
       setScrolled(window.scrollY > 12);
-      if (pathname === "/") setHomeSection(getActiveHomeSection());
+      if (pathname === "/") setHomeSection(getActiveSection(HOME_SECTIONS, "home"));
+      if (pathname.startsWith("/about")) setAboutSection(getActiveSection(ABOUT_SECTIONS, "about", 0.75));
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -94,14 +93,8 @@ export default function Navbar() {
   }, [pathname]);
 
   let activeKey = null;
-  if (pathname === "/") {
-    activeKey = homeSection;
-  } else {
-    const match = NAV_LINKS.flatMap((l) => l.children || [l]).find(
-      (c) => !c.to.includes("#") && c.to !== "/" && pathname.startsWith(c.to)
-    );
-    activeKey = match?.key ?? null;
-  }
+  if (pathname === "/") activeKey = homeSection;
+  else if (pathname.startsWith("/about")) activeKey = aboutSection;
 
   const closeAll = () => {
     setOpen(false);
@@ -109,9 +102,9 @@ export default function Navbar() {
   };
 
   const handleParentClick = (e, link) => {
-    if (link.children && isMobile()) {
+    if (link.children && isMobile() && openMenu !== link.key) {
       e.preventDefault();
-      setOpenMenu((cur) => (cur === link.key ? null : link.key));
+      setOpenMenu(link.key);
       return;
     }
     closeAll();
@@ -123,8 +116,7 @@ export default function Navbar() {
         <nav className={`navbar__links ${open ? "navbar__links--open" : ""}`}>
           {NAV_LINKS.map((link) => {
             const hasMenu = !!link.children;
-            const isActive =
-              link.key === activeKey || link.children?.some((c) => c.key === activeKey);
+            const isActive = link.key === activeKey || link.children?.some((c) => c.key === activeKey);
             const isMenuOpen = openMenu === link.key;
 
             return (

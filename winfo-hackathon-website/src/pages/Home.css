@@ -186,7 +186,15 @@
   top: 97.58vw;
   left: 8vw;
   width: 30%;
+  color: #DBBF94;
   margin: 0;
+  font-family: var(--font-anybody);
+  font-style: italic;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 5vw;
+  line-height: 1.05;
+  letter-spacing: -1px;
 }
 
 .section-two-blurb {
@@ -224,8 +232,7 @@
   font-size: 4.6vw;
   line-height: 1.05;
   margin: 0 0 0.6em;
-  letter-spacing: -1px;
-
+  letter-spacing: -0.2px;
 }
 
 .section-three-body {
@@ -251,7 +258,7 @@
   line-height: 1.15;
   text-align: center;
   margin: 1em 0 1.6em;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 
 }
 
@@ -311,7 +318,7 @@
   font-style: normal;
   font-weight: 700;
   text-transform: none;
-  font-size: var(--fs-title);
+  font-size: 3vw;
   margin: 6% 0 1%;
 }
 
@@ -326,9 +333,44 @@
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
   object-fit: cover;
   flex-shrink: 0;
   margin: 0 auto;
+}
+
+@keyframes badge-sway {
+  0% {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  20% {
+    transform: rotate(-12deg) scale(1.05);
+  }
+
+  40% {
+    transform: rotate(12deg) scale(1.05);
+  }
+
+  60% {
+    transform: rotate(-8deg) scale(1.05);
+  }
+
+  80% {
+    transform: rotate(6deg) scale(1.05);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1.05);
+  }
+}
+
+@media (hover: hover) {
+  .tracks-badge:hover {
+    animation: badge-sway 0.9s ease-in-out;
+    transform: scale(1.05);
+  }
 }
 
 .tracks-copy {
@@ -582,6 +624,118 @@
   left: 0%;
   width: 18%;
 
+}
+
+@keyframes twinkle {
+
+  0%,
+  30%,
+  100% {
+    filter: brightness(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    filter: brightness(3) drop-shadow(0 0 16px rgba(255, 250, 221, 1));
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle-const {
+
+  0%,
+  30%,
+  100% {
+    filter: brightness(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    filter: brightness(2.8) drop-shadow(0 0 12px rgba(255, 250, 221, 0.9));
+    opacity: 1;
+  }
+}
+
+/* stars */
+.stars1-0,
+.stars1-1,
+.stars1-2,
+.stars3-0,
+.stars3-1,
+.stars1-0-about,
+.stars1-1-about,
+.stars1-2-about,
+.stars3-0-about,
+.stars3-1-about {
+  animation: twinkle 1.4s ease-in-out infinite;
+}
+
+/* constellations */
+.goat-const,
+.owl-const,
+.goat-const-about,
+.owl-const-about {
+  animation: twinkle-const 1.8s ease-in-out infinite;
+}
+
+.stars1-0,
+.stars1-0-about {
+  animation-delay: 0s;
+}
+
+.stars1-1,
+.stars1-1-about {
+  animation-delay: 0.4s;
+  animation-duration: 1.6s;
+}
+
+.stars1-2,
+.stars1-2-about {
+  animation-delay: 0.8s;
+  animation-duration: 1.2s;
+}
+
+.stars3-0,
+.stars3-0-about {
+  animation-delay: 0.2s;
+  animation-duration: 1.5s;
+}
+
+.stars3-1,
+.stars3-1-about {
+  animation-delay: 0.6s;
+  animation-duration: 1.9s;
+}
+
+.goat-const,
+.goat-const-about {
+  animation-delay: 0.5s;
+}
+
+.owl-const,
+.owl-const-about {
+  animation-delay: 1s;
+  animation-duration: 2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .stars1-0,
+  .stars1-1,
+  .stars1-2,
+  .stars3-0,
+  .stars3-1,
+  .stars1-0-about,
+  .stars1-1-about,
+  .stars1-2-about,
+  .stars3-0-about,
+  .stars3-1-about,
+  .goat-const,
+  .owl-const,
+  .goat-const-about,
+  .owl-const-about {
+    animation-duration: 6s;
+  }
 }
 
 .section-eight-content {

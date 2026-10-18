@@ -61,8 +61,8 @@ export default function MentorPortal() {
       <section className="mentor-portal__top">
         <div className="mentor-portal__heading">
           <div className="mentor-portal__logo">
-            <img src="/test-bg/star-element.png" alt="Winfo star icon" className="mentor-portal__star" />
-            <img src="/test-bg/winfo-logo.png" alt="Winfo logo" className="mentor-portal__wordmark" />
+            <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="mentor-portal__star" />
+            <img src="/assets/logo/winfo-logo.png" alt="Winfo logo" className="mentor-portal__wordmark" />
           </div>
           <h2>Mentor Portal</h2>
           <p>Welcome mentors!</p>
