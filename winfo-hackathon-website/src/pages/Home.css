@@ -178,7 +178,43 @@
   top: 87.13vw;
   left: 8vw;
   width: 21vw;
+  height: 6.97vw;
+}
+
+.section-two-badge {
+  position: absolute;
   height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.section-two-badge--tree {
+  top: 0.27vw;
+  left: 0vw;
+  width: 6.47vw;
+}
+
+.section-two-badge--bear {
+  top: 0vw;
+  left: 7.1vw;
+  width: 6.61vw;
+}
+
+.section-two-badge--mountain {
+  top: 0.4vw;
+  left: 14.74vw;
+  width: 6.25vw;
+}
+
+.section-two-badge--wiggle {
+  animation: badge-sway 0.9s ease-in-out;
+}
+
+@media (hover: hover) {
+  .section-two-badge:hover {
+    animation: badge-sway 0.9s ease-in-out;
+    transform: scale(1.05);
+  }
 }
 
 .section-two-headline {

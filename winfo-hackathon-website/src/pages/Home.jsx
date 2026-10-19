@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import { SectionHeader, TrackCard, ScheduleList, SponsorGrid } from "../components/Reusable";
@@ -84,6 +84,30 @@ function ResourceCard({ icon, title, when, desc }) {
 }
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [badgesWiggling, setBadgesWiggling] = useState(false);
+  const badgesTriggered = useRef(false);
+  const badgesRef = useRef(null);
+
+  useEffect(() => {
+    const el = badgesRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !badgesTriggered.current) {
+            badgesTriggered.current = true;
+            setBadgesWiggling(true);
+            setTimeout(() => setBadgesWiggling(false), 1300);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <main className="home">
@@ -109,7 +133,26 @@ export default function Home() {
 
         {/* 2. giant tree: section two */}
         <section className="bg-slice home-s2">
-          <img src="/assets/home/badges.png" alt="Triangle tree patch, star bear patch, circle mountain patch" className="section-two-badges" />
+          <div className="section-two-badges" ref={badgesRef}>
+            <img
+              src="/assets/home/badge-tree.png"
+              alt="Triangle tree patch"
+              className={`section-two-badge section-two-badge--tree${badgesWiggling ? " section-two-badge--wiggle" : ""}`}
+              style={{ animationDelay: "0s" }}
+            />
+            <img
+              src="/assets/home/badge-bear.png"
+              alt="Star bear patch"
+              className={`section-two-badge section-two-badge--bear${badgesWiggling ? " section-two-badge--wiggle" : ""}`}
+              style={{ animationDelay: "0.15s" }}
+            />
+            <img
+              src="/assets/home/badge-mountain.png"
+              alt="Circle mountain patch"
+              className={`section-two-badge section-two-badge--mountain${badgesWiggling ? " section-two-badge--wiggle" : ""}`}
+              style={{ animationDelay: "0.3s" }}
+            />
+          </div>
           <h2 className="section-two-headline">Ready to Reach New Heights?</h2>
           <p className="section-two-blurb">
             Women in Informatics is excited to invite you to our 15th Annual
