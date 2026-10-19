@@ -6,12 +6,12 @@ const BADGE_ROWS = [2, 3, 4, 3];
 
 const badges = [
   "/assets/about/badge-18.png",
-  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-19.png",
   "/assets/about/badge-6.png",
   "/assets/about/badge-7.png",
   "/assets/about/badge-21.png",
   "/assets/about/badge-11.png",
-  "/assets/about/badge-placeholder.png",
+  "/assets/about/badge-12.png",
   "/assets/about/badge-20.png",
   "/assets/about/badge-8.png",
   "/assets/about/badge-9.png",
