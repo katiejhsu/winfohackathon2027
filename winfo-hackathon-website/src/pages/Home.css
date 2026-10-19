@@ -1007,6 +1007,59 @@
   background-color: #5f8aa8;
 }
 
+.climbing-bear {
+  position: absolute;
+  left: 75.9%;
+  top: 33.4%;
+  width: 11%;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  z-index: 2;
+}
+
+.climbing-bear--walk {
+  animation: bear-climb 4s ease-in-out forwards;
+}
+
+@keyframes bear-climb {
+  0% {
+    left: 75.9%;
+    top: 33.4%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  20% {
+    left: 70.4%;
+    top: 30%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
+  }
+  40% {
+    left: 63.9%;
+    top: 25.5%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(5deg) scale(0.97);
+  }
+  60% {
+    left: 56.3%;
+    top: 24.2%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
+  }
+  80% {
+    left: 47.6%;
+    top: 29.6%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(5deg) scale(0.97);
+  }
+  100% {
+    left: 44.2%;
+    top: 26.4%;
+    width: 11%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
 .home-s2 {
   aspect-ratio: 1728 / 3875;
   background-image: url("/assets/home/home_background_2.webp");
@@ -1476,4 +1529,33 @@ a.res-tile:hover {
   .home-s8 .section-nine-content {
     top: 0;
   }
+}
+.anchor-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  pointer-events: none;
+}
+
+.anchor-marker__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: red;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+
+.anchor-marker__label {
+  display: block;
+  margin-top: 2px;
+  padding: 2px 6px;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  font-size: 12px;
+  font-family: monospace;
+  white-space: nowrap;
+  border-radius: 4px;
 }

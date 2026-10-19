@@ -108,6 +108,37 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const [anchorPoints, setAnchorPoints] = useState([]);
+  const handleAnchorClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const leftPct = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const topPct = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    setAnchorPoints((prev) => [...prev, { left: leftPct, top: topPct }]);
+  };
+
+  const bearRef = useRef(null);
+  const bearTriggered = useRef(false);
+  const [bearWalking, setBearWalking] = useState(false);
+
+  useEffect(() => {
+    const el = bearRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !bearTriggered.current) {
+            bearTriggered.current = true;
+            setBearWalking(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const trackBadgeRefs = useRef([]);
   const trackBadgesTriggered = useRef(new Set());
   const [trackWiggleIndex, setTrackWiggleIndex] = useState({});
@@ -136,7 +167,17 @@ export default function Home() {
     <>
       <main className="home">
         {/* 1. mountain: hero */}
-        <section className="bg-slice home-s1">
+        <section className="bg-slice home-s1" onClick={handleAnchorClick}>
+          {anchorPoints.map((pt, i) => (
+            <div
+              key={i}
+              className="anchor-marker"
+              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
+            >
+              <span className="anchor-marker__dot"></span>
+              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
+            </div>
+          ))}
           <div className="section-one-content">
             <div className="winfo-logo">
               <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="hero-star" />
@@ -153,6 +194,12 @@ export default function Home() {
             <a className="hero-register-btn" href={event.registerUrl}>Register Now!</a>
           </div>
           <img src="/assets/home/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
+          <img
+            ref={bearRef}
+            src="/assets/characters/bear.png"
+            alt="Bear hiking up the mountain trail to the peak"
+            className={`climbing-bear${bearWalking ? " climbing-bear--walk" : ""}`}
+          />
         </section>
 
         {/* 2. giant tree: section two */}
