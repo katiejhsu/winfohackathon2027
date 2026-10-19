@@ -1066,6 +1066,47 @@
   background-color: #1f3a1a;
 }
 
+.trail-goat {
+  position: absolute;
+  left: 21.7%;
+  top: 97.6%;
+  width: 12%;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  z-index: 2;
+}
+
+.trail-goat--walk {
+  animation: goat-walk 3.5s ease-in-out forwards;
+}
+
+@keyframes goat-walk {
+  0% {
+    left: 21.7%;
+    top: 97.6%;
+    width: 12%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  33% {
+    left: 34.1%;
+    top: 94.4%;
+    width: 12%;
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
+  }
+  66% {
+    left: 41.2%;
+    top: 91.4%;
+    width: 12%;
+    transform: translate(-50%, -50%) rotate(5deg) scale(0.97);
+  }
+  100% {
+    left: 44%;
+    top: 88.4%;
+    width: 12%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
 .home-s3 {
   aspect-ratio: 1728 / 3859;
   background-image: url("/assets/home/home_background_3.webp");
@@ -1089,6 +1130,78 @@
   background-image: url("/assets/home/home_background_6.webp");
   background-color: #06282c;
 }
+
+.lake-fx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ripple {
+  position: absolute;
+  width: 7vw;
+  height: 2.2vw;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple-expand 5s ease-out infinite;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.ripple--1 { top: 88.6%; left: 8.1%; animation-delay: 0s; }
+.ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
+.ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
+.ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
+
+.fish-shadow {
+  position: absolute;
+  width: 5vw;
+  height: 1.1vw;
+  background: radial-gradient(ellipse, rgba(0, 20, 25, 0.4) 0%, rgba(0, 20, 25, 0) 75%);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: fish-swim 16s ease-in-out infinite;
+}
+
+@keyframes fish-swim {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8vw, 2vw) rotate(6deg);
+  }
+  50% {
+    transform: translate(14vw, -1vw) rotate(-4deg);
+  }
+  75% {
+    transform: translate(6vw, 3vw) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.fish-shadow--1 { top: 92.6%; left: 41.5%; animation-duration: 16s; }
+.fish-shadow--2 { top: 97.2%; left: 28.8%; animation-duration: 20s; animation-delay: -4s; }
+.fish-shadow--3 { top: 96.6%; left: 63.9%; animation-duration: 18s; animation-delay: -9s; }
 
 .home-s7 {
   aspect-ratio: 1728 / 2460;
@@ -1449,6 +1562,78 @@ a.res-tile:hover {
 .res-card .res-card__desc {
   white-space: pre-line;
 }
+
+.lake-fx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ripple {
+  position: absolute;
+  width: 7vw;
+  height: 2.2vw;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple-expand 5s ease-out infinite;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.ripple--1 { top: 88.6%; left: 8.1%; animation-delay: 0s; }
+.ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
+.ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
+.ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
+
+.fish-shadow {
+  position: absolute;
+  width: 5vw;
+  height: 1.1vw;
+  background: radial-gradient(ellipse, rgba(0, 20, 25, 0.4) 0%, rgba(0, 20, 25, 0) 75%);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: fish-swim 16s ease-in-out infinite;
+}
+
+@keyframes fish-swim {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8vw, 2vw) rotate(6deg);
+  }
+  50% {
+    transform: translate(14vw, -1vw) rotate(-4deg);
+  }
+  75% {
+    transform: translate(6vw, 3vw) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.fish-shadow--1 { top: 92.6%; left: 41.5%; animation-duration: 16s; }
+.fish-shadow--2 { top: 97.2%; left: 28.8%; animation-duration: 20s; animation-delay: -4s; }
+.fish-shadow--3 { top: 96.6%; left: 63.9%; animation-duration: 18s; animation-delay: -9s; }
 
 .home-s7 {
   aspect-ratio: auto;

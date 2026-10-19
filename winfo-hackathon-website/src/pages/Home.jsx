@@ -139,6 +139,29 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const goatRef = useRef(null);
+  const goatTriggered = useRef(false);
+  const [goatWalking, setGoatWalking] = useState(false);
+
+  useEffect(() => {
+    const el = goatRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !goatTriggered.current) {
+            goatTriggered.current = true;
+            setGoatWalking(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const trackBadgeRefs = useRef([]);
   const trackBadgesTriggered = useRef(new Set());
   const [trackWiggleIndex, setTrackWiggleIndex] = useState({});
@@ -200,6 +223,12 @@ export default function Home() {
             alt="Bear hiking up the mountain trail to the peak"
             className={`climbing-bear${bearWalking ? " climbing-bear--walk" : ""}`}
           />
+          <img
+            ref={goatRef}
+            src="/assets/characters/goat.png"
+            alt="Goat hiking up the forest trail"
+            className={`trail-goat${goatWalking ? " trail-goat--walk" : ""}`}
+          />
         </section>
 
         {/* 2. giant tree: section two */}
@@ -234,7 +263,26 @@ export default function Home() {
         </section>
 
         {/* 3. dark forest to cave: theme + video */}
-        <section className="bg-slice home-s3">
+        <section className="bg-slice home-s3" onClick={handleAnchorClick}>
+          {anchorPoints.map((pt, i) => (
+            <div
+              key={i}
+              className="anchor-marker"
+              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
+            >
+              <span className="anchor-marker__dot"></span>
+              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
+            </div>
+          ))}
+          <div className="lake-fx" aria-hidden="true">
+            <span className="ripple ripple--1"></span>
+            <span className="ripple ripple--2"></span>
+            <span className="ripple ripple--3"></span>
+            <span className="ripple ripple--4"></span>
+            <span className="fish-shadow fish-shadow--1"></span>
+            <span className="fish-shadow fish-shadow--2"></span>
+            <span className="fish-shadow fish-shadow--3"></span>
+          </div>
           <div id="theme" className="section-three-content">
             <h2 className="section-three-heading">Hackathon Theme</h2>
             <p className="section-three-body">
