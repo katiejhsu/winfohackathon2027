@@ -211,7 +211,11 @@ export default function Home() {
     <>
       <main className="home">
         {/* 1. mountain: hero */}
-        <section className="bg-slice home-s1" onClick={handleAnchorClick}>
+        <section
+          className="bg-slice home-s1"
+          // onClick={handleAnchorClick}
+        >
+          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -222,6 +226,7 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
+          */}
           <div className="section-one-content">
             <div className="winfo-logo">
               <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="hero-star" />
@@ -253,7 +258,11 @@ export default function Home() {
         </section>
 
         {/* 2. giant tree: section two */}
-        <section className="bg-slice home-s2" onClick={handleAnchorClick}>
+        <section
+          className="bg-slice home-s2"
+          // onClick={handleAnchorClick}
+        >
+          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -264,6 +273,7 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
+          */}
           <div className="light-rays" aria-hidden="true">
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <span
@@ -304,7 +314,11 @@ export default function Home() {
         </section>
 
         {/* 3. dark forest to cave: theme + video */}
-        <section className="bg-slice home-s3" onClick={handleAnchorClick}>
+        <section
+          className="bg-slice home-s3"
+          // onClick={handleAnchorClick}
+        >
+          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -315,6 +329,7 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
+          */}
           <div className="lake-fx" aria-hidden="true">
             <span className="ripple ripple--1"></span>
             <span className="ripple ripple--2"></span>
