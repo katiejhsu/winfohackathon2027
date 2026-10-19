@@ -108,6 +108,30 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const trackBadgeRefs = useRef([]);
+  const trackBadgesTriggered = useRef(new Set());
+  const [trackWiggleIndex, setTrackWiggleIndex] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = Number(entry.target.dataset.trackIndex);
+          if (entry.isIntersecting && !trackBadgesTriggered.current.has(idx)) {
+            trackBadgesTriggered.current.add(idx);
+            setTrackWiggleIndex((prev) => ({ ...prev, [idx]: true }));
+            setTimeout(() => {
+              setTrackWiggleIndex((prev) => ({ ...prev, [idx]: false }));
+            }, 900);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    trackBadgeRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <main className="home">
@@ -203,9 +227,11 @@ export default function Home() {
                 <h3 className="tracks-title">{i + 1}. {t.name}</h3>
                 <div className="tracks-row">
                   <img
+                    ref={(el) => (trackBadgeRefs.current[i] = el)}
+                    data-track-index={i}
                     src={`/assets/characters/track-${["goat", "otter", "moose", "owl"][i]}.png`}
                     alt={`${t.name} track badge`}
-                    className="tracks-badge"
+                    className={`tracks-badge${trackWiggleIndex[i] ? " tracks-badge--wiggle" : ""}`}
                   />
                   <div className="tracks-copy">
                     <p className="tracks-description">{t.description}</p>

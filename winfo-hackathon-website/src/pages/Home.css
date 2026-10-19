@@ -402,6 +402,10 @@
   }
 }
 
+.tracks-badge--wiggle {
+  animation: badge-sway 0.9s ease-in-out;
+}
+
 @media (hover: hover) {
   .tracks-badge:hover {
     animation: badge-sway 0.9s ease-in-out;
