@@ -1066,6 +1066,65 @@
   background-color: #1f3a1a;
 }
 
+.light-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.light-ray {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 4vw;
+  height: 64vw;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 214, 0) 0%,
+    rgba(255, 248, 214, 0.42) 35%,
+    rgba(255, 248, 214, 0.2) 65%,
+    rgba(255, 248, 214, 0) 100%
+  );
+  filter: blur(22px);
+  mix-blend-mode: screen;
+  transform-origin: top center;
+  opacity: 0;
+  transform: rotate(var(--ray-angle, 35deg));
+  transition: opacity 1.8s ease-out;
+}
+
+.light-ray--visible {
+  opacity: 1;
+  animation: ray-flicker 7s ease-in-out infinite;
+}
+
+@keyframes ray-flicker {
+  0% { opacity: 0.25; transform: rotate(calc(var(--ray-angle, 35deg) - 4deg)) translateX(-1.5vw); }
+  22% { opacity: 0.85; transform: rotate(calc(var(--ray-angle, 35deg) + 3deg)) translateX(1vw); }
+  45% { opacity: 0.15; transform: rotate(calc(var(--ray-angle, 35deg) - 2deg)) translateX(-0.8vw); }
+  68% { opacity: 0.75; transform: rotate(calc(var(--ray-angle, 35deg) + 5deg)) translateX(1.8vw); }
+  85% { opacity: 0.3; transform: rotate(calc(var(--ray-angle, 35deg) - 3deg)) translateX(-1vw); }
+  100% { opacity: 0.25; transform: rotate(calc(var(--ray-angle, 35deg) - 4deg)) translateX(-1.5vw); }
+}
+
+/* All beams anchored at the top edge, sharing one angle (35deg from vertical,
+   eyeballed off the real baked-in beam in the photo). Length is a fixed 110vw
+   rather than 100% of the section, since the section itself is thousands of px
+   tall -- rotating a box that long is what flung beams sideways across the nav
+   and headline earlier. Tune the shared angle via --ray-angle on .light-ray,
+   and each beam's reach via the height value above. */
+.light-ray--1 { left: 80%; width: 2vw; animation-delay: 0s; }
+.light-ray--2 { left: 85%; width: 9vw; animation-delay: 1.3s; }
+.light-ray--3 { left: 90%; width: 3.5vw; animation-delay: 2.6s; }
+.light-ray--4 { left: 95%; width: 7vw; animation-delay: 0.8s; }
+.light-ray--5 { left: 100%; width: 2.5vw; animation-delay: 3.4s; }
+.light-ray--6 { left: 105%; width: 5vw; animation-delay: 1.9s; }
+
 .trail-goat {
   position: absolute;
   left: 21.7%;
@@ -1170,12 +1229,20 @@
 .ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
 .ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
 .ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
+.ripple--5 { top: 93.2%; left: 30.9%; animation-delay: 0.6s; }
+.ripple--6 { top: 93.5%; left: 53.2%; animation-delay: 2.9s; }
+.ripple--7 { top: 95.9%; left: 37.3%; animation-delay: 1.2s; }
+.ripple--8 { top: 96.8%; left: 60.2%; animation-delay: 3.6s; }
+.ripple--9 { top: 97.7%; left: 15.1%; animation-delay: 0.3s; }
+.ripple--10 { top: 99.1%; left: 31.2%; animation-delay: 4.1s; }
+.ripple--11 { top: 99.6%; left: 49.3%; animation-delay: 1.9s; }
+.ripple--12 { top: 99.5%; left: 73.1%; animation-delay: 3.4s; }
 
 .fish-shadow {
   position: absolute;
   width: 5vw;
   height: 1.1vw;
-  background: radial-gradient(ellipse, rgba(0, 20, 25, 0.4) 0%, rgba(0, 20, 25, 0) 75%);
+  background: radial-gradient(ellipse, rgba(0, 8, 10, 0.7) 0%, rgba(0, 8, 10, 0) 75%);
   border-radius: 50%;
   filter: blur(3px);
   animation: fish-swim 16s ease-in-out infinite;
@@ -1602,12 +1669,20 @@ a.res-tile:hover {
 .ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
 .ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
 .ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
+.ripple--5 { top: 93.2%; left: 30.9%; animation-delay: 0.6s; }
+.ripple--6 { top: 93.5%; left: 53.2%; animation-delay: 2.9s; }
+.ripple--7 { top: 95.9%; left: 37.3%; animation-delay: 1.2s; }
+.ripple--8 { top: 96.8%; left: 60.2%; animation-delay: 3.6s; }
+.ripple--9 { top: 97.7%; left: 15.1%; animation-delay: 0.3s; }
+.ripple--10 { top: 99.1%; left: 31.2%; animation-delay: 4.1s; }
+.ripple--11 { top: 99.6%; left: 49.3%; animation-delay: 1.9s; }
+.ripple--12 { top: 99.5%; left: 73.1%; animation-delay: 3.4s; }
 
 .fish-shadow {
   position: absolute;
   width: 5vw;
   height: 1.1vw;
-  background: radial-gradient(ellipse, rgba(0, 20, 25, 0.4) 0%, rgba(0, 20, 25, 0) 75%);
+  background: radial-gradient(ellipse, rgba(0, 8, 10, 0.7) 0%, rgba(0, 8, 10, 0) 75%);
   border-radius: 50%;
   filter: blur(3px);
   animation: fish-swim 16s ease-in-out infinite;

@@ -162,6 +162,27 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const rayRefs = useRef([]);
+  const rayTriggered = useRef(new Set());
+  const [raysVisible, setRaysVisible] = useState({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = Number(entry.target.dataset.rayIndex);
+          if (entry.isIntersecting && !rayTriggered.current.has(idx)) {
+            rayTriggered.current.add(idx);
+            setRaysVisible((prev) => ({ ...prev, [idx]: true }));
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    rayRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const trackBadgeRefs = useRef([]);
   const trackBadgesTriggered = useRef(new Set());
   const [trackWiggleIndex, setTrackWiggleIndex] = useState({});
@@ -232,7 +253,27 @@ export default function Home() {
         </section>
 
         {/* 2. giant tree: section two */}
-        <section className="bg-slice home-s2">
+        <section className="bg-slice home-s2" onClick={handleAnchorClick}>
+          {anchorPoints.map((pt, i) => (
+            <div
+              key={i}
+              className="anchor-marker"
+              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
+            >
+              <span className="anchor-marker__dot"></span>
+              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
+            </div>
+          ))}
+          <div className="light-rays" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <span
+                key={i}
+                ref={(el) => (rayRefs.current[i] = el)}
+                data-ray-index={i}
+                className={`light-ray light-ray--${i + 1}${raysVisible[i] ? " light-ray--visible" : ""}`}
+              ></span>
+            ))}
+          </div>
           <div className="section-two-badges" ref={badgesRef}>
             <img
               src="/assets/home/badge-tree.png"
@@ -279,6 +320,14 @@ export default function Home() {
             <span className="ripple ripple--2"></span>
             <span className="ripple ripple--3"></span>
             <span className="ripple ripple--4"></span>
+            <span className="ripple ripple--5"></span>
+            <span className="ripple ripple--6"></span>
+            <span className="ripple ripple--7"></span>
+            <span className="ripple ripple--8"></span>
+            <span className="ripple ripple--9"></span>
+            <span className="ripple ripple--10"></span>
+            <span className="ripple ripple--11"></span>
+            <span className="ripple ripple--12"></span>
             <span className="fish-shadow fish-shadow--1"></span>
             <span className="fish-shadow fish-shadow--2"></span>
             <span className="fish-shadow fish-shadow--3"></span>
