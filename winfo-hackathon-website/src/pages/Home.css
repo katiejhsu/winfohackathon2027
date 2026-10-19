@@ -1092,6 +1092,86 @@
   width: 70%;
 }
 
+.campfire-fx {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14vw;
+  height: 14vw;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.campfire-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 40, 0.55) 0%, rgba(255, 90, 20, 0.25) 40%, rgba(255, 90, 20, 0) 70%);
+  animation: campfire-pulse 2.4s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes campfire-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+.spark {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 0.4vw;
+  height: 0.5vw;
+  border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+  background: radial-gradient(circle, #FFE8B0 0%, #FF8F3C 60%, rgba(255, 143, 60, 0) 100%);
+  opacity: 0;
+  animation: spark-rise 4.5s ease-out infinite;
+}
+
+.spark:nth-child(odd) {
+  border-radius: 60% 40% 45% 55% / 45% 60% 40% 55%;
+}
+
+@keyframes spark-rise {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(var(--drift, 0.5vw) * 0.5), -13vw) scale(0.75) rotate(90deg);
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift, 0.5vw), -26vw) scale(0.25) rotate(180deg);
+  }
+}
+
+.spark--1 { left: 45%; animation-delay: 0s;   --drift: 1.6vw; }
+.spark--2 { left: 52%; animation-delay: 0.7s; --drift: -1.2vw; }
+.spark--3 { left: 48%; animation-delay: 1.5s; --drift: 0.6vw; }
+.spark--4 { left: 55%; animation-delay: 2.2s; --drift: -2vw; }
+.spark--5 { left: 42%; animation-delay: 3s;   --drift: 2.2vw; }
+.spark--6 { left: 58%; animation-delay: 0.4s; --drift: -0.5vw; }
+.spark--7 { left: 50%; animation-delay: 3.7s; --drift: 1.3vw; }
+.spark--8 { left: 46%; animation-delay: 1.8s; --drift: -1.6vw; }
+
 @media (max-width: 768px) {
   .tracks-copy {
     flex: 0 0 60vw;
