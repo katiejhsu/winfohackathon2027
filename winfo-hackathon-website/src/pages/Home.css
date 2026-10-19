@@ -1128,8 +1128,8 @@
 .trail-goat {
   position: absolute;
   left: 21.7%;
-  top: 97.6%;
-  width: 12%;
+  top: 96%;
+  width: 13.5%;
   height: auto;
   transform: translate(-50%, -50%) rotate(0deg) scale(1);
   z-index: 2;
@@ -1142,26 +1142,26 @@
 @keyframes goat-walk {
   0% {
     left: 21.7%;
-    top: 97.6%;
-    width: 12%;
+    top: 96%;
+    width: 13.5%;
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
   33% {
     left: 34.1%;
-    top: 94.4%;
-    width: 12%;
+    top: 92.8%;
+    width: 13.5%;
     transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);
   }
   66% {
     left: 41.2%;
-    top: 91.4%;
-    width: 12%;
+    top: 89.8%;
+    width: 13.5%;
     transform: translate(-50%, -50%) rotate(5deg) scale(0.97);
   }
   100% {
     left: 44%;
     top: 88.4%;
-    width: 12%;
+    width: 13.5%;
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
 }
