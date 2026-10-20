@@ -1002,8 +1002,8 @@
 }
 
 .home-s1 {
-  aspect-ratio: 1728 / 3255;
-  background-image: url("/assets/home/home_background_1.webp");
+  aspect-ratio: 1728 / 3203;
+  background-image: url("/assets/home/home_background_1_new.png");
   background-color: #5f8aa8;
 }
 
@@ -1061,8 +1061,8 @@
 }
 
 .home-s2 {
-  aspect-ratio: 1728 / 3875;
-  background-image: url("/assets/home/home_background_2.webp");
+  aspect-ratio: 1728 / 3813;
+  background-image: url("/assets/home/home_background_2_new.png");
   background-color: #1f3a1a;
 }
 
@@ -1167,26 +1167,26 @@
 }
 
 .home-s3 {
-  aspect-ratio: 1728 / 3859;
-  background-image: url("/assets/home/home_background_3.webp");
+  aspect-ratio: 1728 / 3797;
+  background-image: url("/assets/home/home_background_3_new.png");
   background-color: #05080a;
 }
 
 .home-s4 {
-  aspect-ratio: 1728 / 5050;
-  background-image: url("/assets/home/home_background_4.webp");
+  aspect-ratio: 1728 / 4969;
+  background-image: url("/assets/home/home_background_4_new.png");
   background-color: #dfe6ee;
 }
 
 .home-s5 {
-  aspect-ratio: 1728 / 4835;
-  background-image: url("/assets/home/home_background_5.webp");
+  aspect-ratio: 1728 / 4758;
+  background-image: url("/assets/home/home_background_5_new.png");
   background-color: #7fb2e8;
 }
 
 .home-s6 {
-  aspect-ratio: 1728 / 2465;
-  background-image: url("/assets/home/home_background_6.webp");
+  aspect-ratio: 1728 / 2426;
+  background-image: url("/assets/home/home_background_6_new.png");
   background-color: #06282c;
 }
 
@@ -1225,18 +1225,18 @@
   }
 }
 
-.ripple--1 { top: 88.6%; left: 8.1%; animation-delay: 0s; }
-.ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
-.ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
-.ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
-.ripple--5 { top: 93.2%; left: 30.9%; animation-delay: 0.6s; }
-.ripple--6 { top: 93.5%; left: 53.2%; animation-delay: 2.9s; }
-.ripple--7 { top: 95.9%; left: 37.3%; animation-delay: 1.2s; }
-.ripple--8 { top: 96.8%; left: 60.2%; animation-delay: 3.6s; }
-.ripple--9 { top: 97.7%; left: 15.1%; animation-delay: 0.3s; }
-.ripple--10 { top: 99.1%; left: 31.2%; animation-delay: 4.1s; }
-.ripple--11 { top: 99.6%; left: 49.3%; animation-delay: 1.9s; }
-.ripple--12 { top: 99.5%; left: 73.1%; animation-delay: 3.4s; }
+.ripple--1 { top: 95.0%; left: 6%; animation-delay: 0s; }
+.ripple--2 { top: 95.3%; left: 13.6%; animation-delay: 1.8s; }
+.ripple--3 { top: 95.0%; left: 21.3%; animation-delay: 3.2s; }
+.ripple--4 { top: 96.4%; left: 28.9%; animation-delay: 2.4s; }
+.ripple--5 { top: 97.0%; left: 36.5%; animation-delay: 0.6s; }
+.ripple--6 { top: 97.2%; left: 44.2%; animation-delay: 2.9s; }
+.ripple--7 { top: 98.2%; left: 51.8%; animation-delay: 1.2s; }
+.ripple--8 { top: 98.6%; left: 59.5%; animation-delay: 3.6s; }
+.ripple--9 { top: 99.0%; left: 67.1%; animation-delay: 0.3s; }
+.ripple--10 { top: 99.6%; left: 74.7%; animation-delay: 4.1s; }
+.ripple--11 { top: 99.8%; left: 82.4%; animation-delay: 1.9s; }
+.ripple--12 { top: 99.8%; left: 90%; animation-delay: 3.4s; }
 
 .fish-shadow {
   position: absolute;
@@ -1271,14 +1271,14 @@
 .fish-shadow--3 { top: 96.6%; left: 63.9%; animation-duration: 18s; animation-delay: -9s; }
 
 .home-s7 {
-  aspect-ratio: 1728 / 2460;
-  background-image: url("/assets/home/home_background_7.webp");
+  aspect-ratio: 1728 / 2421;
+  background-image: url("/assets/home/home_background_7_new.png");
   background-color: #0a1020;
 }
 
 .home-s8 {
-  aspect-ratio: 1728 / 2567;
-  background-image: url("/assets/home/home_background_8.webp");
+  aspect-ratio: 1728 / 2526;
+  background-image: url("/assets/home/home_background_8_new.png");
   background-color: #181818;
 }
 
@@ -1665,18 +1665,18 @@ a.res-tile:hover {
   }
 }
 
-.ripple--1 { top: 88.6%; left: 8.1%; animation-delay: 0s; }
-.ripple--2 { top: 89.1%; left: 27.5%; animation-delay: 1.8s; }
-.ripple--3 { top: 88.5%; left: 50.9%; animation-delay: 3.2s; }
-.ripple--4 { top: 91.8%; left: 12.4%; animation-delay: 2.4s; }
-.ripple--5 { top: 93.2%; left: 30.9%; animation-delay: 0.6s; }
-.ripple--6 { top: 93.5%; left: 53.2%; animation-delay: 2.9s; }
-.ripple--7 { top: 95.9%; left: 37.3%; animation-delay: 1.2s; }
-.ripple--8 { top: 96.8%; left: 60.2%; animation-delay: 3.6s; }
-.ripple--9 { top: 97.7%; left: 15.1%; animation-delay: 0.3s; }
-.ripple--10 { top: 99.1%; left: 31.2%; animation-delay: 4.1s; }
-.ripple--11 { top: 99.6%; left: 49.3%; animation-delay: 1.9s; }
-.ripple--12 { top: 99.5%; left: 73.1%; animation-delay: 3.4s; }
+.ripple--1 { top: 95.0%; left: 6%; animation-delay: 0s; }
+.ripple--2 { top: 95.3%; left: 13.6%; animation-delay: 1.8s; }
+.ripple--3 { top: 95.0%; left: 21.3%; animation-delay: 3.2s; }
+.ripple--4 { top: 96.4%; left: 28.9%; animation-delay: 2.4s; }
+.ripple--5 { top: 97.0%; left: 36.5%; animation-delay: 0.6s; }
+.ripple--6 { top: 97.2%; left: 44.2%; animation-delay: 2.9s; }
+.ripple--7 { top: 98.2%; left: 51.8%; animation-delay: 1.2s; }
+.ripple--8 { top: 98.6%; left: 59.5%; animation-delay: 3.6s; }
+.ripple--9 { top: 99.0%; left: 67.1%; animation-delay: 0.3s; }
+.ripple--10 { top: 99.6%; left: 74.7%; animation-delay: 4.1s; }
+.ripple--11 { top: 99.8%; left: 82.4%; animation-delay: 1.9s; }
+.ripple--12 { top: 99.8%; left: 90%; animation-delay: 3.4s; }
 
 .fish-shadow {
   position: absolute;
@@ -1712,7 +1712,7 @@ a.res-tile:hover {
 
 .home-s7 {
   aspect-ratio: auto;
-  min-height: calc(100vw * 2460 / 1728);
+  min-height: calc(100vw * 2421 / 1728);
   background-size: 100% 100%;
   display: flow-root;
   padding-bottom: 6vw;
@@ -1762,7 +1762,7 @@ a.res-tile:hover {
 /* fire section: footer always starts below the campfire, section grows if needed */
 .home-s8 {
   aspect-ratio: auto;
-  min-height: calc(100vw * 2567 / 1728);
+  min-height: calc(100vw * 2526 / 1728);
   background-size: 100% auto;
   background-position: center top;
   background-color: #1e1e1e;
