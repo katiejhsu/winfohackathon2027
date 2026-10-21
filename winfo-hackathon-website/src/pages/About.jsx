@@ -163,6 +163,17 @@ export default function About() {
             <div>
               <img alt="animals around a campfire" src="assets/about/campfire-mascots.png" className="campfire-mascots" />
             </div>
+            <div className="campfire-fx" aria-hidden="true">
+              <span className="campfire-glow"></span>
+              <span className="spark spark--1"></span>
+              <span className="spark spark--2"></span>
+              <span className="spark spark--3"></span>
+              <span className="spark spark--4"></span>
+              <span className="spark spark--5"></span>
+              <span className="spark spark--6"></span>
+              <span className="spark spark--7"></span>
+              <span className="spark spark--8"></span>
+            </div>
           </div>
           <Footer />
         </section>
