@@ -443,6 +443,7 @@
   width: 33%;
   top: 20%;
   left: 12%;
+  will-change: translate;
 }
 
 .owl-paragliding-about {
@@ -450,6 +451,7 @@
   width: 37%;
   top: 40%;
   right: 10%;
+  will-change: translate;
 }
 
 

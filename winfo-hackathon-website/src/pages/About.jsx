@@ -1,6 +1,8 @@
 import Footer from "../components/Footer";
 import { aboutWinfo, committee, pastWinners, pastWinnersLinks, testimonials, impactStats } from "../data/content";
 import "./About.css";
+import { useRef } from "react";
+import UseGliderScroll from "../hooks/UseGliderScroll";
 
 const BADGE_ROWS = [2, 3, 4, 3];
 
@@ -19,14 +21,21 @@ const badges = [
   "/assets/about/badge-16.png",
 ];
 
-// split the flat list into rows
 const badgeRows = [];
 let idx = 0;
 for (const n of BADGE_ROWS) {
   badgeRows.push(badges.slice(idx, idx + n));
   idx += n;
 }
+
 export default function About() {
+  const elkRef = useRef(null);
+  const owlRef = useRef(null);
+
+  UseGliderScroll([
+    { ref: elkRef, sway: 24 },
+    { ref: owlRef, sway: -30 },
+  ]);
   return (
     <>
 
@@ -73,8 +82,8 @@ export default function About() {
 
         {/* 3. sunset */}
         <section className="bg-slice sunset">
-          <img src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
-          <img src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
+          <img ref={elkRef} src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
+          <img ref={owlRef} src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
 
           <div className="committee-intro">
             <h2 className="committee-header">The WINFO Hackathon <br /> Committee</h2>

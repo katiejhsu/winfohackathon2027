@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
 import { SectionHeader, TrackCard, ScheduleList, SponsorGrid } from "../components/Reusable";
+import UseGliderScroll from "../hooks/UseGliderScroll";
 import {
   event,
   mission,
@@ -207,13 +208,21 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const elkRef = useRef(null);
+  const owlRef = useRef(null);
+
+  UseGliderScroll([
+    { ref: elkRef, sway: 24 },
+    { ref: owlRef, sway: -30 },
+  ]);
+
   return (
     <>
       <main className="home">
         {/* 1. mountain: hero */}
         <section
           className="bg-slice home-s1"
-          // onClick={handleAnchorClick}
+        // onClick={handleAnchorClick}
         >
           {/*
           {anchorPoints.map((pt, i) => (
@@ -276,7 +285,7 @@ export default function Home() {
         {/* 2. giant tree: section two */}
         <section
           className="bg-slice home-s2"
-          // onClick={handleAnchorClick}
+        // onClick={handleAnchorClick}
         >
           {/*
           {anchorPoints.map((pt, i) => (
@@ -332,7 +341,7 @@ export default function Home() {
         {/* 3. dark forest to cave: theme + video */}
         <section
           className="bg-slice home-s3"
-          // onClick={handleAnchorClick}
+        // onClick={handleAnchorClick}
         >
           {/*
           {anchorPoints.map((pt, i) => (
@@ -426,7 +435,7 @@ export default function Home() {
 
         {/* 5. blue sky to mountain lake: schedules */}
         <section className="bg-slice home-s5">
-          <img src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding" />
+          <img ref={elkRef} src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding" />
           <div id="schedule" className="section-six-content">
             <h2 className="section-schedule-heading">Schedules</h2>
             <h3 className="section-schedule-day-title">Hackathon Day</h3>
@@ -462,7 +471,7 @@ export default function Home() {
             </ul>
             <p className="schedules-disclaimer">The exact schedule will be sent out closer to the hackathon date</p>
           </div>
-          <img src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding" />
+          <img ref={owlRef} onLoad={() => window.dispatchEvent(new Event("resize"))} src="assets/characters/owl-paragliding.png" className="owl-paragliding" alt="owl paragliding" />
         </section>
 
         {/* 6. water fading to black: FAQ */}
