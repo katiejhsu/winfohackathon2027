@@ -173,6 +173,53 @@
   width: 100vw;
 }
 
+/* Ribbon: fabric-like ripple (SVG displacement) + drifting sheen + soft pulsing glow */
+.ribbon-wrap {
+  filter: url(#ribbon-ripple);
+  pointer-events: none;
+}
+
+.ribbon-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: ribbon-glow 4.5s ease-in-out infinite;
+}
+
+.ribbon-sheen {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: url("/assets/home/ribbon.png");
+  mask-image: url("/assets/home/ribbon.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 38%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 62%
+  );
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  mix-blend-mode: soft-light;
+  animation: ribbon-sheen 6s ease-in-out infinite;
+}
+
+@keyframes ribbon-sheen {
+  0% { background-position: 130% 0; }
+  100% { background-position: -30% 0; }
+}
+
+@keyframes ribbon-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 140, 180, 0.35)) brightness(1); }
+  50% { filter: drop-shadow(0 0 18px rgba(255, 170, 200, 0.75)) brightness(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon-wrap { filter: none; }
+  .ribbon-img, .ribbon-sheen { animation: none; }
+}
+
 .section-two-badges {
   position: absolute;
   top: 87.13vw;

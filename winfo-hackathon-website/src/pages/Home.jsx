@@ -242,7 +242,23 @@ export default function Home() {
             </p>
             <a className="hero-register-btn" href={event.registerUrl}>Register Now!</a>
           </div>
-          <img src="/assets/home/ribbon.png" className="home-asset home-asset--ribbon" alt="Hikers, get ready to trek" />
+          <div className="home-asset home-asset--ribbon ribbon-wrap">
+            <svg width="0" height="0" aria-hidden="true" focusable="false" style={{ position: "absolute" }}>
+              <filter id="ribbon-ripple" x="-2%" y="-12%" width="104%" height="124%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.003 0.006" numOctaves="2" seed="4" result="noise">
+                  <animate
+                    attributeName="baseFrequency"
+                    dur="10s"
+                    values="0.003 0.006;0.005 0.009;0.003 0.006"
+                    repeatCount="indefinite"
+                  />
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="11" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </svg>
+            <img src="/assets/home/ribbon.png" className="ribbon-img" alt="Hikers, get ready to trek" />
+            <span className="ribbon-sheen" aria-hidden="true"></span>
+          </div>
           <img
             ref={bearRef}
             src="/assets/characters/bear.png"
