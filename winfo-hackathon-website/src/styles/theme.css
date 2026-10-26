@@ -99,7 +99,11 @@ button {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0% 24px;
+}
+
+.container h1{
+  font-family: var(--font-anybody);
 }
 
 .section {
@@ -157,8 +161,10 @@ button {
 }
 
 .btn--primary {
-  background: var(--color-accent);
-  color: var(--color-ink);
+  background: rgb(255, 255, 255);
+  color: rgb(45, 45, 45);
+  font-family: var(--font-jost);
+  font-weight: 600;
   box-shadow: var(--shadow-soft);
 }
 
@@ -218,8 +224,12 @@ button {
 
 .page-hero {
   padding: calc(var(--nav-height) + 64px) 0 64px;
-  background: var(--gradient-hero);
+  background: url("/assets/home/home_background_7_new.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
   color: var(--color-white);
+  display: flex;
+  align-items: center;
   text-align: center;
 }
 

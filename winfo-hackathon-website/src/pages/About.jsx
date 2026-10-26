@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
-import { aboutWinfo, committee, pastWinners, pastWinnersLinks, testimonials, impactStats } from "../data/content";
+import { aboutWinfo, pastWinners, whatIsWinfo } from "../data/content";
 import "./About.css";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import UseGliderScroll from "../hooks/UseGliderScroll";
 
 const BADGE_ROWS = [2, 3, 4, 3];
@@ -29,9 +29,29 @@ for (const n of BADGE_ROWS) {
 }
 
 export default function About() {
+
   const elkRef = useRef(null);
   const owlRef = useRef(null);
+  const rayRefs = useRef([]);
+  const rayTriggered = useRef(new Set());
+  const [raysVisible, setRaysVisible] = useState({});
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const idx = Number(entry.target.dataset.rayIndex);
+          if (entry.isIntersecting && !rayTriggered.current.has(idx)) {
+            rayTriggered.current.add(idx);
+            setRaysVisible((prev) => ({ ...prev, [idx]: true }));
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    rayRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
   UseGliderScroll([
     { ref: elkRef, sway: 24 },
     { ref: owlRef, sway: -30 },
@@ -42,6 +62,16 @@ export default function About() {
       <main className="about">
         {/* 1. mountain */}
         <section className="bg-slice mountain">
+          <div className="light-rays" aria-hidden="true">
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                ref={(el) => (rayRefs.current[i] = el)}
+                data-ray-index={i}
+                className={`light-ray about-ray--${i + 1}${raysVisible[i] ? " light-ray--visible" : ""}`}
+              ></span>
+            ))}
+          </div>
           <div className="about-intro">
             <img src="/assets/about/about-title.png" alt="about WINFO" />
             <p>Learn more about WINFO and the team behind our latest hackathon!</p>
@@ -53,15 +83,10 @@ export default function About() {
           <div className="about-winfo">
             <h2 className="what-is-winfo-header">WHAT IS WINFO?</h2>
             <p>
-              Women in Informatics (WINFO) is a diversity organization at the Information
-              School at the University of Washington, Seattle, dedicated to empowering
-              women and non-binary individuals to thrive as producers of technology.
+              {whatIsWinfo.aboutParagraph1}
             </p>
             <p>
-              The purpose of our hackathon is to provide participants with a fun, safe,
-              beginner-friendly, and collaborative environment in which they can develop
-              new skills, network with industry professionals, and learn more about the
-              tech industry.
+              {whatIsWinfo.aboutParagraph2}
             </p>
             <a
               className="btn-outline"
@@ -145,22 +170,21 @@ export default function About() {
           <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1-about" />
           <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const-about" />
           <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const-about" />
-          <div id="past-winners" className="section-eight-content"></div>
           <div className="last-years-winners">
             <h2 className="last-years-winners-header">Last Year's Winners</h2>
             <h3 className="winner-heading">{pastWinners[0].track} – “{pastWinners[0].project}”</h3>
-            <p>Reducing confusion, improving preparedness, and supporting safer encounters.</p>
-            <p>By: Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai</p>
+            <p>{pastWinners[0].about}</p>
+            <p>By: {pastWinners[0].team}</p>
             <img src={pastWinners[0].image} alt={`${pastWinners[0].project} project poster`} className="project-poster" />
             <h3 className="winner-heading">{pastWinners[1].track} – “{pastWinners[1].project}”</h3>
-            <p>Exploring the depths of news! Making today's news understandable, not overwhelming.</p>
-            <p>By: Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen</p>
+            <p>{pastWinners[1].about}</p>
+            <p>By: {pastWinners[1].team}</p>
             <img src={pastWinners[1].image} alt={`${pastWinners[1].project} project poster`} className="project-poster" />    <h3 className="winner-heading">{pastWinners[2].track} – “{pastWinners[2].project}”</h3>
-            <p>Nudge doesn't block your escape - it builds your bridge to focus.</p>
-            <p>By: Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja</p>
+            <p>{pastWinners[2].about}</p>
+            <p>By: {pastWinners[2].team}</p>
             <img src={pastWinners[2].image} alt={`${pastWinners[2].project} project poster`} className="project-poster" />    <h3 className="winner-heading">{pastWinners[3].track} – “{pastWinners[3].project}”</h3>
-            <p>Introducing the WNBA to new fans through an improved fantasy experience.</p>
-            <p>By: Isaiah Hoagland, Sunny Tian, Farrel Sudrajat</p>
+            <p>{pastWinners[3].about}</p>
+            <p>By: {pastWinners[3].team}</p>
             <img src={pastWinners[3].image} alt={`${pastWinners[3].project} project poster`} className="project-poster" />
             <p className="congrats-text">Congratulations to all of our winners and their incredible projects! Thank you to everyone who dove into our 14th Hackathon with us 🤍</p>
           </div>

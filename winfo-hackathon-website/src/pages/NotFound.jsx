@@ -5,10 +5,10 @@ export default function NotFound() {
     <section className="page-hero" style={{ minHeight: "70vh" }}>
       <div className="container">
         <h1>You've Wandered Off the Trail</h1>
-        <p style={{ color: "var(--color-text-muted)", marginBottom: "1.5rem" }}>
+        <p style={{ color: "white", marginBottom: "1.5rem" }}>
           404 — this page doesn't exist.
         </p>
-        <Link className="btn btn--primary" to="/">Back to Basecamp</Link>
+        <Link className="btn btn--primary" to="/">Back to Home</Link>
       </div>
     </section>
   );

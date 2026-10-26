@@ -1,57 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-.committee-group {
-  margin: 24px 0 40px;
-}
-
-.committee-card {
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.photo-placeholder {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
-}
-
-.winner-card {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.winner-card__emoji {
-  font-size: 1.8rem;
-}
-
-.testimonial {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.testimonial__name {
-  font-size: 0.85rem;
-  color: var(--color-sky-mid);
-  margin-top: 1rem;
-}
-
 .about {
   display: block;
   background: #101417;
-  /* fallback while images load */
 }
 
 .bg-slice {
   position: relative;
-  /* lets sprites use absolute positioning inside */
   width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -67,6 +22,33 @@
   aspect-ratio: 1728 / 2680;
   background-image: url("/assets/about/about-1-mountain.webp");
   background-color: #0a0c10;
+}
+
+.mountain .about-intro {
+  z-index: 2;
+}
+
+.mountain .light-ray {
+  top: 0;
+  --ray-angle: -55deg;
+}
+
+.mountain .about-ray--1 {
+  left: 0%;
+  width: 2vw;
+  animation-delay: 0s;
+}
+
+.mountain .about-ray--2 {
+  left: 6%;
+  width: 4vw;
+  animation-delay: 3.6s;
+}
+
+.mountain .about-ray--3 {
+  left: 2%;
+  width: 3.5vw;
+  animation-delay: 2.6s;
 }
 
 .cliff {
@@ -194,6 +176,13 @@
   display: block;
   width: 80%;
   height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.about-gallery img:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .about-gallery img:nth-child(1),
@@ -288,6 +277,26 @@
   display: block;
 }
 
+.badge-row img:hover {
+  animation: badge-shake 0.4s ease-in-out;
+}
+
+@keyframes badge-shake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-4deg);
+  }
+
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
 .speakers {
   position: absolute;
   top: 68%;
@@ -343,6 +352,10 @@
   margin-top: 30px;
 }
 
+.speaker-card img:hover {
+  animation: badge-shake 0.4s ease-in-out;
+}
+
 .speaker-badge {
   flex-shrink: 0;
   width: 25vw;
@@ -393,24 +406,8 @@
   font-weight: 700;
 }
 
-.best-impact-header {
-  width: 60%;
-  margin-top: 12%;
-  margin-bottom: 5%;
-}
-
 .last-years-winners p {
   font-size: 20px;
-}
-
-.past-project-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 7%;
-}
-
-.project-img {
-  width: 90%;
 }
 
 .congrats-text {
@@ -602,21 +599,8 @@
     font-size: 9px;
   }
 
-  .best-impact-header {
-    margin-top: 5%;
-    margin-bottom: 3%;
-  }
-
   .last-years-winners p {
     font-size: 9px;
-  }
-
-  .past-project-section {
-    margin-top: 3%;
-  }
-
-  .project-img {
-    width: 80%;
   }
 
   .congrats-text {

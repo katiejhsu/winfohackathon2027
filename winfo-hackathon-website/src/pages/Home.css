@@ -32,11 +32,6 @@
   font-size: var(--fs-small);
 }
 
-.hero__inner {
-  text-align: center;
-  max-width: 820px;
-}
-
 .winfo-logo {
   display: flex;
   flex-direction: row;
@@ -115,37 +110,6 @@
   transition: transform 0.2s ease;
 }
 
-.hero__theme {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: var(--color-accent);
-  margin-bottom: 1em;
-}
-
-.hero__blurb {
-  max-width: 620px;
-  margin: 1.5rem auto 2rem;
-  color: var(--color-text-muted);
-}
-
-.hero__actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.goal__number {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--color-accent);
-}
-
-.countdown-section h2 {
-  color: var(--color-sky-deep);
-  margin-bottom: 1.5rem;
-}
-
 .hero-meta__icon {
   width: 1em;
   height: 1em;
@@ -173,7 +137,6 @@
   width: 100vw;
 }
 
-/* Ribbon: fabric-like ripple (SVG displacement) + drifting sheen + soft pulsing glow */
 .ribbon-wrap {
   filter: url(#ribbon-ripple);
   pointer-events: none;
@@ -355,6 +318,7 @@
   color: #FF8D47;
   font-size: 3vw;
   line-height: 1.15;
+  text-transform: uppercase;
   text-align: center;
   margin: 1em 0 1.6em;
   letter-spacing: -0.5px;
@@ -763,7 +727,6 @@
   }
 }
 
-/* stars */
 .stars1-0,
 .stars1-1,
 .stars1-2,
@@ -777,7 +740,6 @@
   animation: twinkle 1.4s ease-in-out infinite;
 }
 
-/* constellations */
 .goat-const,
 .owl-const,
 .goat-const-about,
@@ -1052,7 +1014,6 @@
 .home {
   display: block;
   background: #101417;
-  /* fallback while images load */
 }
 
 .bg-slice {
@@ -1205,12 +1166,6 @@
   }
 }
 
-/* All beams anchored at the top edge, sharing one angle (35deg from vertical,
-   eyeballed off the real baked-in beam in the photo). Length is a fixed 110vw
-   rather than 100% of the section, since the section itself is thousands of px
-   tall -- rotating a box that long is what flung beams sideways across the nav
-   and headline earlier. Tune the shared angle via --ray-angle on .light-ray,
-   and each beam's reach via the height value above. */
 .light-ray--1 {
   left: 80%;
   width: 2vw;
@@ -1698,38 +1653,6 @@
     top: -36%
   }
 
-  .tracks-copy {
-    flex: 0 0 60vw;
-  }
-
-  .tracks-title {
-    margin: 0% 0% 1%;
-  }
-
-  .tracks-row {
-    margin: 2% 0% 4%;
-  }
-
-  .tracks-heading {
-    margin: 0;
-  }
-
-  .tracks-divider {
-    margin: 0.6em 0;
-  }
-
-  .section-faq__list {
-    width: 85%;
-  }
-
-  .section-five-content {
-    width: 85vw;
-  }
-
-  .section-eight-content {
-    top: -10%;
-  }
-
   .section-nine-content {
     top: 0%;
   }
@@ -1882,167 +1805,6 @@ a.res-tile:hover {
   white-space: pre-line;
 }
 
-.lake-fx {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.ripple {
-  position: absolute;
-  width: 7vw;
-  height: 2.2vw;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
-  opacity: 0;
-  animation: ripple-expand 5s ease-out infinite;
-}
-
-@keyframes ripple-expand {
-  0% {
-    transform: scale(0.2);
-    opacity: 0.6;
-  }
-
-  70% {
-    opacity: 0.15;
-  }
-
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
-.ripple--1 {
-  top: 95.0%;
-  left: 6%;
-  animation-delay: 0s;
-}
-
-.ripple--2 {
-  top: 95.3%;
-  left: 13.6%;
-  animation-delay: 1.8s;
-}
-
-.ripple--3 {
-  top: 95.0%;
-  left: 21.3%;
-  animation-delay: 3.2s;
-}
-
-.ripple--4 {
-  top: 96.4%;
-  left: 28.9%;
-  animation-delay: 2.4s;
-}
-
-.ripple--5 {
-  top: 97.0%;
-  left: 36.5%;
-  animation-delay: 0.6s;
-}
-
-.ripple--6 {
-  top: 97.2%;
-  left: 44.2%;
-  animation-delay: 2.9s;
-}
-
-.ripple--7 {
-  top: 98.2%;
-  left: 51.8%;
-  animation-delay: 1.2s;
-}
-
-.ripple--8 {
-  top: 98.6%;
-  left: 59.5%;
-  animation-delay: 3.6s;
-}
-
-.ripple--9 {
-  top: 99.0%;
-  left: 67.1%;
-  animation-delay: 0.3s;
-}
-
-.ripple--10 {
-  top: 99.6%;
-  left: 74.7%;
-  animation-delay: 4.1s;
-}
-
-.ripple--11 {
-  top: 99.8%;
-  left: 82.4%;
-  animation-delay: 1.9s;
-}
-
-.ripple--12 {
-  top: 99.8%;
-  left: 90%;
-  animation-delay: 3.4s;
-}
-
-.fish-shadow {
-  position: absolute;
-  width: 5vw;
-  height: 1.1vw;
-  background: radial-gradient(ellipse, rgba(0, 8, 10, 0.7) 0%, rgba(0, 8, 10, 0) 75%);
-  border-radius: 50%;
-  filter: blur(3px);
-  animation: fish-swim 16s ease-in-out infinite;
-}
-
-@keyframes fish-swim {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(8vw, 2vw) rotate(6deg);
-  }
-
-  50% {
-    transform: translate(14vw, -1vw) rotate(-4deg);
-  }
-
-  75% {
-    transform: translate(6vw, 3vw) rotate(3deg);
-  }
-
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
-.fish-shadow--1 {
-  top: 92.6%;
-  left: 41.5%;
-  animation-duration: 16s;
-}
-
-.fish-shadow--2 {
-  top: 97.2%;
-  left: 28.8%;
-  animation-duration: 20s;
-  animation-delay: -4s;
-}
-
-.fish-shadow--3 {
-  top: 96.6%;
-  left: 63.9%;
-  animation-duration: 18s;
-  animation-delay: -9s;
-}
-
 .home-s7 {
   aspect-ratio: auto;
   min-height: calc(100vw * 2421 / 1728);
@@ -2092,7 +1854,6 @@ a.res-tile:hover {
   -webkit-backdrop-filter: blur(3px);
 }
 
-/* fire section: footer always starts below the campfire, section grows if needed */
 .home-s8 {
   aspect-ratio: auto;
   min-height: calc(100vw * 2526 / 1728);

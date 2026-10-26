@@ -10,7 +10,7 @@ export const event = {
   name: "Women in Informatics' 15th Annual Hackathon",
   heroDates: "January 30-31, 2027",
   heroLocation: "University of Washington Husky Union Building",
-  theme: "Peaks of Possibility, Paths of Progress",
+  theme: "Peaks of Possibility",
   lastYearTheme: "Depths of Discovery, Currents of Creation",
   dates: "January 30–31, 2027",
   hackingDate: "January 30, 2027",
@@ -26,55 +26,34 @@ export const event = {
 
 export const mission = {
   heading: "Ready to Reach New Heights?",
-  blurb:
-    `Women in Informatics is excited to invite you to our 15th Annual Hackathon, ` +
-    `"Peaks of Possibility, Paths of Progress." Join us for a day of developing ` +
+  blurb1:
+    `Women in Informatics is excited to invite you to our 15th Annual Hackathon, `,
+  blurb2:
+    `. Join us for a day of developing ` +
     `technology solutions for social good and celebrating equity and inclusion ` +
     `in the technology field.`,
 };
 
 export const themeStory = {
   heading: "Hackathon Theme",
-  paragraphs: [
-    `Last year, our theme, "Depths of Discovery, Currents of Creation" emphasized ` +
-      `the power of exploration, creativity, and collaboration in shaping the future ` +
-      `of technology. This year, we're setting out on a new path. Inspired by the ` +
-      `winding trails, towering mountains, and the natural beauty of the Pacific ` +
-      `Northwest, our theme reflects the journey of discovery in technology. We ` +
-      `believe ingenuity emerges when participants venture beyond familiar ground ` +
-      `and pursue bold, creative ideas.`,
+  paragraph1:
+    `Inspired by the ` +
+    `winding trails, towering mountains, and the natural beauty of the Pacific ` +
+    `Northwest, our theme reflects the journey of discovery in`,
+  paragraph2:
+    `We believe ingenuity emerges when participants venture beyond familiar ground ` +
+    `and pursue bold, creative ideas.`,
+  paragraph3:
     `Our theme celebrates creativity, collaboration, and problem-solving as powerful ` +
-      `forces for shaping the future. We want to encourage our participants to explore ` +
-      `emerging technologies, work together through challenges, and build solutions ` +
-      `that create meaningful impact. Just as every trail leads to a new perspective, ` +
-      `every project has the potential to guide us toward bold new possibilities.`,
-  ],
-  // TODO: drop in the embed / video file for the 2026 hackathon highlight reel
+    `forces for shaping the future. We want to encourage our participants to explore ` +
+    `emerging technologies, work together through challenges, and build solutions ` +
+    `that create meaningful impact.`,
+
+  paragraph4:
+    `Just as every trail leads to a new perspective, ` +
+    `every project has the potential to guide us toward `,
   highlightReelUrl: null,
 };
-
-export const goals = [
-  {
-    number: "01",
-    title: "Successfully host our 15th Annual Hackathon",
-    body: "...targeting 300+ students across different disciplines, backgrounds, and experience levels.",
-  },
-  {
-    number: "02",
-    title: "Provide hands-on learning opportunities",
-    body: "...encouraging participants to explore emerging technologies, tools, and ideas.",
-  },
-  {
-    number: "03",
-    title: "Strengthen long-term partnerships",
-    body: "...with corporate sponsors, information professionals, and the local community to support the event's continued growth and impact.",
-  },
-  {
-    number: "04",
-    title: "Enhance the hackathon experience",
-    body: "...for participants, mentors, and sponsors through meaningful mentorship, stronger sponsor-participant engagement, and a transparent judging process.",
-  },
-];
 
 export const tracks = [
   {
@@ -277,6 +256,7 @@ export const pastWinners = [
     project: "Canario",
     image: "/assets/about/winners/canario.png",
     team: "Vania Benitez Salgado, Kai Barnum, Pimnipa Thawai",
+    about: "Reducing confusion, improving preparedness, and supporting safer encounters.",
   },
   {
     emoji: "🐟",
@@ -284,6 +264,7 @@ export const pastWinners = [
     project: "NewFuse",
     image: "/assets/about/winners/newfuse.png",
     team: "Sophia Wei, Angela Yang, Thu Doan, Thu Nguyen",
+    about: "Exploring the depths of news! Making today's news understandable, not overwhelming.",
   },
   {
     emoji: "🐚",
@@ -291,6 +272,7 @@ export const pastWinners = [
     project: "Nudge",
     image: "/assets/about/winners/nudge.png",
     team: "Sacchin Saravanan, Abhinav Vallabhaneni, Achintya Agrawal, Aashi Juneja",
+    about: "Nudge doesn't block your escape - it builds your bridge to focus.",
   },
   {
     emoji: "🪼",
@@ -298,6 +280,7 @@ export const pastWinners = [
     project: "WNBA",
     image: "/assets/about/winners/wnba.png",
     team: "Isaiah Hoagland, Sunny Tian, Farrel Sudrajat",
+    about: "Introducing the WNBA to new fans through an improved fantasy experience.",
   },
 ];
 
@@ -307,48 +290,6 @@ export const pastWinnersLinks = {
     "https://www.figma.com/slides/U9UfoWDtiYncSv54wT1lB5/judging-day?node-id=4108-116",
 };
 
-export const impactStats = [
-  { number: "256", label: "student participants" },
-  { number: "64", label: "projects submitted" },
-  { number: "39", label: "industry mentors" },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "The WINFO Hackathon is one of the highlights of the year; seeing the inventive work that students create, all in a single day, meant to solve real problems in a human-centered and humane way, is always inspiring. Which makes judging challenging - and very rewarding!",
-    name: "Joseph Janes",
-    role: "iSchool Professor and Hackathon Judge",
-  },
-  {
-    quote:
-      "I joined the WINFO Hackathon without a team and wasn't sure what to expect, but I ended up finding a great group and learning so much. It was a fun, supportive experience that pushed me to try new things and build confidence in my skills.",
-    name: "Shalomi Jobi",
-    role: "Third Year Informatics Student",
-  },
-  {
-    quote:
-      "It was a fantastic experience. The event was very well-organized, the provided resources made collaboration easy, and the food was great. The welcoming environment made it easy to meet new people, and the overall experience was fun and rewarding!",
-    name: "Isabella Petra",
-    role: "",
-  },
-];
-
-// TODO: replace filenames with real logo assets in /public/sponsors
-export const sponsors = [
-  { name: "Microsoft", logo: null },
-  { name: "Accenture", logo: null },
-  { name: "Adobe", logo: null },
-  { name: "EY", logo: null },
-  { name: "Cyborg Mobile", logo: null },
-  { name: "lululemon", logo: null },
-  { name: "Samuel E. Kelly Ethnic Cultural Center — UW Office of Minority Affairs & Diversity", logo: null },
-  { name: "Costco Wholesale", logo: null },
-  { name: "PitchBook", logo: null },
-  { name: "UW Services + Activities Fee", logo: null },
-  { name: "UW Alumni Association", logo: null },
-];
-
 export const contact = {
   email: "winfo@uw.edu",
   instagram: "https://www.instagram.com/uwwinfo/",
@@ -356,3 +297,51 @@ export const contact = {
   youtube: "https://www.youtube.com/@uw_winfo",
   facebook: "https://www.facebook.com/groups/winfouw/",
 };
+export const workshops = [
+  {
+    icon: "/assets/resources/icon-design.png",
+    title: "Design Workshop",
+    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
+    desc: "🏔️ Interested in leveling up your Figma skills before the WINFO Hackathon? Now's your chance!\n\nJoin Figma Campus Leaders for a hands-on workshop covering Auto Layout, Components, and Variables! These are three essential tools for designing faster, smarter, and more scalable interfaces.\n\nWhether you’re new to Figma or looking to sharpen your skills, this workshop will help you build flexible designs, collaborate more efficiently, and move seamlessly from idea to prototype. Come learn, ask questions, and get hackathon-ready with confidence.",
+  },
+  {
+    icon: "/assets/resources/icon-code.png",
+    title: "All about ‘Best Implementation’",
+    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
+    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
+  },
+];
+
+export const events = [
+  {
+    icon: "/assets/resources/icon-team.png",
+    title: "Team Formation",
+    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
+    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
+  },
+  {
+    icon: "/assets/resources/icon-laptop.png",
+    title: "Hack the Hackathon",
+    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
+    desc: "New to the hackathon or still searching for a team? Hack the Hackathon has you covered 🥾\n\nThis session gives you the opportunity to:\n🥾 Meet other participants and potential teammates\n🌲 Learn more about the hackathon structure, expectations, and tips & tricks\n🏔️ Get your brain working on early ideation and making the most out of our hackathon!\n\nDive in early, explore new ideas, and kick off the hackathon with confidence.",
+  },
+];
+
+export const designResources = [
+  { label: "Design Basics", url: "https://www.figma.com/resource-library/design-basics/" },
+  { label: "How to use Figma", url: "https://www.figma.com/resource-library/k-12-design-basics/" },
+];
+export const devResources = [
+  { label: "How to collaborate with Github", url: "https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67" },
+  { label: "Intro to Web Dev", url: "https://www.youtube.com/watch?v=ysEN5RaKOlA" },
+  { label: "Intro to CSS Animations", url: "https://www.youtube.com/watch?v=z2LQYsZhsFw" },
+];
+
+export const whatIsWinfo = {
+  aboutParagraph1: `Women in Informatics (WINFO) is a diversity organization at the Information School at the University` +
+    ` of Washington, Seattle, dedicated to empowering women and non-binary individuals to thrive as producers of technology.`,
+
+  aboutParagraph2: `The purpose of our hackathon is to provide participants with a fun, safe, beginner-friendly, and` +
+    ` collaborative environment in which they can develop new skills, network with industry professionals, and learn` +
+    ` more about the tech industry.`,
+}

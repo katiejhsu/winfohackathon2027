@@ -1,19 +1,18 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Countdown from "../components/Countdown";
-import { SectionHeader, TrackCard, ScheduleList, SponsorGrid } from "../components/Reusable";
 import UseGliderScroll from "../hooks/UseGliderScroll";
 import {
   event,
   mission,
   themeStory,
-  goals,
   tracks,
   hackingDaySchedule,
   judgingDaySchedule,
-  sponsors,
-  impactStats,
   faqs,
+  workshops,
+  events,
+  designResources,
+  devResources,
 } from "../data/content";
 import Footer from "../components/Footer";
 
@@ -29,45 +28,6 @@ function linkifyEmail(text) {
     )
   );
 }
-const workshops = [
-  {
-    icon: "/assets/resources/icon-design.png",
-    title: "Design Workshop",
-    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "🏔️ Interested in leveling up your Figma skills before the WINFO Hackathon? Now's your chance!\n\nJoin Figma Campus Leaders for a hands-on workshop covering Auto Layout, Components, and Variables! These are three essential tools for designing faster, smarter, and more scalable interfaces.\n\nWhether you’re new to Figma or looking to sharpen your skills, this workshop will help you build flexible designs, collaborate more efficiently, and move seamlessly from idea to prototype. Come learn, ask questions, and get hackathon-ready with confidence.",
-  },
-  {
-    icon: "/assets/resources/icon-code.png",
-    title: "All about ‘Best Implementation’",
-    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
-  },
-];
-
-const events = [
-  {
-    icon: "/assets/resources/icon-team.png",
-    title: "Team Formation",
-    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "lorem ipsum dolor sit amet consectetur adipiscing elit voluptas anim accusamus quas optio in adipiscing optio officia.",
-  },
-  {
-    icon: "/assets/resources/icon-laptop.png",
-    title: "Hack the Hackathon",
-    when: "Thursday, January 15, from 5:30 to 7pm | HUB 214",
-    desc: "New to the hackathon or still searching for a team? Hack the Hackathon has you covered 🥾\n\nThis session gives you the opportunity to:\n🥾 Meet other participants and potential teammates\n🌲 Learn more about the hackathon structure, expectations, and tips & tricks\n🏔️ Get your brain working on early ideation and making the most out of our hackathon!\n\nDive in early, explore new ideas, and kick off the hackathon with confidence.",
-  },
-];
-
-const designResources = [
-  { label: "Design Basics", url: "https://www.figma.com/resource-library/design-basics/" },
-  { label: "How to use Figma", url: "https://www.figma.com/resource-library/k-12-design-basics/" },
-];
-const devResources = [
-  { label: "How to collaborate with Github", url: "https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67" },
-  { label: "Intro to Web Dev", url: "https://www.youtube.com/watch?v=ysEN5RaKOlA" },
-  { label: "Intro to CSS Animations", url: "https://www.youtube.com/watch?v=z2LQYsZhsFw" },
-];
 
 function ResourceCard({ icon, title, when, desc }) {
   return (
@@ -329,12 +289,10 @@ export default function Home() {
               style={{ animationDelay: "0.3s" }}
             />
           </div>
-          <h2 className="section-two-headline">Ready to Reach New Heights?</h2>
+          <h2 className="section-two-headline">{mission.heading}</h2>
           <p className="section-two-blurb">
-            Women in Informatics is excited to invite you to our 15th Annual
-            Hackathon, <span className="section-two-blurb__accent">&#8220;Peaks of Possibility&#8221;</span>.
-            Join us for a day of developing technology solutions for social good
-            and celebrating equity and inclusion in the technology field.
+            {mission.blurb1}<span className="section-two-blurb__accent">&#8220;Peaks of Possibility&#8221;</span>
+            {mission.blurb2}
           </p>
         </section>
 
@@ -375,18 +333,18 @@ export default function Home() {
           <div id="theme" className="section-three-content">
             <h2 className="section-three-heading">Hackathon Theme</h2>
             <p className="section-three-body">
-              Last year, our theme, <strong>&#8220;Depths of Discovery, Currents of Creation&#8221;</strong> emphasized the power of exploration, creativity, and collaboration in shaping the future of technology.
+              Last year, our theme, <strong>&#8220;{event.lastYearTheme}&#8221;</strong> emphasized the power of exploration, creativity, and collaboration in shaping the future of technology.
             </p>
             <p className="section-three-body">This year, we&#8217;re setting out on a new path:</p>
-            <p className="section-three-banner">PEAKS OF POSSIBILITY</p>
+            <p className="section-three-banner">{event.theme}</p>
             <p className="section-three-body">
-              Inspired by the winding trails, towering mountains, and the natural beauty of the Pacific Northwest, our theme reflects the journey of <strong>discovery in technology.</strong> We believe ingenuity emerges when participants venture beyond familiar ground and pursue bold, creative ideas.
+              {themeStory.paragraph1} <strong>discovery in technology.</strong> {themeStory.paragraph2}
             </p>
             <p className="section-three-body">
-              Our theme celebrates creativity, collaboration, and problem-solving as powerful forces for shaping the future. We want to encourage our participants to explore emerging technologies, work together through challenges, and build solutions that create meaningful impact.
+              {themeStory.paragraph3}
             </p>
             <p className="section-three-body">
-              Just as every trail leads to a new perspective, every project has the potential to guide us toward <strong>bold new possibilities</strong>.
+              {themeStory.paragraph4} <strong>bold new possibilities</strong>.
             </p>
           </div>
           <iframe
