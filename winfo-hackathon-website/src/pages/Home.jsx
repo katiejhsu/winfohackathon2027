@@ -344,11 +344,22 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
-          <img
-            src="/assets/characters/fishingowl.png"
-            alt="Owl fishing in the river"
-            className="fishing-owl"
-          />
+          <div className="fishing-owl">
+            <img
+              src="/assets/characters/fishingowl.png"
+              alt="Owl fishing in the river"
+              className="fishing-owl__img"
+            />
+          </div>
+            <div className="fish-splash" aria-hidden="true">
+              <span className="fish-splash__ring fish-splash__ring--1"></span>
+              <span className="fish-splash__ring fish-splash__ring--2"></span>
+              <span className="fish-splash__drop" style={{ "--dx": "-1.6vw", "--h": "2.4vw", "--d": "0s" }}></span>
+              <span className="fish-splash__drop" style={{ "--dx": "-0.8vw", "--h": "3.2vw", "--d": "0.05s" }}></span>
+              <span className="fish-splash__drop" style={{ "--dx": "0.2vw", "--h": "3.6vw", "--d": "0.02s" }}></span>
+              <span className="fish-splash__drop" style={{ "--dx": "1.0vw", "--h": "2.8vw", "--d": "0.08s" }}></span>
+              <span className="fish-splash__drop" style={{ "--dx": "1.8vw", "--h": "2.0vw", "--d": "0.03s" }}></span>
+            </div>
           <div className="lake-fx" aria-hidden="true">
             <span className="ripple ripple--1"></span>
             <span className="ripple ripple--2"></span>

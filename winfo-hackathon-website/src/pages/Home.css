@@ -2022,7 +2022,71 @@ a.res-tile:hover {
   width: 28%;
   height: auto;
   transform-origin: 50% 50%;
-  transform: translate(calc(var(--tip-x) * -1), calc(var(--tip-y) * -1)) scaleX(-1);
+  transform: translate(calc(var(--tip-x) * -1), calc(var(--tip-y) * -1));
   z-index: 3;
   pointer-events: none;
+}
+
+/* Owl is mirrored on the inner image; the wrapper does the positioning. */
+.fishing-owl__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+/* Splash where the fish leaves the water. left/top = % of the lake section (red-dot click). */
+.fish-splash {
+  position: absolute;
+  left: 46%;
+  top: 95.4%;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.fish-splash__ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7vw;
+  height: 2.2vw;
+  border: 2px solid rgba(225, 242, 240, 0.75);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+  animation: fish-splash-ring 3.4s ease-out infinite;
+}
+.fish-splash__ring--2 { animation-delay: 0.35s; border-width: 1.5px; }
+
+.fish-splash__drop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.55vw;
+  height: 0.55vw;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff, rgba(200, 232, 235, 0.85) 60%, rgba(160, 205, 215, 0.4));
+  opacity: 0;
+  animation: fish-splash-drop 3.4s infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes fish-splash-ring {
+  0%   { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
+  8%   { opacity: 0.85; }
+  60%  { opacity: 0.25; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes fish-splash-drop {
+  0%   { transform: translate(0, 0); opacity: 0; animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+  6%   { opacity: 1; }
+  30%  { transform: translate(calc(var(--dx) * 0.5), calc(var(--h) * -1)); opacity: 1; animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+  55%  { transform: translate(var(--dx), 0.4vw); opacity: 0; }
+  100% { transform: translate(var(--dx), 0.4vw); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fish-splash__ring, .fish-splash__drop { animation: none; opacity: 0; }
 }
