@@ -21,7 +21,7 @@ export default function Register() {
               <h3>Participant Sign-Up</h3>
               <p>
                 Register as a hackathon participant. No coding experience
-                required — teams of up to 4.
+                required - teams of up to 4.
               </p>
               {/* TODO: swap for an embedded form (Google Form / Typeform / custom) */}
               <a className="btn btn--primary" href={event.registerUrl}>Register Now</a>

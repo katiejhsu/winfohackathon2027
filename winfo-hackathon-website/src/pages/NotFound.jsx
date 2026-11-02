@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="container">
         <h1>You've Wandered Off the Trail</h1>
         <p style={{ color: "white", marginBottom: "1.5rem" }}>
-          404 — this page doesn't exist.
+          404 - this page doesn't exist.
         </p>
         <Link className="btn btn--primary" to="/">Back to Home</Link>
       </div>

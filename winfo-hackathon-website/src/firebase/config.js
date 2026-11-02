@@ -1,5 +1,5 @@
 // ============================================================================
-// FIREBASE CONFIG (placeholder — NOT wired up yet)
+// FIREBASE CONFIG (placeholder - NOT wired up yet)
 // ----------------------------------------------------------------------------
 // Backend/database is intentionally undecided for now, so this site runs
 // fully static with a stubbed auth hook (see useAuth.js). Nothing here is

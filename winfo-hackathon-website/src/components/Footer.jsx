@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="footer-contact">
         <h2 className="footer-contact__heading">Contact Us</h2>
         <p className="footer-contact__text">
-          Reach out to <a href="mailto:winfo@uw.edu">winfo@uw.edu</a> — we're happy to help.
+          Reach out to <a href="mailto:winfo@uw.edu">winfo@uw.edu</a> - we're happy to help.
         </p>
       </div>
       <div className="sponsors-section">

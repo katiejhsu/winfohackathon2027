@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // ============================================================================
-// STUB AUTH HOOK — fully static, no backend wired up yet
+// STUB AUTH HOOK - fully static, no backend wired up yet
 // ----------------------------------------------------------------------------
 // This fakes a sign-in (any @uw.edu-looking email "succeeds" after a short
 // delay) purely so the two portal pages are click-through-able in a demo.

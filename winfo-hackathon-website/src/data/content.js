@@ -97,7 +97,7 @@ export const tracks = [
     description:
       `This team excels in technical execution, showing exceptional software ` +
       `development and coding skills. This hack showcases clean, effective, and ` +
-      `innovative code—whether through advanced software engineering, creative ` +
+      `innovative code-whether through advanced software engineering, creative ` +
       `problem-solving, or impactful use of AI and emerging technologies. "Best ` +
       `Implementation" projects can balance their technical skillset with creativity ` +
       `in their final product.`,
@@ -140,7 +140,7 @@ export const faqs = [
   },
   {
     q: "Are there any prerequisites or required skills?",
-    a: "While no prerequisites are required, it helps to have a team where each member brings something different \u2014 design, coding, presentation, or research. Curiosity is all you really need.",
+    a: "While no prerequisites are required, it helps to have a team where each member brings something different - design, coding, presentation, or research. Curiosity is all you really need.",
   },
   {
     q: "How big are the teams?",
@@ -176,7 +176,7 @@ export const faqs = [
   },
   {
     q: "Who can participate in the hackathon?",
-    a: "Any current undergraduate UW student is welcome to participate. Come as you are \u2014 we can't wait to see what you build.",
+    a: "Any current undergraduate UW student is welcome to participate. Come as you are - we can't wait to see what you build.",
   },
   {
     q: "How long will the hackathon be?",
@@ -192,7 +192,7 @@ export const faqs = [
   },
   {
     q: "My question isn't here!",
-    a: "Reach out to winfo@uw.edu \u2014 we're happy to help.",
+    a: "Reach out to winfo@uw.edu - we're happy to help.",
   },
 ];
 
@@ -226,7 +226,7 @@ export const aboutWinfo = {
   website: "https://winfo.ischool.uw.edu"
 };
 
-// Committee members grouped by role — TODO: add headshots + last names as available
+// Committee members grouped by role - TODO: add headshots + last names as available
 export const committee = {
   intro:
     "Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.",
@@ -240,7 +240,7 @@ export const committee = {
   ],
 };
 
-// The People — speakers / mentors / judges. TODO: fill in with real names,
+// The People - speakers / mentors / judges. TODO: fill in with real names,
 // company, and (optionally) email once confirmed. Ask past mentors for consent
 // before publishing their info.
 export const people = {
