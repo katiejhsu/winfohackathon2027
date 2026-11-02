@@ -684,3 +684,38 @@
     font-size: 10px;
   }
 }
+/* Bear on the About mountain. left/top = where the bear's feet land (red-dot coords, mountain section).
+   Mirrored with scaleX(-1). Walks once when scrolled into view. */
+.about-bear {
+  position: absolute;
+  left: 7.9%;
+  top: 34.7%;
+  width: 20%;
+  height: auto;
+  transform: translate(-50%, -100%) scaleX(-1);
+  transform-origin: 50% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.about-bear--walk {
+  animation: about-bear-walk 6s ease-in-out forwards;
+}
+
+@keyframes about-bear-walk {
+  0%   { left: 7.9%;  top: 34.7%; transform: translate(-50%, -100%) scaleX(-1) rotate(0deg); }
+  8%   { transform: translate(-50%, -100%) scaleX(-1) rotate(-4deg); }
+  16%  { transform: translate(-50%, -100%) scaleX(-1) rotate(4deg); }
+  24%  { transform: translate(-50%, -100%) scaleX(-1) rotate(-4deg); }
+  33%  { left: 25.7%; top: 31.8%; transform: translate(-50%, -100%) scaleX(-1) rotate(4deg); }
+  41%  { transform: translate(-50%, -100%) scaleX(-1) rotate(-4deg); }
+  50%  { transform: translate(-50%, -100%) scaleX(-1) rotate(4deg); }
+  58%  { transform: translate(-50%, -100%) scaleX(-1) rotate(-4deg); }
+  66%  { left: 39.6%; top: 28.6%; transform: translate(-50%, -100%) scaleX(-1) rotate(4deg); }
+  75%  { transform: translate(-50%, -100%) scaleX(-1) rotate(-4deg); }
+  88%  { transform: translate(-50%, -100%) scaleX(-1) rotate(4deg); }
+  100% { left: 49.1%; top: 23.2%; transform: translate(-50%, -100%) scaleX(-1) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-bear--walk { animation: none; }
+}

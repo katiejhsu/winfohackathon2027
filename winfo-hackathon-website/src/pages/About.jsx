@@ -36,6 +36,48 @@ export default function About() {
   const rayTriggered = useRef(new Set());
   const [raysVisible, setRaysVisible] = useState({});
 
+  // Bear walks down the mountain once, when it scrolls into view.
+  const bearRef = useRef(null);
+  const [bearWalking, setBearWalking] = useState(false);
+  useEffect(() => {
+    const el = bearRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBearWalking(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Red-dot coordinate tool: click any section to drop a dot and read its left/top %.
+  // Dots are kept per section since each section has its own % coordinate space.
+  const [anchorPoints, setAnchorPoints] = useState([]);
+  const handleAnchorClick = (section) => (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const left = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const top = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    setAnchorPoints((prev) => [...prev, { section, left, top }]);
+  };
+  const renderDots = (section) =>
+    anchorPoints
+      .filter((pt) => pt.section === section)
+      .map((pt, i) => (
+        <div
+          key={i}
+          className="anchor-marker"
+          style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
+        >
+          <span className="anchor-marker__dot"></span>
+          <span className="anchor-marker__label">{section}: left: {pt.left}%, top: {pt.top}%</span>
+        </div>
+      ));
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,7 +103,17 @@ export default function About() {
 
       <main className="about">
         {/* 1. mountain */}
-        <section className="bg-slice mountain">
+        <section
+          className="bg-slice mountain"
+          onClick={handleAnchorClick("mountain")}
+        >
+          {renderDots("mountain")}
+          <img
+            ref={bearRef}
+            src="/assets/characters/bear.png"
+            alt="Bear hiking down the mountain"
+            className={`about-bear${bearWalking ? " about-bear--walk" : ""}`}
+          />
           <div className="light-rays" aria-hidden="true">
             {[0, 1, 2].map((i) => (
               <span
@@ -79,7 +131,11 @@ export default function About() {
         </section>
 
         {/* 2. black cliff */}
-        <section className="bg-slice cliff">
+        <section
+          className="bg-slice cliff"
+          onClick={handleAnchorClick("cliff")}
+        >
+          {renderDots("cliff")}
           <div className="about-winfo">
             <h2 className="what-is-winfo-header">WHAT IS WINFO?</h2>
             <p>
@@ -106,7 +162,11 @@ export default function About() {
         </section>
 
         {/* 3. sunset */}
-        <section className="bg-slice sunset">
+        <section
+          className="bg-slice sunset"
+          onClick={handleAnchorClick("sunset")}
+        >
+          {renderDots("sunset")}
           <img ref={elkRef} src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
           <img ref={owlRef} src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
 
@@ -117,7 +177,11 @@ export default function About() {
         </section>
 
         {/* 4. orange */}
-        <section className="bg-slice orange">
+        <section
+          className="bg-slice orange"
+          onClick={handleAnchorClick("orange")}
+        >
+          {renderDots("orange")}
           <div id="committee" className="committee-badges">
             <h2 className="meet-committee-header">Meet the 2026-2027 <br /> Hackathon Committee!</h2>
             <div className="badge-grid">
@@ -162,7 +226,11 @@ export default function About() {
         </section>
 
         {/* 5. night sky */}
-        <section className="bg-slice sky">
+        <section
+          className="bg-slice sky"
+          onClick={handleAnchorClick("sky")}
+        >
+          {renderDots("sky")}
           <img src="assets/characters/stars1.png" alt="star" className="stars1-0-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-1-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-2-about" />
@@ -191,7 +259,11 @@ export default function About() {
         </section>
 
         {/* 6. fire */}
-        <section className="bg-slice fire">
+        <section
+          className="bg-slice fire"
+          onClick={handleAnchorClick("fire")}
+        >
+          {renderDots("fire")}
           <div className="campfire-mascots-section">
             <div>
               <img alt="animals around a campfire" src="assets/about/campfire-mascots.png" className="campfire-mascots" />
