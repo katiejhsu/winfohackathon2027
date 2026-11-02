@@ -1914,3 +1914,14 @@ a.res-tile:hover {
   white-space: nowrap;
   border-radius: 4px;
 }
+/* Elk on the forest path (tree section). left/top = where the elk's feet land. */
+.elk-hiking {
+  position: absolute;
+  left: 69.1%;
+  top: 101.5%;
+  width: 17%;
+  height: auto;
+  transform: translate(-50%, -100%);
+  z-index: 5;
+  pointer-events: none;
+}

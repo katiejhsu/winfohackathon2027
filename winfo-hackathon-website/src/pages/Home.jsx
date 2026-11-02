@@ -245,9 +245,14 @@ export default function Home() {
         {/* 2. giant tree: section two */}
         <section
           className="bg-slice home-s2"
-        // onClick={handleAnchorClick}
+          onClick={handleAnchorClick}
         >
-          {/*
+          <img
+            src="/assets/characters/elk-hiking.png"
+            alt="Elk hiking through the forest"
+            className="elk-hiking"
+          />
+
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -258,7 +263,6 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
-          */}
           <div className="light-rays" aria-hidden="true">
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <span
