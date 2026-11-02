@@ -140,6 +140,10 @@ export default function MentorPortal() {
 
       <section className="mentor-portal__bottom" onClick={handleAnchorClick("bottom")}>
         {renderDots("bottom")}
+        <div className="mentor-lantern" aria-hidden="true">
+          <span className="mentor-lantern__glow"></span>
+          <span className="mentor-lantern__core"></span>
+        </div>
         <div className="mentor-portal__footer">
           <Footer />
         </div>
