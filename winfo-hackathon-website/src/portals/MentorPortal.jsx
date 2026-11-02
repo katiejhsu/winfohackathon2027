@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import Footer from "../components/Footer";
 import "./MentorPortal.css";
 
@@ -56,9 +57,62 @@ function MentorTiles({ items }) {
 }
 
 export default function MentorPortal() {
+  // Bear walks across the mountain when it scrolls into view (same trigger as the home page bear)
+  const bearRef = useRef(null);
+  const bearTriggered = useRef(false);
+  const [bearWalking, setBearWalking] = useState(false);
+  useEffect(() => {
+    const el = bearRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !bearTriggered.current) {
+            bearTriggered.current = true;
+            setBearWalking(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // RED-DOT COORDINATE TOOL: click anywhere on the page to drop a dot that shows its left%/top%.
+  // Dots are tracked per section (top / bottom) since each section has its own % coordinate space.
+  const [anchorPoints, setAnchorPoints] = useState([]);
+  const handleAnchorClick = (section) => (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const left = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const top = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    setAnchorPoints((prev) => [...prev, { section, left, top }]);
+  };
+  const renderDots = (section) =>
+    anchorPoints
+      .filter((pt) => pt.section === section)
+      .map((pt, i) => (
+        <div
+          key={i}
+          className="anchor-marker"
+          style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
+        >
+          <span className="anchor-marker__dot"></span>
+          <span className="anchor-marker__label">{section}: left: {pt.left}%, top: {pt.top}%</span>
+        </div>
+      ));
+
   return (
     <div className="mentor-portal">
-      <section className="mentor-portal__top">
+      <section className="mentor-portal__top" onClick={handleAnchorClick("top")}>
+        {renderDots("top")}
+        <img
+          ref={bearRef}
+          src="/assets/characters/pink-bear.png"
+          alt="Bear hiking across the mountain"
+          className={`mentor-bear${bearWalking ? " mentor-bear--walk" : ""}`}
+        />
         <div className="mentor-portal__heading">
           <div className="mentor-portal__logo">
             <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="mentor-portal__star" />
@@ -84,7 +138,8 @@ export default function MentorPortal() {
         </div>
       </section>
 
-      <section className="mentor-portal__bottom">
+      <section className="mentor-portal__bottom" onClick={handleAnchorClick("bottom")}>
+        {renderDots("bottom")}
         <div className="mentor-portal__footer">
           <Footer />
         </div>
