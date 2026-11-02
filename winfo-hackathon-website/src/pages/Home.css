@@ -1924,6 +1924,7 @@ a.res-tile:hover {
   transform: translate(-50%, -100%);
   z-index: 5;
   pointer-events: none;
+  transform-origin: 50% 100%;
 }
 
 /* Fireflies (tree section). left/top = center of each firefly, from red-dot clicks. */
@@ -1960,4 +1961,52 @@ a.res-tile:hover {
 
 @media (prefers-reduced-motion: reduce) {
   .firefly { animation: none; opacity: 0.85; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .elk-hiking { animation: none; }
+}
+
+/* Elk looks left/right: top elk fades out to reveal a mirrored copy underneath. */
+.elk-hiking {
+  z-index: 6;
+  transform-origin: 50% 100%;
+  animation:
+    elk-breathe 6s ease-in-out infinite,
+    elk-fade-top 12s ease-in-out infinite;
+}
+.elk-hiking--flip {
+  z-index: 5;
+  opacity: 0;
+  animation:
+    elk-breathe-flip 6s ease-in-out infinite,
+    elk-fade-under 12s ease-in-out infinite;
+}
+
+@keyframes elk-breathe {
+  0%, 100% { transform: translate(-50%, -100%) scaleX(1) scaleY(1); }
+  50%      { transform: translate(-50%, -100%) scaleX(1) scaleY(1.012); }
+}
+@keyframes elk-breathe-flip {
+  0%, 100% { transform: translate(-50%, -100%) scaleX(-1) scaleY(1); }
+  50%      { transform: translate(-50%, -100%) scaleX(-1) scaleY(1.012); }
+}
+
+/* top elk: visible, fades out ~30-40%, fades back in ~62-72% */
+@keyframes elk-fade-top {
+  0%, 30%   { opacity: 1; }
+  33%, 69%  { opacity: 0; }
+  72%, 100% { opacity: 1; }
+}
+/* mirrored elk: only on while the top elk is fading/hidden */
+@keyframes elk-fade-under {
+  0%, 29%     { opacity: 0; }
+  29.1%, 73%  { opacity: 1; }
+  73.1%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elk-hiking, .elk-hiking--flip { animation: none; }
+  .elk-hiking--flip { opacity: 0; }
 }

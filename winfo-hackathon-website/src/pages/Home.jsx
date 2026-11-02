@@ -252,6 +252,12 @@ export default function Home() {
             alt="Elk hiking through the forest"
             className="elk-hiking"
           />
+          <img
+            src="/assets/characters/elk-hiking.png"
+            alt=""
+            aria-hidden="true"
+            className="elk-hiking elk-hiking--flip"
+          />
           {[
             [56.8, 83.1], [59.0, 84.6], [65.0, 84.9], [80.7, 86.7],
             [59.3, 87.6], [82.9, 87.9], [70.7, 89.0], [55.7, 90.1],
