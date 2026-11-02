@@ -332,8 +332,9 @@ export default function Home() {
         {/* 3. dark forest to cave: theme + video */}
         <section
           className="bg-slice home-s3"
-          onClick={handleAnchorClick}
+          // onClick={handleAnchorClick}
         >
+          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -344,6 +345,7 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
+          */}
           <div className="fishing-owl">
             <img
               src="/assets/characters/fishingowl.png"

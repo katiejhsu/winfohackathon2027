@@ -105,9 +105,9 @@ export default function About() {
         {/* 1. mountain */}
         <section
           className="bg-slice mountain"
-          onClick={handleAnchorClick("mountain")}
+          // onClick={handleAnchorClick("mountain")}
         >
-          {renderDots("mountain")}
+          {/* {renderDots("mountain")} */}
           <img
             ref={bearRef}
             src="/assets/characters/bear.png"
@@ -133,9 +133,9 @@ export default function About() {
         {/* 2. black cliff */}
         <section
           className="bg-slice cliff"
-          onClick={handleAnchorClick("cliff")}
+          // onClick={handleAnchorClick("cliff")}
         >
-          {renderDots("cliff")}
+          {/* {renderDots("cliff")} */}
           <div className="about-winfo">
             <h2 className="what-is-winfo-header">WHAT IS WINFO?</h2>
             <p>
@@ -164,9 +164,9 @@ export default function About() {
         {/* 3. sunset */}
         <section
           className="bg-slice sunset"
-          onClick={handleAnchorClick("sunset")}
+          // onClick={handleAnchorClick("sunset")}
         >
-          {renderDots("sunset")}
+          {/* {renderDots("sunset")} */}
           <img ref={elkRef} src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
           <img ref={owlRef} src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
 
@@ -179,9 +179,9 @@ export default function About() {
         {/* 4. orange */}
         <section
           className="bg-slice orange"
-          onClick={handleAnchorClick("orange")}
+          // onClick={handleAnchorClick("orange")}
         >
-          {renderDots("orange")}
+          {/* {renderDots("orange")} */}
           <div id="committee" className="committee-badges">
             <h2 className="meet-committee-header">Meet the 2026-2027 <br /> Hackathon Committee!</h2>
             <div className="badge-grid">
@@ -228,9 +228,9 @@ export default function About() {
         {/* 5. night sky */}
         <section
           className="bg-slice sky"
-          onClick={handleAnchorClick("sky")}
+          // onClick={handleAnchorClick("sky")}
         >
-          {renderDots("sky")}
+          {/* {renderDots("sky")} */}
           <img src="assets/characters/stars1.png" alt="star" className="stars1-0-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-1-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-2-about" />
@@ -261,9 +261,9 @@ export default function About() {
         {/* 6. fire */}
         <section
           className="bg-slice fire"
-          onClick={handleAnchorClick("fire")}
+          // onClick={handleAnchorClick("fire")}
         >
-          {renderDots("fire")}
+          {/* {renderDots("fire")} */}
           <div className="campfire-mascots-section">
             <div>
               <img alt="animals around a campfire" src="assets/about/campfire-mascots.png" className="campfire-mascots" />

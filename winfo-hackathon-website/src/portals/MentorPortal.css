@@ -249,8 +249,8 @@
 .mentor-bear {
   position: absolute;
   left: 83%;
-  top: 23.6%;
-  width: 9.3%;
+  top: 24.4%;
+  width: 14%;
   height: auto;
   transform: translate(-50%, -100%) rotate(0deg) scale(1);
   transform-origin: 50% 100%;
@@ -265,27 +265,27 @@
 @keyframes mentor-bear-walk {
   0% {
     left: 83%;
-    top: 23.6%;
+    top: 24.4%;
     transform: translate(-50%, -100%) rotate(0deg) scale(1);
   }
   25% {
     left: 72.3%;
-    top: 18.2%;
+    top: 19.0%;
     transform: translate(-50%, -100%) rotate(-5deg) scale(1.04);
   }
   50% {
     left: 63.9%;
-    top: 15.6%;
+    top: 16.4%;
     transform: translate(-50%, -100%) rotate(5deg) scale(0.97);
   }
   75% {
     left: 56.5%;
-    top: 18.5%;
+    top: 19.3%;
     transform: translate(-50%, -100%) rotate(-5deg) scale(1.04);
   }
   100% {
-    left: 42.8%;
-    top: 17.2%;
+    left: 45.3%;
+    top: 18.0%;
     transform: translate(-50%, -100%) rotate(0deg) scale(1);
   }
 }
