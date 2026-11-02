@@ -252,6 +252,27 @@ export default function Home() {
             alt="Elk hiking through the forest"
             className="elk-hiking"
           />
+          {[
+            [56.8, 83.1], [59.0, 84.6], [65.0, 84.9], [80.7, 86.7],
+            [59.3, 87.6], [82.9, 87.9], [70.7, 89.0], [55.7, 90.1],
+            [87.6, 89.6], [61.8, 91.6], [87.1, 90.8], [76.3, 92.8],
+            [90.3, 92.6],
+          ].map(([l, t], i) => (
+            <img
+              key={`firefly-${i}`}
+              src="/assets/characters/fireflies.png"
+              alt=""
+              aria-hidden="true"
+              className="firefly"
+              style={{
+                left: `${l}%`,
+                top: `${t}%`,
+                "--ff-delay": `${(i * 0.73) % 4}s`,
+                "--ff-drift": `${7 + (i % 5) * 1.6}s`,
+                "--ff-glow": `${2.4 + (i % 4) * 0.7}s`,
+              }}
+            />
+          ))}
 
           {anchorPoints.map((pt, i) => (
             <div

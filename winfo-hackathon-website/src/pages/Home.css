@@ -1925,3 +1925,39 @@ a.res-tile:hover {
   z-index: 5;
   pointer-events: none;
 }
+
+/* Fireflies (tree section). left/top = center of each firefly, from red-dot clicks. */
+.firefly {
+  position: absolute;
+  width: 2.4%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 232, 120, 0.95))
+          drop-shadow(0 0 14px rgba(255, 210, 80, 0.6));
+  animation:
+    firefly-drift var(--ff-drift, 9s) ease-in-out var(--ff-delay, 0s) infinite,
+    firefly-glow var(--ff-glow, 3s) ease-in-out var(--ff-delay, 0s) infinite;
+}
+
+@keyframes firefly-drift {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25%      { transform: translate(calc(-50% + 1.2vw), calc(-50% - 0.8vw)); }
+  50%      { transform: translate(calc(-50% - 0.8vw), calc(-50% - 1.6vw)); }
+  75%      { transform: translate(calc(-50% + 0.6vw), calc(-50% - 0.5vw)); }
+}
+
+@keyframes firefly-glow {
+  0%   { opacity: 0.1; }
+  20%  { opacity: 1; }
+  40%  { opacity: 0.35; }
+  60%  { opacity: 0.95; }
+  80%  { opacity: 0.25; }
+  100% { opacity: 0.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .firefly { animation: none; opacity: 0.85; }
+}
