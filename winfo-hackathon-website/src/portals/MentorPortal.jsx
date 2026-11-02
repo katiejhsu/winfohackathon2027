@@ -105,8 +105,11 @@ export default function MentorPortal() {
 
   return (
     <div className="mentor-portal">
-      <section className="mentor-portal__top" onClick={handleAnchorClick("top")}>
-        {renderDots("top")}
+      <section
+        className="mentor-portal__top"
+      // onClick={handleAnchorClick("top")}
+      >
+        {/* {renderDots("top")} */}
         <img
           ref={bearRef}
           src="/assets/characters/pink-bear.png"
@@ -138,8 +141,11 @@ export default function MentorPortal() {
         </div>
       </section>
 
-      <section className="mentor-portal__bottom" onClick={handleAnchorClick("bottom")}>
-        {renderDots("bottom")}
+      <section
+        className="mentor-portal__bottom"
+      // onClick={handleAnchorClick("bottom")}
+      >
+        {/* {renderDots("bottom")} */}
         <div className="mentor-lantern" aria-hidden="true">
           <span className="mentor-lantern__glow"></span>
           <span className="mentor-lantern__core"></span>

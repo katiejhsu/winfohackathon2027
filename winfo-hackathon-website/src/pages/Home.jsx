@@ -245,7 +245,7 @@ export default function Home() {
         {/* 2. giant tree: section two */}
         <section
           className="bg-slice home-s2"
-          onClick={handleAnchorClick}
+        // onClick={handleAnchorClick}
         >
           <img
             src="/assets/characters/elk-hiking.png"
@@ -280,6 +280,7 @@ export default function Home() {
             />
           ))}
 
+          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -290,6 +291,7 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
+          */}
           <div className="light-rays" aria-hidden="true">
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <span
@@ -330,9 +332,8 @@ export default function Home() {
         {/* 3. dark forest to cave: theme + video */}
         <section
           className="bg-slice home-s3"
-        // onClick={handleAnchorClick}
+          onClick={handleAnchorClick}
         >
-          {/*
           {anchorPoints.map((pt, i) => (
             <div
               key={i}
@@ -343,7 +344,11 @@ export default function Home() {
               <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
             </div>
           ))}
-          */}
+          <img
+            src="/assets/characters/fishingowl.png"
+            alt="Owl fishing in the river"
+            className="fishing-owl"
+          />
           <div className="lake-fx" aria-hidden="true">
             <span className="ripple ripple--1"></span>
             <span className="ripple ripple--2"></span>
