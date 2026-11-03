@@ -720,3 +720,6 @@
 @media (prefers-reduced-motion: reduce) {
   .about-bear--walk { animation: none; }
 }
+
+/* soften the bear's edges a touch (keeps the muted colors) */
+.about-bear { filter: saturate(0.72) contrast(0.92) brightness(1.03) blur(0.6px); }

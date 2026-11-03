@@ -2090,3 +2090,6 @@ a.res-tile:hover {
 @media (prefers-reduced-motion: reduce) {
   .fish-splash__ring, .fish-splash__drop { animation: none; opacity: 0; }
 }
+
+/* soften the elk's edges a touch so it blends with the bg (covers the mirrored copy too) */
+.elk-hiking { filter: blur(0.6px); }

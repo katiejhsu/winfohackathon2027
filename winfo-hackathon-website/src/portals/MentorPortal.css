@@ -372,3 +372,6 @@
   .mentor-lantern__glow,
   .mentor-lantern__core { animation: none; }
 }
+
+/* soften the bear's edges a touch so it blends with the bg */
+.mentor-bear { filter: blur(0.6px); }
