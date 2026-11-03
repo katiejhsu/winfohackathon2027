@@ -141,14 +141,17 @@ export default function MentorPortal() {
         </div>
       </section>
 
-      <section
-        className="mentor-portal__bottom"
-      // onClick={handleAnchorClick("bottom")}
-      >
-        {/* {renderDots("bottom")} */}
-        <div className="mentor-lantern" aria-hidden="true">
-          <span className="mentor-lantern__glow"></span>
-          <span className="mentor-lantern__core"></span>
+      <section className="mentor-portal__bottom">
+        <div className="boat-scene">
+          <img
+            src="/assets/mentor-portal/mascots-boating.png"
+            alt="Mascots on a boat"
+            className="mascots-boating"
+          />
+          <div className="mentor-lantern" aria-hidden="true">
+            <span className="mentor-lantern__glow"></span>
+            <span className="mentor-lantern__core"></span>
+          </div>
         </div>
         <div className="mentor-portal__footer">
           <Footer />

@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
 :root {
   --fs-display: clamp(24px, 56px, 54px);
   --fs-title: clamp(16px, 2.3vw, 40px);
@@ -1349,36 +1346,6 @@
   animation-delay: 1.2s;
 }
 
-.ripple--8 {
-  top: 98.6%;
-  left: 59.5%;
-  animation-delay: 3.6s;
-}
-
-.ripple--9 {
-  top: 99.0%;
-  left: 67.1%;
-  animation-delay: 0.3s;
-}
-
-.ripple--10 {
-  top: 99.6%;
-  left: 74.7%;
-  animation-delay: 4.1s;
-}
-
-.ripple--11 {
-  top: 99.8%;
-  left: 82.4%;
-  animation-delay: 1.9s;
-}
-
-.ripple--12 {
-  top: 99.8%;
-  left: 90%;
-  animation-delay: 3.4s;
-}
-
 .fish-shadow {
   position: absolute;
   width: 5vw;
@@ -1677,6 +1644,9 @@
   .section-schedule-day-title {
     font-size: clamp(14px, 4vw, 22px);
   }
+  .ribbon-wrap {
+    filter: none;
+  }
 }
 
 .location-link--plain {
@@ -1914,6 +1884,7 @@ a.res-tile:hover {
   white-space: nowrap;
   border-radius: 4px;
 }
+
 /* Elk on the forest path (tree section). left/top = where the elk's feet land. */
 .elk-hiking {
   position: absolute;
@@ -1936,36 +1907,70 @@ a.res-tile:hover {
   z-index: 3;
   pointer-events: none;
   opacity: 0;
-  filter: drop-shadow(0 0 6px rgba(255, 232, 120, 0.95))
-          drop-shadow(0 0 14px rgba(255, 210, 80, 0.6));
+  filter: drop-shadow(0 0 6px rgba(255, 232, 120, 0.95)) drop-shadow(0 0 14px rgba(255, 210, 80, 0.6));
   animation:
     firefly-drift var(--ff-drift, 9s) ease-in-out var(--ff-delay, 0s) infinite,
     firefly-glow var(--ff-glow, 3s) ease-in-out var(--ff-delay, 0s) infinite;
 }
 
 @keyframes firefly-drift {
-  0%, 100% { transform: translate(-50%, -50%); }
-  25%      { transform: translate(calc(-50% + 1.2vw), calc(-50% - 0.8vw)); }
-  50%      { transform: translate(calc(-50% - 0.8vw), calc(-50% - 1.6vw)); }
-  75%      { transform: translate(calc(-50% + 0.6vw), calc(-50% - 0.5vw)); }
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  25% {
+    transform: translate(calc(-50% + 1.2vw), calc(-50% - 0.8vw));
+  }
+
+  50% {
+    transform: translate(calc(-50% - 0.8vw), calc(-50% - 1.6vw));
+  }
+
+  75% {
+    transform: translate(calc(-50% + 0.6vw), calc(-50% - 0.5vw));
+  }
 }
 
 @keyframes firefly-glow {
-  0%   { opacity: 0.1; }
-  20%  { opacity: 1; }
-  40%  { opacity: 0.35; }
-  60%  { opacity: 0.95; }
-  80%  { opacity: 0.25; }
-  100% { opacity: 0.1; }
+  0% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.35;
+  }
+
+  60% {
+    opacity: 0.95;
+  }
+
+  80% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .firefly { animation: none; opacity: 0.85; }
+  .firefly {
+    animation: none;
+    opacity: 0.85;
+  }
 }
 
 
 @media (prefers-reduced-motion: reduce) {
-  .elk-hiking { animation: none; }
+  .elk-hiking {
+    animation: none;
+  }
 }
 
 /* Elk looks left/right: top elk fades out to reveal a mirrored copy underneath. */
@@ -1973,49 +1978,84 @@ a.res-tile:hover {
   z-index: 6;
   transform-origin: 50% 100%;
   animation:
-    elk-breathe 6s ease-in-out infinite,
-    elk-fade-top 12s ease-in-out infinite;
-}
-.elk-hiking--flip {
-  z-index: 5;
-  opacity: 0;
-  animation:
-    elk-breathe-flip 6s ease-in-out infinite,
-    elk-fade-under 12s ease-in-out infinite;
+    elk-breathe 6s ease-in-out infinite;
 }
 
 @keyframes elk-breathe {
-  0%, 100% { transform: translate(-50%, -100%) scaleX(1) scaleY(1); }
-  50%      { transform: translate(-50%, -100%) scaleX(1) scaleY(1.012); }
+
+  0%,
+  100% {
+    transform: translate(-50%, -100%) scaleX(1) scaleY(1);
+  }
+
+  50% {
+    transform: translate(-50%, -100%) scaleX(1) scaleY(1.012);
+  }
 }
+
 @keyframes elk-breathe-flip {
-  0%, 100% { transform: translate(-50%, -100%) scaleX(-1) scaleY(1); }
-  50%      { transform: translate(-50%, -100%) scaleX(-1) scaleY(1.012); }
+
+  0%,
+  100% {
+    transform: translate(-50%, -100%) scaleX(-1) scaleY(1);
+  }
+
+  50% {
+    transform: translate(-50%, -100%) scaleX(-1) scaleY(1.012);
+  }
 }
 
 /* top elk: visible, fades out ~30-40%, fades back in ~62-72% */
 @keyframes elk-fade-top {
-  0%, 30%   { opacity: 1; }
-  33%, 69%  { opacity: 0; }
-  72%, 100% { opacity: 1; }
+
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  33%,
+  69% {
+    opacity: 0;
+  }
+
+  72%,
+  100% {
+    opacity: 1;
+  }
 }
+
 /* mirrored elk: only on while the top elk is fading/hidden */
 @keyframes elk-fade-under {
-  0%, 29%     { opacity: 0; }
-  29.1%, 73%  { opacity: 1; }
-  73.1%, 100% { opacity: 0; }
+
+  0%,
+  29% {
+    opacity: 0;
+  }
+
+  29.1%,
+  73% {
+    opacity: 1;
+  }
+
+  73.1%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .elk-hiking, .elk-hiking--flip { animation: none; }
-  .elk-hiking--flip { opacity: 0; }
+
+  .elk-hiking {
+    animation: none;
+  }
 }
 
 /* Fishing owl (lake section), mirrored. left/top = where the owl's FEET stand (the rock).
    --tip-x / --tip-y = where the feet sit in the DISPLAYED (mirrored) image, % of its width/height. */
 .fishing-owl {
   --tip-x: 82%;
-  --tip-y: 77%;
+  --tip-y: 75.4%;
+  --fish-cycle: 5s; 
   position: absolute;
   left: 61.9%;
   top: 96.3%;
@@ -2035,16 +2075,70 @@ a.res-tile:hover {
   transform: scaleX(-1);
 }
 
-/* Splash where the fish leaves the water. left/top = % of the lake section (red-dot click). */
+.fishing-owl__img--1 {
+  animation: owl-frame-1 var(--fish-cycle) step-end infinite;
+}
+
+.fishing-owl__img--2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: owl-frame-2 var(--fish-cycle) step-end infinite;
+}
+
+/* catch frame: on 0–35%, off 35–95%, on again 95–100% */
+@keyframes owl-frame-1 {
+  0% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0;
+  }
+
+  95% {
+    opacity: 1;
+  }
+}
+
+/* waiting frame: the exact opposite */
+@keyframes owl-frame-2 {
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fishing-owl__img--1 {
+    animation: none;
+    opacity: 0;
+  }
+
+  .fishing-owl__img--2 {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .fish-splash {
   position: absolute;
-  left: 46%;
-  top: 95.4%;
+  left: 20%;
+  top: 79%;
   z-index: 3;
   width: 0;
   height: 0;
   pointer-events: none;
 }
+
 .fish-splash__ring {
   position: absolute;
   left: 0;
@@ -2055,9 +2149,13 @@ a.res-tile:hover {
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   opacity: 0;
-  animation: fish-splash-ring 3.4s ease-out infinite;
+  animation: fish-splash-ring var(--fish-cycle) ease-out infinite;
 }
-.fish-splash__ring--2 { animation-delay: 0.35s; border-width: 1.5px; }
+
+.fish-splash__ring--2 {
+  animation-delay: 0.35s;
+  border-width: 1.5px;
+}
 
 .fish-splash__drop {
   position: absolute;
@@ -2068,33 +2166,75 @@ a.res-tile:hover {
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #ffffff, rgba(200, 232, 235, 0.85) 60%, rgba(160, 205, 215, 0.4));
   opacity: 0;
-  animation: fish-splash-drop 3.4s infinite;
+  animation: fish-splash-drop var(--fish-cycle) infinite;
   animation-delay: var(--d, 0s);
 }
 
 @keyframes fish-splash-ring {
-  0%   { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
-  8%   { opacity: 0.85; }
-  60%  { opacity: 0.25; }
-  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  60% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
 }
 
 @keyframes fish-splash-drop {
-  0%   { transform: translate(0, 0); opacity: 0; animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
-  6%   { opacity: 1; }
-  30%  { transform: translate(calc(var(--dx) * 0.5), calc(var(--h) * -1)); opacity: 1; animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
-  55%  { transform: translate(var(--dx), 0.4vw); opacity: 0; }
-  100% { transform: translate(var(--dx), 0.4vw); opacity: 0; }
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(calc(var(--dx) * 0.5), calc(var(--h) * -1));
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6);
+  }
+
+  34% {
+    transform: translate(var(--dx), 0.4vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(var(--dx), 0.4vw);
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fish-splash__ring, .fish-splash__drop { animation: none; opacity: 0; }
+
+  .fish-splash__ring,
+  .fish-splash__drop {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 /* soften the elk's edges a touch so it blends with the bg (covers the mirrored copy too) */
-.elk-hiking { filter: blur(0.6px); }
+.elk-hiking {
+  filter: blur(0.6px);
+}
 
 /* phones: no edge blur on the elk */
 @media (max-width: 768px) {
-  .elk-hiking { filter: none; }
+  .elk-hiking {
+    filter: none;
+  }
 }

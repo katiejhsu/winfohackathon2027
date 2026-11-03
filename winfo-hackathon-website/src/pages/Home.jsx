@@ -256,7 +256,7 @@ export default function Home() {
             src="/assets/characters/elk-hiking.png"
             alt=""
             aria-hidden="true"
-            className="elk-hiking elk-hiking--flip"
+            className="elk-hiking"
           />
           {[
             [56.8, 83.1], [59.0, 84.6], [65.0, 84.9], [80.7, 86.7],
@@ -332,7 +332,7 @@ export default function Home() {
         {/* 3. dark forest to cave: theme + video */}
         <section
           className="bg-slice home-s3"
-          // onClick={handleAnchorClick}
+        // onClick={handleAnchorClick}
         >
           {/*
           {anchorPoints.map((pt, i) => (
@@ -348,11 +348,16 @@ export default function Home() {
           */}
           <div className="fishing-owl">
             <img
-              src="/assets/characters/fishingowl.png"
+              src="/assets/characters/fishing-owl1.png"
               alt="Owl fishing in the river"
-              className="fishing-owl__img"
+              className="fishing-owl__img fishing-owl__img--1"
             />
-          </div>
+            <img
+              src="/assets/characters/fishing-owl2.png"
+              alt=""
+              aria-hidden="true"
+              className="fishing-owl__img fishing-owl__img--2"
+            />
             <div className="fish-splash" aria-hidden="true">
               <span className="fish-splash__ring fish-splash__ring--1"></span>
               <span className="fish-splash__ring fish-splash__ring--2"></span>
@@ -362,6 +367,8 @@ export default function Home() {
               <span className="fish-splash__drop" style={{ "--dx": "1.0vw", "--h": "2.8vw", "--d": "0.08s" }}></span>
               <span className="fish-splash__drop" style={{ "--dx": "1.8vw", "--h": "2.0vw", "--d": "0.03s" }}></span>
             </div>
+          </div>
+
           <div className="lake-fx" aria-hidden="true">
             <span className="ripple ripple--1"></span>
             <span className="ripple ripple--2"></span>
@@ -370,11 +377,6 @@ export default function Home() {
             <span className="ripple ripple--5"></span>
             <span className="ripple ripple--6"></span>
             <span className="ripple ripple--7"></span>
-            <span className="ripple ripple--8"></span>
-            <span className="ripple ripple--9"></span>
-            <span className="ripple ripple--10"></span>
-            <span className="ripple ripple--11"></span>
-            <span className="ripple ripple--12"></span>
             <span className="fish-shadow fish-shadow--1"></span>
             <span className="fish-shadow fish-shadow--2"></span>
             <span className="fish-shadow fish-shadow--3"></span>

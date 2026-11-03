@@ -31,13 +31,15 @@
 
 .mentor-portal__top {
   aspect-ratio: 1728 / 3800;
-  background-image: url("/assets/mentor-portal/mentor-portal1.webp");
+  background-image: url("/assets/mentor-portal/mentor-portal.png");
   background-color: #040b17;
+  background-position: center top;
 }
 
 .mentor-portal__bottom {
   aspect-ratio: 1728 / 2208;
-  background-image: url("/assets/mentor-portal/mentor-portal2.webp");
+  background-image: url("/assets/mentor-portal/mentor-portal.png");
+  background-position: center bottom;
   background-color: #080c10;
 }
 
@@ -235,16 +237,6 @@
   }
 }
 
-.mentor-portal__top {
-  background-image: url("/assets/mentor-portal/mentor-portal-final.jpg");
-  background-position: center top;
-}
-
-.mentor-portal__bottom {
-  background-image: url("/assets/mentor-portal/mentor-portal-final.jpg");
-  background-position: center bottom;
-}
-
 /* Walking bear: left/top below are where the bear's FEET land, taken from the red-dot clicks. */
 .mentor-bear {
   position: absolute;
@@ -259,7 +251,7 @@
 }
 
 .mentor-bear--walk {
-  animation: mentor-bear-walk 5s ease-in-out forwards;
+  animation: mentor-bear-walk 3.3s ease-in-out forwards;
 }
 
 @keyframes mentor-bear-walk {
@@ -268,39 +260,88 @@
     top: 24.4%;
     transform: translate(-50%, -100%) rotate(0deg) scale(1);
   }
-  25% {
-    left: 72.3%;
-    top: 19.0%;
+
+  17% {
     transform: translate(-50%, -100%) rotate(-5deg) scale(1.04);
   }
-  50% {
-    left: 63.9%;
-    top: 16.4%;
+
+  33% {
     transform: translate(-50%, -100%) rotate(5deg) scale(0.97);
   }
-  75% {
-    left: 56.5%;
-    top: 19.3%;
+
+  50% {
     transform: translate(-50%, -100%) rotate(-5deg) scale(1.04);
   }
+
+  66% {
+    left: 72.3%;
+    top: 19.0%;
+    transform: translate(-50%, -100%) rotate(5deg) scale(0.97);
+  }
+
+  83% {
+    transform: translate(-50%, -100%) rotate(-5deg) scale(1.04);
+  }
+
   100% {
-    left: 45.3%;
-    top: 18.0%;
+    left: 68%;
+    top: 17.7%;
     transform: translate(-50%, -100%) rotate(0deg) scale(1);
   }
 }
 
+.boat-scene {
+  position: absolute;
+  left: 45%;
+  top: 47%;
+  width: 36vw;
+  transform: translate(-50%, -100%);
+  transform-origin: 50% 100%;
+  animation: boat-bob 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
 
-/* Lantern glow in the cave: bright yellow core fading to dim yellow, with an irregular flame flicker. */
+.mascots-boating {
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
 .mentor-lantern {
   position: absolute;
-  left: 50%;
-  top: 36.6%;
-  width: 36vw;
-  height: 36vw;
+  left: 70%;
+  top: 30%;
+  width: 100%;
+  aspect-ratio: 1;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 1;
+}
+
+@keyframes boat-bob {
+
+  0%,
+  100% {
+    transform: translate(-50%, -100%) translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%, -100%) translateY(-0.5vw) rotate(-1deg);
+  }
+
+  50% {
+    transform: translate(-50%, -100%) translateY(0.2vw) rotate(0deg);
+  }
+
+  75% {
+    transform: translate(-50%, -100%) translateY(-0.4vw) rotate(1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boat-scene {
+    animation: none;
+  }
 }
 
 .mentor-lantern__glow,
@@ -312,85 +353,167 @@
 }
 
 .mentor-lantern__glow {
-  background: radial-gradient(
-    circle,
-    rgba(255, 240, 130, 0.9) 0%,
-    rgba(255, 225, 100, 0.8) 10%,
-    rgba(255, 205, 75, 0.62) 20%,
-    rgba(255, 185, 55, 0.42) 31%,
-    rgba(255, 165, 42, 0.25) 43%,
-    rgba(230, 140, 30, 0.12) 56%,
-    rgba(200, 120, 25, 0.04) 69%,
-    rgba(200, 120, 25, 0) 80%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 240, 130, 0.9) 0%,
+      rgba(255, 225, 100, 0.8) 10%,
+      rgba(255, 205, 75, 0.62) 20%,
+      rgba(255, 185, 55, 0.42) 31%,
+      rgba(255, 165, 42, 0.25) 43%,
+      rgba(230, 140, 30, 0.12) 56%,
+      rgba(200, 120, 25, 0.04) 69%,
+      rgba(200, 120, 25, 0) 80%);
   filter: blur(4px);
   animation: lantern-flicker 3.4s linear infinite;
 }
 
 .mentor-lantern__core {
   inset: 32%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 252, 215, 0.85) 0%,
-    rgba(255, 240, 140, 0.55) 30%,
-    rgba(255, 228, 110, 0.25) 58%,
-    rgba(255, 220, 100, 0) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 252, 215, 0.85) 0%,
+      rgba(255, 240, 140, 0.55) 30%,
+      rgba(255, 228, 110, 0.25) 58%,
+      rgba(255, 220, 100, 0) 100%);
   filter: blur(6px);
   animation: lantern-flicker-core 2.3s linear infinite;
 }
 
+
 @keyframes lantern-flicker {
-  0%   { opacity: 0.9;  transform: scale(1); }
-  6%   { opacity: 0.62; transform: scale(0.96); }
-  11%  { opacity: 0.98; transform: scale(1.03); }
-  19%  { opacity: 0.74; transform: scale(0.98); }
-  27%  { opacity: 1;    transform: scale(1.05); }
-  36%  { opacity: 0.8;  transform: scale(1); }
-  44%  { opacity: 0.58; transform: scale(0.95); }
-  52%  { opacity: 0.95; transform: scale(1.04); }
-  63%  { opacity: 0.7;  transform: scale(0.97); }
-  71%  { opacity: 1;    transform: scale(1.06); }
-  83%  { opacity: 0.78; transform: scale(1); }
-  92%  { opacity: 0.92; transform: scale(1.02); }
-  100% { opacity: 0.9;  transform: scale(1); }
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  6% {
+    opacity: 0.62;
+    transform: scale(0.96);
+  }
+
+  11% {
+    opacity: 0.98;
+    transform: scale(1.03);
+  }
+
+  19% {
+    opacity: 0.74;
+    transform: scale(0.98);
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  36% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  44% {
+    opacity: 0.58;
+    transform: scale(0.95);
+  }
+
+  52% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+
+  63% {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+
+  71% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  83% {
+    opacity: 0.78;
+    transform: scale(1);
+  }
+
+  92% {
+    opacity: 0.92;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
 }
 
 @keyframes lantern-flicker-core {
-  0%   { opacity: 1;    transform: scale(1); }
-  9%   { opacity: 0.7;  transform: scale(0.9); }
-  17%  { opacity: 1;    transform: scale(1.08); }
-  31%  { opacity: 0.8;  transform: scale(0.95); }
-  42%  { opacity: 1;    transform: scale(1.1); }
-  58%  { opacity: 0.65; transform: scale(0.88); }
-  69%  { opacity: 0.95; transform: scale(1.04); }
-  84%  { opacity: 0.75; transform: scale(0.94); }
-  100% { opacity: 1;    transform: scale(1); }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  9% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+
+  17% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  31% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  58% {
+    opacity: 0.65;
+    transform: scale(0.88);
+  }
+
+  69% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+
+  84% {
+    opacity: 0.75;
+    transform: scale(0.94);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .mentor-lantern__glow,
-  .mentor-lantern__core { animation: none; }
+  .mentor-lantern__core {
+    animation: none;
+  }
 }
 
 /* soften the bear's edges a touch so it blends with the bg */
-.mentor-bear { filter: blur(0.6px); }
+.mentor-bear {
+  filter: blur(0.6px);
+}
 
 /* phones: no blur; shorter walk that stops before covering "Explore our resources below." */
 @media (max-width: 768px) {
-  .mentor-bear { filter: none; }
+  .mentor-bear {
+    filter: none;
+  }
 }
+
 @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .mentor-bear--walk { animation: mentor-bear-walk-mobile 5s ease-in-out forwards; }
-}
-@keyframes mentor-bear-walk-mobile {
-  0%   { left: 83%;   top: 24.4%; transform: translate(-50%, -100%) rotate(0deg)  scale(1); }
-  10%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
-  20%  { transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
-  33%  { left: 72.3%; top: 19.0%; transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
-  45%  { transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
-  55%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
-  66%  { left: 63.9%; top: 16.4%; transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
-  80%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
-  100% { left: 56.5%; top: 19.3%; transform: translate(-50%, -100%) rotate(0deg)  scale(1); }
+  .mentor-bear--walk {
+    animation: mentor-bear-walk 3.5s ease-in-out forwards;
+  }
 }
