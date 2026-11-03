@@ -375,3 +375,22 @@
 
 /* soften the bear's edges a touch so it blends with the bg */
 .mentor-bear { filter: blur(0.6px); }
+
+/* phones: no blur; shorter walk that stops before covering "Explore our resources below." */
+@media (max-width: 768px) {
+  .mentor-bear { filter: none; }
+}
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .mentor-bear--walk { animation: mentor-bear-walk-mobile 5s ease-in-out forwards; }
+}
+@keyframes mentor-bear-walk-mobile {
+  0%   { left: 83%;   top: 24.4%; transform: translate(-50%, -100%) rotate(0deg)  scale(1); }
+  10%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
+  20%  { transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
+  33%  { left: 72.3%; top: 19.0%; transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
+  45%  { transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
+  55%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
+  66%  { left: 63.9%; top: 16.4%; transform: translate(-50%, -100%) rotate(5deg)  scale(0.99); }
+  80%  { transform: translate(-50%, -100%) rotate(-5deg) scale(1.02); }
+  100% { left: 56.5%; top: 19.3%; transform: translate(-50%, -100%) rotate(0deg)  scale(1); }
+}
