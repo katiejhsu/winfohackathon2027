@@ -1,7 +1,7 @@
 :root {
   --fs-display: clamp(24px, 56px, 54px);
   --fs-title: clamp(16px, 2.3vw, 40px);
-  --fs-body: clamp(8px, 1.05vw, 18px);
+  --fs-body: clamp(8px, 1.8vw, 18px);
   --fs-small: clamp(9px, 0.92vw, 16px);
 }
 
@@ -2227,12 +2227,10 @@ a.res-tile:hover {
   }
 }
 
-/* soften the elk's edges a touch so it blends with the bg (covers the mirrored copy too) */
 .elk-hiking {
   filter: blur(0.6px);
 }
 
-/* phones: no edge blur on the elk */
 @media (max-width: 768px) {
   .elk-hiking {
     filter: none;

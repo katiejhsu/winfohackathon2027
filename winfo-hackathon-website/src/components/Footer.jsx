@@ -8,7 +8,7 @@ const socials = [
   { label: "linkedin", icon: "linkedin", href: contact?.linkedin },
   { label: "youTube", icon: "youtube", href: contact?.youtube },
   { label: "facebook", icon: "facebook", href: contact?.facebook ?? "https://www.facebook.com/groups/winfouw/" },
-].filter((s) => s.href); // skip any link that isn't defined
+].filter((s) => s.href); 
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="footer-contact">
         <h2 className="footer-contact__heading">Contact Us</h2>
         <p className="footer-contact__text">
-          Reach out to <a href="mailto:winfo@uw.edu">winfo@uw.edu</a> - we're happy to help.
+          Reach out to <a href="mailto:winfo@uw.edu">winfo@uw.edu</a> - we're happy to help!
         </p>
       </div>
       <div className="sponsors-section">

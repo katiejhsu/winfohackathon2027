@@ -4,21 +4,20 @@ import "./About.css";
 import { useRef, useState, useEffect } from "react";
 import UseGliderScroll from "../hooks/UseGliderScroll";
 
-const BADGE_ROWS = [2, 3, 4, 3];
+const BADGE_ROWS = [2, 3, 4, 2];
 
 const badges = [
   "/assets/about/badge-18.png",
   "/assets/about/badge-19.png",
   "/assets/about/badge-6.png",
   "/assets/about/badge-7.png",
-  "/assets/about/badge-21.png",
+  "/assets/about/badge-16.png",
   "/assets/about/badge-11.png",
   "/assets/about/badge-12.png",
   "/assets/about/badge-20.png",
   "/assets/about/badge-8.png",
   "/assets/about/badge-9.png",
   "/assets/about/badge-15.png",
-  "/assets/about/badge-16.png",
 ];
 
 const badgeRows = [];
@@ -172,7 +171,7 @@ export default function About() {
 
           <div className="committee-intro">
             <h2 className="committee-header">The WINFO Hackathon <br /> Committee</h2>
-            <p>Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.</p>
+            <p>Our team of 11 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.</p>
           </div>
         </section>
 
@@ -198,24 +197,24 @@ export default function About() {
             <div className="speakers-container">
               <div className="speakers-list">
                 <div className="speaker-card">
-                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/speaker-1.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
-                    <h4>Speaker Name</h4>
-                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                    <h4>Speaker TBA</h4>
+                    <p></p>
                   </div>
                 </div>
                 <div className="speaker-card">
-                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/speaker-2.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
-                    <h4>Speaker Name</h4>
-                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                    <h4>Speaker TBA</h4>
+                    <p></p>
                   </div>
                 </div>
                 <div className="speaker-card">
-                  <img src="assets/about/badge-placeholder.png" className="speaker-badge" alt="" />
+                  <img src="assets/about/speaker-3.png" className="speaker-badge" alt="" />
                   <div className="speaker-info">
-                    <h4>Speaker Name</h4>
-                    <p>lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                    <h4>Speaker TBA</h4>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -226,9 +225,7 @@ export default function About() {
         {/* 5. night sky */}
         <section
           className="bg-slice sky"
-        // onClick={handleAnchorClick("sky")}
         >
-          {/* {renderDots("sky")} */}
           <img src="assets/characters/stars1.png" alt="star" className="stars1-0-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-1-about" />
           <img src="assets/characters/stars1.png" alt="star" className="stars1-2-about" />
@@ -236,7 +233,7 @@ export default function About() {
           <img src="assets/characters/stars3.png" alt="3 stars" className="stars3-1-about" />
           <img src="assets/characters/owl-const.png" alt="owl constellation" className="owl-const-about" />
           <img src="assets/characters/goat-const.png" alt="goat constellation" className="goat-const-about" />
-          <div className="last-years-winners">
+          <div id="past-winners" className="last-years-winners">
             <h2 className="last-years-winners-header">Last Year's Winners</h2>
             <h3 className="winner-heading">{pastWinners[0].track} – “{pastWinners[0].project}”</h3>
             <p>{pastWinners[0].about}</p>

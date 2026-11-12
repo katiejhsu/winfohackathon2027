@@ -356,7 +356,8 @@
 
 .speaker-badge {
   flex-shrink: 0;
-  width: 25vw;
+  width: 24vw;
+  padding-right: 6vw;
   object-fit: contain;
   margin-left: -30px;
 }

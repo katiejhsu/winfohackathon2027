@@ -1,7 +1,7 @@
 # WINFO Hackathon Website — Skeleton
 
 Static front-end skeleton for the 15th Annual WINFO Hackathon
-("Peaks of Possibility, Paths of Progress"). Built with **React + Vite**,
+("Peaks of Possibility"). Built with **React + Vite**,
 routed with **React Router**, and styled with plain CSS (no UI framework).
 
 No backend is wired up yet — the two portal pages (Project Submission,

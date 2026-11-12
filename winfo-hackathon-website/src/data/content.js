@@ -106,19 +106,18 @@ export const tracks = [
 ];
 
 export const hackingDaySchedule = [
-  { time: "08:30 AM - 9:30 AM", label: "Participants & Sponsors Check-In" },
-  { time: "09:30 AM - 9:50 AM", label: "Opening Ceremony" },
-  { time: "9:50 AM", label: "Hacking Begins!" },
-  { time: "10:00 AM", label: "Mentors Check-In" },
+  { time: "08:30 AM - 9:00 AM", label: "Check-In Period" },
+  { time: "09:30 AM - 10:15 AM", label: "Opening Ceremony" },
+  { time: "10:15 AM", label: "Hacking Begins!" },
   { time: "10:50 AM - 11:50 AM", label: "Mentoring Round 1" },
-  { time: "11:50 AM", label: "Complimentary Lunch" },
-  { time: "01:20 PM - 02:20 PM", label: "Mentoring Round 2" },
-  { time: "02:50 PM - 03:50 PM", label: "Mentoring Round 3" },
+  { time: "12:00 PM", label: "Complimentary Lunch" },
+  { time: "02:00 PM - 03:00 PM", label: "Mentoring Round 2" },
+  { time: "04:00 PM", label: "Track Decisions Due" },
   { time: "04:00 PM", label: "Complimentary Dinner" },
-  { time: "05:00 PM - 06:00 PM", label: "Mentoring Round 4" },
-  { time: "07:00 PM", label: "Final Project Submissions Due" },
-  { time: "07:00 PM - 08:15 PM", label: "Pitching" },
-  { time: "08:15 PM - 09:00 PM", label: "Closing Ceremony" },
+  { time: "05:00 PM - 06:00 PM", label: "Mentoring Round 3" },
+  { time: "06:50 PM", label: "Final Project Submissions Due" },
+  { time: "07:00 PM - 08:00 PM", label: "Pitching" },
+  { time: "08:15 PM - 08:40 PM", label: "Closing Ceremony" },
 ];
 
 export const judgingDaySchedule = [
@@ -192,7 +191,7 @@ export const faqs = [
   },
   {
     q: "My question isn't here!",
-    a: "Reach out to winfo@uw.edu - we're happy to help.",
+    a: "Reach out to winfo@uw.edu - we're happy to help!",
   },
 ];
 
