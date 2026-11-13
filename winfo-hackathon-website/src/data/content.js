@@ -21,7 +21,7 @@ export const event = {
   mapleMapUrl: "https://www.google.com/maps/dir/?api=1&destination=1135+NE+Campus+Pkwy,+Seattle,+WA+98105",
   // ISO string used to drive the countdown component
   countdownTarget: "2027-01-30T09:00:00-08:00",
-  registerUrl: "#", // TODO: replace with live registration form link
+  registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfy4dwW9LAieLvIEY-exF9tiivldDp-RE31dzLplCrT_ZGnUw/viewform?usp=header",
 };
 
 export const mission = {
