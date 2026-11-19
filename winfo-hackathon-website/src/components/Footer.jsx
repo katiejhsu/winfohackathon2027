@@ -20,7 +20,7 @@ export default function Footer() {
         </p>
       </div>
       <div className="sponsors-section">
-        <img src="assets/about/sponsors.png" alt="sponsor logos" />
+        <img src="assets/about/sponsors.svg" alt="sponsor logos" />
       </div>
       <div className="footer__inner">
         <hr className="footer__divider" />

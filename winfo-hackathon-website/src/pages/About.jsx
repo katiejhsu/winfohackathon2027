@@ -210,13 +210,6 @@ export default function About() {
                     <p></p>
                   </div>
                 </div>
-                <div className="speaker-card">
-                  <img src="assets/about/speaker-3.png" className="speaker-badge" alt="" />
-                  <div className="speaker-info">
-                    <h4>Speaker TBA</h4>
-                    <p></p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
