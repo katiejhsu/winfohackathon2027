@@ -728,58 +728,44 @@
 .stars1-1,
 .stars1-2,
 .stars3-0,
-.stars3-1,
-.stars1-0-about,
-.stars1-1-about,
-.stars1-2-about,
-.stars3-0-about,
-.stars3-1-about {
+.stars3-1 {
   animation: twinkle 1.4s ease-in-out infinite;
 }
 
 .goat-const,
-.owl-const,
-.goat-const-about,
-.owl-const-about {
+.owl-const {
   animation: twinkle-const 1.8s ease-in-out infinite;
 }
 
-.stars1-0,
-.stars1-0-about {
+.stars1-0 {
   animation-delay: 0s;
 }
 
-.stars1-1,
-.stars1-1-about {
+.stars1-1 {
   animation-delay: 0.4s;
   animation-duration: 1.6s;
 }
 
-.stars1-2,
-.stars1-2-about {
+.stars1-2 {
   animation-delay: 0.8s;
   animation-duration: 1.2s;
 }
 
-.stars3-0,
-.stars3-0-about {
+.stars3-0 {
   animation-delay: 0.2s;
   animation-duration: 1.5s;
 }
 
-.stars3-1,
-.stars3-1-about {
+.stars3-1 {
   animation-delay: 0.6s;
   animation-duration: 1.9s;
 }
 
-.goat-const,
-.goat-const-about {
+.goat-const {
   animation-delay: 0.5s;
 }
 
-.owl-const,
-.owl-const-about {
+.owl-const {
   animation-delay: 1s;
   animation-duration: 2s;
 }
@@ -791,15 +777,8 @@
   .stars1-2,
   .stars3-0,
   .stars3-1,
-  .stars1-0-about,
-  .stars1-1-about,
-  .stars1-2-about,
-  .stars3-0-about,
-  .stars3-1-about,
   .goat-const,
-  .owl-const,
-  .goat-const-about,
-  .owl-const-about {
+  .owl-const {
     animation-duration: 6s;
   }
 }
@@ -1854,37 +1833,6 @@ a.res-tile:hover {
     top: 0;
   }
 }
-
-.anchor-marker {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-  pointer-events: none;
-}
-
-.anchor-marker__dot {
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: red;
-  border: 2px solid white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-}
-
-.anchor-marker__label {
-  display: block;
-  margin-top: 2px;
-  padding: 2px 6px;
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  font-size: 12px;
-  font-family: monospace;
-  white-space: nowrap;
-  border-radius: 4px;
-}
-
 /* Elk on the forest path (tree section). left/top = where the elk's feet land. */
 .elk-hiking {
   position: absolute;

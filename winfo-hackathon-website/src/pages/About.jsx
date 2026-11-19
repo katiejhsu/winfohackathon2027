@@ -54,29 +54,6 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
-  // Red-dot coordinate tool: click any section to drop a dot and read its left/top %.
-  // Dots are kept per section since each section has its own % coordinate space.
-  const [anchorPoints, setAnchorPoints] = useState([]);
-  const handleAnchorClick = (section) => (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const left = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
-    const top = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
-    setAnchorPoints((prev) => [...prev, { section, left, top }]);
-  };
-  const renderDots = (section) =>
-    anchorPoints
-      .filter((pt) => pt.section === section)
-      .map((pt, i) => (
-        <div
-          key={i}
-          className="anchor-marker"
-          style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
-        >
-          <span className="anchor-marker__dot"></span>
-          <span className="anchor-marker__label">{section}: left: {pt.left}%, top: {pt.top}%</span>
-        </div>
-      ));
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -104,9 +81,7 @@ export default function About() {
         {/* 1. mountain */}
         <section
           className="bg-slice mountain"
-        // onClick={handleAnchorClick("mountain")}
         >
-          {/* {renderDots("mountain")} */}
           <img
             ref={bearRef}
             src="/assets/characters/bear.png"
@@ -132,9 +107,7 @@ export default function About() {
         {/* 2. black cliff */}
         <section
           className="bg-slice cliff"
-        // onClick={handleAnchorClick("cliff")}
         >
-          {/* {renderDots("cliff")} */}
           <div className="about-winfo">
             <h2 className="what-is-winfo-header">WHAT IS WINFO?</h2>
             <p>
@@ -163,9 +136,7 @@ export default function About() {
         {/* 3. sunset */}
         <section
           className="bg-slice sunset"
-        // onClick={handleAnchorClick("sunset")}
         >
-          {/* {renderDots("sunset")} */}
           <img ref={elkRef} src="assets/characters/elk-paragliding.png" alt="elk paragliding" className="elk-paragliding-about" />
           <img ref={owlRef} src="assets/characters/owl-paragliding.png" alt="owl" className="owl-paragliding-about" />
 
@@ -249,9 +220,7 @@ export default function About() {
         {/* 6. fire */}
         <section
           className="bg-slice fire"
-        // onClick={handleAnchorClick("fire")}
         >
-          {/* {renderDots("fire")} */}
           <div className="campfire-mascots-section">
             <div>
               <img alt="animals around a campfire" src="assets/about/campfire-mascots.png" className="campfire-mascots" />

@@ -69,14 +69,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const [anchorPoints, setAnchorPoints] = useState([]);
-  const handleAnchorClick = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const leftPct = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
-    const topPct = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
-    setAnchorPoints((prev) => [...prev, { left: leftPct, top: topPct }]);
-  };
-
   const bearRef = useRef(null);
   const bearTriggered = useRef(false);
   const [bearWalking, setBearWalking] = useState(false);
@@ -182,20 +174,7 @@ export default function Home() {
         {/* 1. mountain: hero */}
         <section
           className="bg-slice home-s1"
-        // onClick={handleAnchorClick}
         >
-          {/*
-          {anchorPoints.map((pt, i) => (
-            <div
-              key={i}
-              className="anchor-marker"
-              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
-            >
-              <span className="anchor-marker__dot"></span>
-              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
-            </div>
-          ))}
-          */}
           <div className="section-one-content">
             <div className="winfo-logo">
               <img src="/assets/logo/star-element.png" alt="Winfo star icon" className="hero-star" />
@@ -245,7 +224,6 @@ export default function Home() {
         {/* 2. giant tree: section two */}
         <section
           className="bg-slice home-s2"
-        // onClick={handleAnchorClick}
         >
           <img
             src="/assets/characters/elk-hiking.png"
@@ -279,19 +257,6 @@ export default function Home() {
               }}
             />
           ))}
-
-          {/*
-          {anchorPoints.map((pt, i) => (
-            <div
-              key={i}
-              className="anchor-marker"
-              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
-            >
-              <span className="anchor-marker__dot"></span>
-              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
-            </div>
-          ))}
-          */}
           <div className="light-rays" aria-hidden="true">
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <span
@@ -332,20 +297,7 @@ export default function Home() {
         {/* 3. dark forest to cave: theme + video */}
         <section
           className="bg-slice home-s3"
-        // onClick={handleAnchorClick}
         >
-          {/*
-          {anchorPoints.map((pt, i) => (
-            <div
-              key={i}
-              className="anchor-marker"
-              style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
-            >
-              <span className="anchor-marker__dot"></span>
-              <span className="anchor-marker__label">left: {pt.left}%, top: {pt.top}%</span>
-            </div>
-          ))}
-          */}
           <div className="fishing-owl">
             <img
               src="/assets/characters/fishing-owl1.png"

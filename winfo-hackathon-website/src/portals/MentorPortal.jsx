@@ -57,7 +57,6 @@ function MentorTiles({ items }) {
 }
 
 export default function MentorPortal() {
-  // Bear walks across the mountain when it scrolls into view (same trigger as the home page bear)
   const bearRef = useRef(null);
   const bearTriggered = useRef(false);
   const [bearWalking, setBearWalking] = useState(false);
@@ -80,36 +79,11 @@ export default function MentorPortal() {
     return () => observer.disconnect();
   }, []);
 
-  // RED-DOT COORDINATE TOOL: click anywhere on the page to drop a dot that shows its left%/top%.
-  // Dots are tracked per section (top / bottom) since each section has its own % coordinate space.
-  const [anchorPoints, setAnchorPoints] = useState([]);
-  const handleAnchorClick = (section) => (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const left = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
-    const top = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
-    setAnchorPoints((prev) => [...prev, { section, left, top }]);
-  };
-  const renderDots = (section) =>
-    anchorPoints
-      .filter((pt) => pt.section === section)
-      .map((pt, i) => (
-        <div
-          key={i}
-          className="anchor-marker"
-          style={{ left: `${pt.left}%`, top: `${pt.top}%` }}
-        >
-          <span className="anchor-marker__dot"></span>
-          <span className="anchor-marker__label">{section}: left: {pt.left}%, top: {pt.top}%</span>
-        </div>
-      ));
-
   return (
     <div className="mentor-portal">
       <section
         className="mentor-portal__top"
-      // onClick={handleAnchorClick("top")}
       >
-        {/* {renderDots("top")} */}
         <img
           ref={bearRef}
           src="/assets/characters/pink-bear.png"
