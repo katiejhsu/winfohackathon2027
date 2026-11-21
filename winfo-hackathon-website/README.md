@@ -1,134 +1,106 @@
-# WINFO Hackathon Website — Skeleton
+# WINFO Hackathon Website
 
-Static front-end skeleton for the 15th Annual WINFO Hackathon
-("Peaks of Possibility"). Built with **React + Vite**,
-routed with **React Router**, and styled with plain CSS (no UI framework).
+Website for the 15th Annual WINFO Hackathon ("Peaks of Possibility").
+Built with **React + Vite**, routed with **React Router**, styled with plain
+CSS (no UI framework), and hosted on **Firebase Hosting**.
 
-No backend is wired up yet — the two portal pages (Project Submission,
-Mentor Feedback) use a fake local "sign-in" stub just so their forms are
-click-through-able. See **"About the portals"** below.
+Live site: https://winfohackathon2027.web.app/
 
 ---
 
 ## 1. Requirements
 
 - [Node.js](https://nodejs.org/) 18 or newer (includes `npm`)
-
-Check your version:
-
-```bash
-node -v
-```
+- [Firebase CLI](https://firebase.google.com/docs/cli) (only needed to deploy)
 
 ---
 
-## 2. Run it locally (recommended way to view it)
+## 2. Run it locally
 
-From the project folder:
+From this folder (`winfo-hackathon-website/`):
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the URL it prints — usually **http://localhost:5173** — in your
-browser. This is a live dev server: edit any file in `src/` and the page
-updates instantly.
-
-To stop the server, press `Ctrl + C` in the terminal.
+Open the URL it prints (usually **http://localhost:5173**). Edits in `src/`
+update the page instantly. Press `Ctrl + C` to stop.
 
 ---
 
-## 3. Build a static, deployable version
-
-If you want a plain set of HTML/CSS/JS files (e.g. to preview without a dev
-server, or to hand off to hosting like Netlify/Vercel/GitHub Pages):
+## 3. Build and deploy
 
 ```bash
-npm install
-npm run build
+npm run build      # outputs the static site to dist/
+npm run preview    # optional: check the build at http://localhost:4173
+firebase deploy    # uploads dist/ to Firebase Hosting
 ```
 
-This outputs everything into a new `dist/` folder. To double-check it looks
-right before deploying, serve it locally:
-
-```bash
-npm run preview
-```
-
-and open the URL it prints (usually **http://localhost:4173**).
-
-`dist/` is a completely static site — you can drag that folder into Netlify,
-push it to GitHub Pages, or upload it to any static host.
+`firebase.json` serves `dist/` and rewrites every route to `index.html` so
+React Router links like `/about` work on refresh. The Firebase project is
+set in `.firebaserc` (`winfohackathon2027`). Always run `npm run build`
+before `firebase deploy`, or you'll deploy the old build.
 
 ---
 
-## 4. Project structure
-
-```
-src/
-├── App.jsx              # route definitions (all pages live here)
-├── main.jsx              # entry point, global CSS imports
-├── components/           # Navbar, Footer, Countdown, shared UI bits
-├── pages/                 # one file per site page (Home, About, ...)
-├── portals/                # Submission Portal + Mentor Feedback Portal
-├── firebase/               # NOT active — placeholder for future backend
-├── data/content.js         # ALL site copy lives here — edit this file first
-└── styles/theme.css         # colors, fonts, spacing, shared classes
-```
-
-**To update text/content**, start with `src/data/content.js` — nearly every
-page pulls its copy from there instead of hardcoding it, so most edits
-(dates, schedule, FAQ, sponsor list, committee names, etc.) only need to
-happen in one place.
-
-**To restyle**, colors/fonts/spacing are CSS variables at the top of
-`src/styles/theme.css`.
-
----
-
-## 5. Pages included
+## 4. Pages
 
 | Route | Page |
 |---|---|
-| `/` | Home — mission, theme, goals, tracks preview, schedule preview, sponsors, countdown |
-| `/schedule` | Hacking Day + Judging Day timelines |
-| `/people` | Speakers / mentors / judges (empty — TODO once roster is confirmed) |
-| `/about` | About WINFO, committee, past winners, testimonials, photos |
-| `/resources` | Pre-hackathon workshops, project resources, FAQ |
-| `/day-of` | Day-of hub: today's timeline + submission portal link |
-| `/register` | Registration page |
-| `/portal/submission` | Project Submission Portal (stub auth + form) |
-| `/portal/mentor-feedback` | Mentor Feedback Portal (stub auth + form) |
+| `/` | Home: hero, theme, prize tracks, schedule, FAQ, resources, countdown |
+| `/about` | About WINFO, committee, speakers, past winners |
+| `/register` | Registration page (links to the Google Form) |
+| `/mentor-portal` | Mentor info: notes form, info packet, resources |
+| anything else | 404 page |
+
+Navbar dropdown items jump to sections by id:
+
+- **Home:** `#theme`, `#prize-tracks`, `#schedule`, `#faq`, `#resources`
+- **About:** `#committee`, `#speakers`, `#past-winners`
 
 ---
 
-## 6. About the portals
+## 5. Project structure
 
-The Submission and Mentor Feedback portals are **UI-only** right now:
+```
+src/
+├── App.jsx                # routes
+├── main.jsx               # entry point + global CSS imports
+├── components/            # Navbar, Footer, Countdown, Reusable
+├── pages/                 # Home, About, Register, NotFound (+ their CSS)
+├── portals/               # MentorPortal
+├── hooks/UseGliderScroll.jsx  # scroll-linked movement for the paragliders
+├── data/content.js        # event info, tracks, schedules, FAQ, resources
+├── firebase/              # NOT active; placeholder, nothing imports it
+└── styles/theme.css       # colors, fonts, shared variables
 
-- "Signing in" just fakes a short delay and accepts any `@uw.edu`-looking
-  email — nothing is verified or stored.
-- Submitting either form just logs the data to the browser console
-  (`console.log`) — nothing is saved anywhere.
+public/assets/             # all images, grouped by page
+```
 
-This is intentional since the backend (Firebase vs. Supabase vs. something
-else) hasn't been decided yet. The `src/firebase/` folder contains commented-
-out placeholder code showing one way to wire up real auth + a database later
-— nothing in it is active or imported by the running app.
+### Animations
 
-Two open decisions are flagged with `TODO` comments directly in
-`src/portals/MentorFeedbackPortal.jsx`:
-1. How mentor feedback gets delivered back to hackers (emailed summary vs. a
-   logged-in team view).
-2. Whether Day-2 presentation time slots should be coordinated through the
-   Submission Portal.
+- **Bear, goat and other walking characters:** an `IntersectionObserver`
+  adds a `--walk` class once the character scrolls into view, and a CSS
+  `@keyframes` animation moves it along its path. To change the path, edit
+  the `left`/`top` values in that keyframe.
+- **Paragliders (elk, owl):** move with scroll via `UseGliderScroll`.
+- **Stars and constellations:** twinkle with the `twinkle` /
+  `twinkle-const` keyframes in `Home.css`. About.css uses them too.
+- Everything slows down or stops for users with "reduce motion" turned on.
+
+### Breakpoints
+
+The main mobile breakpoint is `max-width: 768px` / `min-width: 769px`. The
+prize tracks section is the exception: it switches at `767px`/`768px` so the
+iPad mini (768px) gets the desktop layout.
 
 ---
 
-## 7. Known placeholders to fill in before launch
+## 6. Placeholders to fill in before launch
 
-- `src/pages/People.jsx` — speaker/mentor/judge lists are empty
-- `src/data/content.js` → `committee.groups` — Directors list is empty
-- `src/pages/About.jsx` — photo gallery is placeholder boxes
-- `event.registerUrl` in `src/data/content.js` — points to `#`, swap for the real registration form link
+- `src/portals/MentorPortal.jsx`: the info cards still use lorem ipsum
+  descriptions.
+- `src/data/content.js` has exports nothing uses yet: `committee`,
+  `preHackathonEvents`, `projectResources`, `pastWinnersLinks`.
+  Either wire them up or delete them.

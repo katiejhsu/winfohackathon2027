@@ -33,7 +33,6 @@ export default function UseGliderScroll(gliders) {
             }
         };
 
-        // recalculate once images have real heights
         const imgs = gliders.map((g) => g.ref.current).filter((el) => el && !el.complete);
         imgs.forEach((img) => img.addEventListener("load", update));
 

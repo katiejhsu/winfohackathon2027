@@ -362,7 +362,6 @@
   font-style: italic;
   font-weight: 800;
   text-transform: none;
-  font-size: var(--fs-display);
   margin: 0 0 0.4em;
 }
 
@@ -378,7 +377,7 @@
   font-style: normal;
   font-weight: 700;
   text-transform: none;
-  font-size: 3vw;
+  font-size: clamp(14px, 3vw, 50px);
   margin: 6% 0 1%;
 }
 
@@ -438,7 +437,7 @@
 }
 
 .tracks-copy {
-  flex: 0 0 35vw;
+  flex: 0 0 40vw;
 }
 
 .tracks-description {
@@ -509,8 +508,7 @@
   font-style: italic;
   font-weight: 800;
   text-transform: none;
-  font-size: var(--fs-display);
-  margin: 0 0 0.2em;
+  margin: 0 0 1em;
 }
 
 .section-schedule-day-title {
@@ -626,13 +624,19 @@
 }
 
 .section-faq__answer {
-  padding: 0 0 1.2em;
   font-family: var(--font-jost);
   font-weight: 400;
   font-size: var(--fs-body);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
   max-width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 0.8em 1.1em;
+  margin: 0 0 1.2em;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .section-faq__email-link {
@@ -645,6 +649,7 @@
   top: 0;
   right: 22%;
   width: 12%;
+  animation: twinkle 1.4s ease-in-out 0s infinite;
 }
 
 .stars1-1 {
@@ -653,6 +658,7 @@
   transform: scaleX(-1);
   left: 2%;
   width: 16%;
+  animation: twinkle 1.6s ease-in-out 0.4s infinite;
 }
 
 .stars1-2 {
@@ -661,6 +667,7 @@
   right: 0%;
   width: 16%;
   transform: scaleX(-1);
+  animation: twinkle 1.2s ease-in-out 0.8s infinite;
 }
 
 .stars3-0 {
@@ -668,6 +675,7 @@
   top: 0;
   width: 18%;
   right: 7%;
+  animation: twinkle 1.5s ease-in-out 0.2s infinite;
 }
 
 .stars3-1 {
@@ -675,7 +683,7 @@
   bottom: 8%;
   left: 2%;
   width: 18%;
-
+  animation: twinkle 1.9s ease-in-out 0.6s infinite;
 }
 
 .goat-const {
@@ -683,6 +691,7 @@
   top: 56%;
   width: 26%;
   right: 2%;
+  animation: twinkle-const 1.8s ease-in-out 0.5s infinite;
 }
 
 .owl-const {
@@ -691,7 +700,7 @@
   top: 26%;
   left: 0%;
   width: 18%;
-
+  animation: twinkle-const 2s ease-in-out 1s infinite;
 }
 
 @keyframes twinkle {
@@ -722,52 +731,6 @@
     filter: brightness(2.8) drop-shadow(0 0 12px rgba(255, 250, 221, 0.9));
     opacity: 1;
   }
-}
-
-.stars1-0,
-.stars1-1,
-.stars1-2,
-.stars3-0,
-.stars3-1 {
-  animation: twinkle 1.4s ease-in-out infinite;
-}
-
-.goat-const,
-.owl-const {
-  animation: twinkle-const 1.8s ease-in-out infinite;
-}
-
-.stars1-0 {
-  animation-delay: 0s;
-}
-
-.stars1-1 {
-  animation-delay: 0.4s;
-  animation-duration: 1.6s;
-}
-
-.stars1-2 {
-  animation-delay: 0.8s;
-  animation-duration: 1.2s;
-}
-
-.stars3-0 {
-  animation-delay: 0.2s;
-  animation-duration: 1.5s;
-}
-
-.stars3-1 {
-  animation-delay: 0.6s;
-  animation-duration: 1.9s;
-}
-
-.goat-const {
-  animation-delay: 0.5s;
-}
-
-.owl-const {
-  animation-delay: 1s;
-  animation-duration: 2s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -843,6 +806,12 @@
   border-radius: 2.4vw;
   overflow: hidden;
   background: rgb(218 218 218 / 9%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.res-card:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 .res-card__icon {
@@ -892,7 +861,7 @@
   font-weight: 600;
   font-size: 1.2vw;
   line-height: 1.45;
-  max-width: 42vw;
+  max-width: 80vw;
   margin: 0;
 }
 
@@ -935,7 +904,7 @@
   font-weight: 800;
   text-transform: uppercase;
   color: #FFFADD;
-  font-size: 40px;
+  font-size: clamp(12px, 2.78vw, 40px);
   line-height: 1.1;
   white-space: nowrap;
   margin: 0 0 1.5em;
@@ -1378,15 +1347,24 @@
 }
 
 .home-s7 {
-  aspect-ratio: 1728 / 2421;
+  min-height: calc(100vw * 2421 / 1728);
   background-image: url("/assets/home/home_background_7_new.png");
   background-color: #0a1020;
+  background-size: 100% 100%;
+  display: flow-root;
+  padding-bottom: 6vw;
 }
 
 .home-s8 {
-  aspect-ratio: 1728 / 2526;
+  min-height: calc(100vw * 2526 / 1728);
   background-image: url("/assets/home/home_background_8_new.png");
-  background-color: #181818;
+  background-color: #1e1e1e;
+  background-size: 100% auto;
+  background-position: center top;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 87vw;
 }
 
 .section-two-badges,
@@ -1559,32 +1537,45 @@
 }
 
 @media (max-width: 768px) {
+  .tracks-heading {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 767px) {
+   .res-card__desc {
+    font-size: 7.5px;
+  }
+  .section-five-content {
+    width: 85vw;
+  }
+
   .tracks-copy {
     flex: 0 0 60vw;
   }
 
+  .tracks-heading {
+    margin: 0;
+    font-size: clamp(20px, 6vw, 32px);
+  }
+
   .tracks-title {
     margin: 0% 0% 1%;
+    font-size: clamp(14px, 4vw, 22px);
   }
 
   .tracks-row {
     margin: 2% 0% 4%;
   }
 
-  .tracks-heading {
-    margin: 0;
-  }
-
-  .section-faq__list {
-    width: 85%;
-  }
-
-  .section-five-content {
-    width: 85vw;
-  }
-
   .tracks-divider {
     margin: 0.6em 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-faq__list {
+    width: 85%;
   }
 
   .section-six-content {
@@ -1607,24 +1598,24 @@
     font-size: 16px;
   }
 
-  .section-nine-heading {
-    font-size: 12px;
-  }
-
-  .tracks-heading,
   .section-schedule-heading {
     font-size: clamp(20px, 6vw, 32px);
   }
 
   .tracks-title {
-    font-size: clamp(14px, 4vw, 22px);
+    font-size: clamp(20px, 3vw, 32px);
   }
 
   .section-schedule-day-title {
     font-size: clamp(14px, 4vw, 22px);
   }
+
   .ribbon-wrap {
     filter: none;
+  }
+
+  .tracks-copy {
+    flex: 0 0 60%;
   }
 }
 
@@ -1720,7 +1711,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .tracks-description {
     font-size: clamp(12px, 1.6vw, 26px);
   }
@@ -1754,14 +1745,6 @@ a.res-tile:hover {
   white-space: pre-line;
 }
 
-.home-s7 {
-  aspect-ratio: auto;
-  min-height: calc(100vw * 2421 / 1728);
-  background-size: 100% 100%;
-  display: flow-root;
-  padding-bottom: 6vw;
-}
-
 .home-s7 .section-eight-content {
   position: relative;
   top: auto;
@@ -1774,45 +1757,6 @@ a.res-tile:hover {
   .home-s7 .section-eight-content {
     margin-top: -14.2vw;
   }
-}
-
-.section-schedule-heading {
-  margin-bottom: 1em;
-}
-
-.section-nine-heading {
-  font-size: clamp(12px, 2.78vw, 40px);
-}
-
-.res-card {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.res-card:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-
-.section-faq__answer {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  padding: 0.8em 1.1em;
-  margin: 0 0 1.2em;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-.home-s8 {
-  aspect-ratio: auto;
-  min-height: calc(100vw * 2526 / 1728);
-  background-size: 100% auto;
-  background-position: center top;
-  background-color: #1e1e1e;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 87vw;
 }
 
 .home-s8 .section-nine-content {
@@ -1833,7 +1777,7 @@ a.res-tile:hover {
     top: 0;
   }
 }
-/* Elk on the forest path (tree section). left/top = where the elk's feet land. */
+
 .elk-hiking {
   position: absolute;
   left: 69.1%;
@@ -1841,9 +1785,24 @@ a.res-tile:hover {
   width: 17%;
   height: auto;
   transform: translate(-50%, -100%);
-  z-index: 5;
+  z-index: 6;
   pointer-events: none;
   transform-origin: 50% 100%;
+  filter: blur(0.6px);
+  animation: elk-breathe 6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .elk-hiking {
+    filter: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elk-hiking {
+    animation: none;
+  }
 }
 
 /* Fireflies (tree section). left/top = center of each firefly, from red-dot clicks. */
@@ -1915,20 +1874,6 @@ a.res-tile:hover {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-  .elk-hiking {
-    animation: none;
-  }
-}
-
-/* Elk looks left/right: top elk fades out to reveal a mirrored copy underneath. */
-.elk-hiking {
-  z-index: 6;
-  transform-origin: 50% 100%;
-  animation:
-    elk-breathe 6s ease-in-out infinite;
-}
-
 @keyframes elk-breathe {
 
   0%,
@@ -1941,69 +1886,12 @@ a.res-tile:hover {
   }
 }
 
-@keyframes elk-breathe-flip {
-
-  0%,
-  100% {
-    transform: translate(-50%, -100%) scaleX(-1) scaleY(1);
-  }
-
-  50% {
-    transform: translate(-50%, -100%) scaleX(-1) scaleY(1.012);
-  }
-}
-
-/* top elk: visible, fades out ~30-40%, fades back in ~62-72% */
-@keyframes elk-fade-top {
-
-  0%,
-  30% {
-    opacity: 1;
-  }
-
-  33%,
-  69% {
-    opacity: 0;
-  }
-
-  72%,
-  100% {
-    opacity: 1;
-  }
-}
-
-/* mirrored elk: only on while the top elk is fading/hidden */
-@keyframes elk-fade-under {
-
-  0%,
-  29% {
-    opacity: 0;
-  }
-
-  29.1%,
-  73% {
-    opacity: 1;
-  }
-
-  73.1%,
-  100% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .elk-hiking {
-    animation: none;
-  }
-}
-
 /* Fishing owl (lake section), mirrored. left/top = where the owl's FEET stand (the rock).
    --tip-x / --tip-y = where the feet sit in the DISPLAYED (mirrored) image, % of its width/height. */
 .fishing-owl {
   --tip-x: 82%;
   --tip-y: 75.4%;
-  --fish-cycle: 5s; 
+  --fish-cycle: 5s;
   position: absolute;
   left: 61.9%;
   top: 96.3%;
@@ -2172,15 +2060,5 @@ a.res-tile:hover {
   .fish-splash__drop {
     animation: none;
     opacity: 0;
-  }
-}
-
-.elk-hiking {
-  filter: blur(0.6px);
-}
-
-@media (max-width: 768px) {
-  .elk-hiking {
-    filter: none;
   }
 }

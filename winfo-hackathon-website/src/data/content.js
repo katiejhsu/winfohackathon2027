@@ -1,11 +1,3 @@
-// ============================================================================
-// SITE CONTENT
-// All copy pulled from the WINFO 15th Hackathon Sponsorship Packet and the
-// Website Copy doc. Edit this file to update text across the whole site.
-// Placeholder arrays (committee, sponsors, faces, etc.) should be filled in
-// with real data/images before launch.
-// ============================================================================
-
 export const event = {
   name: "Women in Informatics' 15th Annual Hackathon",
   heroDates: "January 30-31, 2027",
@@ -19,7 +11,6 @@ export const event = {
   hubMapUrl: "https://www.google.com/maps/dir/?api=1&destination=4001+E+Stevens+Way+NE,+Seattle,+WA+98195",
   judgingLocation: "University of Washington Maple Great Room",
   mapleMapUrl: "https://www.google.com/maps/dir/?api=1&destination=1135+NE+Campus+Pkwy,+Seattle,+WA+98105",
-  // ISO string used to drive the countdown component
   countdownTarget: "2027-01-30T09:00:00-08:00",
   registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfy4dwW9LAieLvIEY-exF9tiivldDp-RE31dzLplCrT_ZGnUw/viewform?usp=header",
 };
@@ -225,32 +216,8 @@ export const aboutWinfo = {
   website: "https://winfo.ischool.uw.edu"
 };
 
-// Committee members grouped by role - TODO: add headshots + last names as available
-export const committee = {
-  intro:
-    "Our team of 12 organizers are brought together by a shared passion for building spaces where everyone feels welcome to create, connect, and learn.",
-  groups: [
-    { role: "Directors", members: [] }, // TODO
-    { role: "Logistics Leads", members: ["Rithika", "Shinaya"] },
-    { role: "Outreach Leads", members: ["Tanya", "Shreya", "Katrina"] },
-    { role: "Design Leads", members: ["Claire", "Thu", "Sarah"] },
-    { role: "Tech Leads", members: ["Katie", "Mara"] },
-    { role: "Finance", members: ["Tejaswi"] },
-  ],
-};
-
-// The People - speakers / mentors / judges. TODO: fill in with real names,
-// company, and (optionally) email once confirmed. Ask past mentors for consent
-// before publishing their info.
-export const people = {
-  speakers: [], // { name, role, company, photo }
-  mentors: [],
-  judges: [],
-};
-
 export const pastWinners = [
   {
-    emoji: "🌊",
     track: "Best Impact",
     project: "Canario",
     image: "/assets/about/winners/canario.png",
@@ -258,7 +225,6 @@ export const pastWinners = [
     about: "Reducing confusion, improving preparedness, and supporting safer encounters.",
   },
   {
-    emoji: "🐟",
     track: "Best Product",
     project: "NewFuse",
     image: "/assets/about/winners/newfuse.png",
@@ -266,7 +232,6 @@ export const pastWinners = [
     about: "Exploring the depths of news! Making today's news understandable, not overwhelming.",
   },
   {
-    emoji: "🐚",
     track: "Best Implementation",
     project: "Nudge",
     image: "/assets/about/winners/nudge.png",
@@ -274,7 +239,6 @@ export const pastWinners = [
     about: "Nudge doesn't block your escape - it builds your bridge to focus.",
   },
   {
-    emoji: "🪼",
     track: "Best Design",
     project: "WNBA",
     image: "/assets/about/winners/wnba.png",

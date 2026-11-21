@@ -23,7 +23,6 @@ export default function Register() {
                 Register as a hackathon participant. No coding experience
                 required - teams of up to 4.
               </p>
-              {/* TODO: swap for an embedded form (Google Form / Typeform / custom) */}
               <a className="btn btn--primary" href={event.registerUrl}>Register Now</a>
               <p style={{ fontSize: "0.8rem", marginTop: "0.75rem" }}>
                 Registration full? <a href="#">Join the waitlist</a>
